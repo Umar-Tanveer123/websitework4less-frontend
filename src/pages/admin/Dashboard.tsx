@@ -192,7 +192,7 @@ export default function AdminDashboard() {
         ))}
       </div>
 
-      <SectionWrapper background="transparent">
+      <SectionWrapper background="white">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Dashboard</h1>
