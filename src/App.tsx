@@ -8,7 +8,6 @@ import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import AdminLogin from './pages/admin/Login';
-import RegisterAdmin from './pages/admin/Register';
 import AdminDashboard from './pages/admin/Dashboard';
 
 function App() {
@@ -26,7 +25,6 @@ function App() {
         </Route>
         <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
         <Route path="/admin/login" element={<AdminLogin />} />
-        <Route path="/admin/register" element={<RegisterAdmin />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>

@@ -181,22 +181,14 @@ export default function AdminLogin() {
               )}
             </button>
 
-            <div className="mt-10 pt-8 border-t border-gray-800 text-center space-y-4">
-              <p className="text-sm text-gray-500 font-medium">
-                Don't have an account?{' '}
-                <Link to="/admin/register" className="text-accent font-bold hover:underline">
-                  Create admin
-                </Link>
-              </p>
-              <div>
-                <button
-                  type="button"
-                  onClick={() => setView(view === 'login' ? 'forgot' : 'login')}
-                  className="text-sm font-bold text-gray-400 hover:text-gray-600 transition-colors"
-                >
-                  {view === 'login' ? 'Forgot password?' : '← Back to login'}
-                </button>
-              </div>
+            <div className="mt-10 pt-8 border-t border-gray-800 text-center">
+              <button
+                type="button"
+                onClick={() => setView(view === 'login' ? 'forgot' : 'login')}
+                className="text-sm font-bold text-gray-400 hover:text-gray-600 transition-colors"
+              >
+                {view === 'login' ? 'Forgot password?' : '← Back to login'}
+              </button>
             </div>
           </form>
         </div>
