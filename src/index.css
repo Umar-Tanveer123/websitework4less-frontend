@@ -17,6 +17,15 @@
   --color-text-muted: #94A3B8;
   --color-text-inverse: #FFFFFF;
 
+  /* Dark Mode Variables */
+  --color-dark-surface: #0F172A;
+  --color-dark-surface-alt: #1E293B;
+  --color-dark-surface-muted: #334155;
+  --color-dark-border: #334155;
+  --color-dark-text-primary: #F8FAFC;
+  --color-dark-text-secondary: #94A3B8;
+  --color-dark-text-muted: #64748B;
+
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
   --ease-premium: cubic-bezier(0.4, 0, 0.2, 1);
@@ -32,6 +41,12 @@
   --animate-float: float 6s var(--ease-in-out-premium) infinite;
   --animate-pulse-slow: pulse-slow 3s var(--ease-in-out-premium) infinite;
   --animate-reveal-right: reveal-right 0.8s var(--ease-out-premium) forwards;
+  --animate-gradient-x: gradient-x 15s ease infinite;
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @keyframes reveal-right {
@@ -73,10 +88,25 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-12px); }
 }
-
 @keyframes pulse-slow {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
+}
+
+@layer base {
+  .dark {
+    --color-surface: var(--color-dark-surface);
+    --color-surface-alt: var(--color-dark-surface-alt);
+    --color-surface-muted: var(--color-dark-surface-muted);
+    --color-border: var(--color-dark-border);
+    --color-text-primary: var(--color-dark-text-primary);
+    --color-text-secondary: var(--color-dark-text-secondary);
+    --color-text-muted: var(--color-dark-text-muted);
+  }
+
+  * {
+    @apply transition-colors duration-300;
+  }
 }
 
 /* Base styles */

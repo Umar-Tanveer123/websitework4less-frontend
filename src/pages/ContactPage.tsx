@@ -234,21 +234,6 @@ export default function ContactPage() {
             className="lg:col-span-2"
           >
             <div className="space-y-8">
-              {/* Map Placeholder */}
-              <div className="overflow-hidden rounded-2xl border border-border">
-                <div className="aspect-[4/3] bg-surface-muted flex items-center justify-center">
-                  <div className="text-center p-6">
-                    <MapPinIcon className="mx-auto h-12 w-12 text-text-muted/40" />
-                    <p className="mt-3 text-sm font-medium text-text-muted">
-                      Interactive Map
-                    </p>
-                    <p className="mt-1 text-xs text-text-muted/70">
-                      Lakewood, NJ USA
-                    </p>
-                  </div>
-                </div>
-              </div>
-
               {/* FAQ */}
               <div className="rounded-2xl border border-border bg-surface p-6">
                 <h3 className="text-lg font-bold text-text-primary">

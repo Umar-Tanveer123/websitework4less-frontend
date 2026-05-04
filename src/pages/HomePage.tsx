@@ -49,24 +49,26 @@ const processSteps = [
 
 
 const clientLogos = [
-  'Acme Corp',
-  'Globex',
-  'Initech',
-  'Umbrella',
-  'Stark Industries',
-  'Wayne Ent.',
+  'Barbux Barter',
+  'Ajlead',
+  'Menachems Dips',
+  'Vipn Lines',
+  'Mjenzi',
+  'Ngpm',
+  'Jrv International',
 ];
 
 const stats = [
   { value: '200+', label: 'Projects Delivered' },
-  { value: '98%', label: 'Client Satisfaction' },
+  { value: '50', label: 'States Served' },
   { value: '3+', label: 'Years Experience' },
-  { value: '200+', label: 'Team Members' },
+  { value: '50+', label: 'Team Members' },
 ];
 
 export default function HomePage() {
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
   const [processRef, processVisible] = useStaggerReveal(processSteps.length, 150);
+  const [portfolioRef, portfolioVisible] = useStaggerReveal(4, 100);
 
   return (
     <>
@@ -85,33 +87,48 @@ export default function HomePage() {
               <span className="mb-6 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
                 Professional Web Development
               </span>
-              <h1 className="text-4xl font-extrabold leading-[1.1] text-text-primary sm:text-5xl lg:text-6xl">
-                We Build Websites
+              <h1 className="text-3xl font-extrabold leading-[1.1] text-text-primary sm:text-4xl lg:text-5xl">
+                <span className="bg-gradient-to-r from-accent via-blue-400 to-accent bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent">
+                  Websites That Define Your Brand
+                </span>
                 <br />
-                That{' '}
-                <span className="relative">
-                  <span className="text-accent">Deliver Results</span>
+                <span className="relative inline-block mt-2">
+                  and Drive Growth
                   <svg
-                    className="absolute -bottom-2 left-0 w-full"
+                    className="absolute -bottom-2 left-0 w-full text-accent/30"
                     viewBox="0 0 200 8"
                     fill="none"
                   >
                     <path
                       d="M1 5.5Q50 1 100 5.5T199 5.5"
-                      stroke="#3B82F6"
-                      strokeWidth="2"
+                      stroke="currentColor"
+                      strokeWidth="3"
                       strokeLinecap="round"
-                      className="animate-pulse-slow"
                     />
                   </svg>
                 </span>
               </h1>
-              <p className="mt-6 max-w-lg text-lg leading-relaxed text-text-secondary">
-                We are from the largest and most established website design and custom software companies in the country and offer the best rates that you will ever find. Affordable Websites & Marketing for Businesses of All Sizes. We work with any budget—big or small. We do custom software, help your business show on Google through SEO and ads, and make websites that impress your audience. We design websites that feel right, look professional, and build instant trust.
-              </p>
-              <p className="mt-4 max-w-lg text-md font-medium text-accent">
-                We offer no payment upfront and monthly installments until you pay off your site. You can use the site even before payments are made.
-              </p>
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
+                <p className="border-l-4 border-accent/20 pl-6 py-2 bg-accent/5 rounded-r-2xl italic">
+                  "We partner with ambitious businesses to design and develop exceptional digital experiences—crafted to elevate your brand, attract the right audience, and deliver measurable results."
+                </p>
+                <div className="space-y-4">
+                  <p>
+                    From bespoke websites to advanced custom software, every project is built with precision, strategy, and a deep understanding of what drives trust and conversion.
+                  </p>
+                  <p>
+                    Our work goes beyond aesthetics. We create websites that feel seamless, look unmistakably professional, and instantly establish credibility.
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl bg-surface-alt p-4 border border-border/50">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <RocketLaunchIcon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-medium">
+                    <span className="text-accent font-bold">Flexible Payments:</span> Launch now, pay over time with no upfront commitment.
+                  </p>
+                </div>
+              </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button as="link" to="/contact" size="lg">
                   Start Your Project
@@ -209,7 +226,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <p className="mb-8 text-center text-sm font-medium uppercase tracking-wider text-text-muted">
-              Trusted by companies worldwide
+              Trusted by companies nationwide
             </p>
             <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
               {clientLogos.map((name) => (
@@ -230,8 +247,8 @@ export default function HomePage() {
         <AnimatedSection>
           <SectionHeading
             label="What We Do"
-            title="Services Built for Growth"
-            description="We offer a comprehensive suite of web development and digital services to help your business succeed online."
+            title="Strategic Services for Lasting Growth"
+            description="We provide end-to-end web development and digital solutions, engineered to strengthen your presence, attract the right audience, and accelerate your growth online."
           />
         </AnimatedSection>
 
@@ -307,13 +324,20 @@ export default function HomePage() {
           />
         </AnimatedSection>
 
-        <AnimatedSection delay={200}>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {projects.slice(0, 4).map((item) => (
-              <PortfolioGridItem key={item.title} {...item} />
-            ))}
-          </div>
-        </AnimatedSection>
+        <div ref={portfolioRef} className="grid gap-6 sm:grid-cols-2">
+          {projects.slice(0, 4).map((item, i) => (
+            <div
+              key={item.title}
+              className={`transition-all duration-700 ease-out ${
+                portfolioVisible[i]
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-12'
+              }`}
+            >
+              <PortfolioGridItem {...item} />
+            </div>
+          ))}
+        </div>
 
         <div className="mt-12 text-center">
           <Button as="link" to="/portfolio" variant="outline">

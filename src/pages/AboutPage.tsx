@@ -6,9 +6,9 @@ import { ArrowRightIcon, CheckCircleIcon } from '../components/Icons';
 
 const stats = [
   { value: '200+', label: 'Projects Completed' },
-  { value: '98%', label: 'Client Satisfaction' },
+  { value: '50', label: 'States Served' },
   { value: '3+', label: 'Years in Business' },
-  { value: '200+', label: 'Team Members' },
+  { value: '50+', label: 'Team Members' },
 ];
 
 const values = [
@@ -104,11 +104,11 @@ export default function AboutPage() {
               </div>
               <div className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-accent">
                 <h3 className="font-bold text-text-primary">2025</h3>
-                <p className="text-sm text-text-secondary">Quickly became the USA go-to for any size job, from small to large, expanding our team to over 40.</p>
+                <p className="text-sm text-text-secondary">Quickly became the USA go-to for any size job, from small to large, expanding our team to over 20.</p>
               </div>
               <div className="relative pl-6 before:absolute before:left-0 before:top-2 before:h-2 before:w-2 before:rounded-full before:bg-accent">
                 <h3 className="font-bold text-text-primary">2026</h3>
-                <p className="text-sm text-text-secondary">Launched the enterprise solutions department, expanding our project range from minor website fixes to complex custom frameworks. We now have a team comprising over 250 employees.</p>
+                <p className="text-sm text-text-secondary">Launched the enterprise solutions department, expanding our project range from minor website fixes to complex custom frameworks. We now have a team comprising over 50+ experts.</p>
               </div>
             </div>
             <p className="mt-6 text-lg font-medium text-accent">

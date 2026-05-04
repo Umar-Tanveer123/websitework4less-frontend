@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
+import { SunIcon, MoonIcon } from './Icons';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -14,7 +16,24 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    return false;
+  });
   const location = useLocation();
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark]);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -38,10 +57,13 @@ export default function Navbar() {
   // Or just default to dark text everywhere if backgrounds are light.
   const isWhiteText = !scrolled && location.pathname === '/dark-hero-page'; // Assuming no dark hero for now, text will be dark.
 
+  // Show background if scrolled OR if not on the Home page
+  const showBackground = scrolled || location.pathname !== '/';
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+        showBackground
           ? 'bg-surface/80 backdrop-blur-xl shadow-sm border-b border-border/50'
           : 'bg-transparent'
       }`}
@@ -50,7 +72,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="relative z-50 flex items-center gap-2 text-xl font-bold"
+          className="relative z-[70] flex items-center gap-2 text-xl font-bold"
         >
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent">
             <svg
@@ -90,7 +112,26 @@ export default function Navbar() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-4">
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
+            }`}
+            aria-label="Toggle theme"
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={isDark ? 'dark' : 'light'}
+                initial={{ y: -20, opacity: 0, rotate: -45 }}
+                animate={{ y: 0, opacity: 1, rotate: 0 }}
+                exit={{ y: 20, opacity: 0, rotate: 45 }}
+                transition={{ duration: 0.2 }}
+              >
+                {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+              </motion.div>
+            </AnimatePresence>
+          </button>
           <Button 
             as="link" 
             to="/contact" 
@@ -102,14 +143,24 @@ export default function Navbar() {
           </Button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className={`relative z-50 flex h-10 w-10 items-center justify-center rounded-lg lg:hidden transition-colors ${
-            isWhiteText ? 'hover:bg-white/10' : 'hover:bg-surface-muted'
-          }`}
-          aria-label="Toggle menu"
-        >
+        {/* Mobile Toggle Group */}
+        <div className="flex items-center gap-2 lg:hidden">
+          <button
+            onClick={() => setIsDark(!isDark)}
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
+            }`}
+            aria-label="Toggle theme"
+          >
+            {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              isWhiteText ? 'hover:bg-white/10' : 'hover:bg-surface-muted'
+            }`}
+            aria-label="Toggle menu"
+          >
           <div className="relative h-5 w-6">
             <span
               className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${
@@ -128,16 +179,17 @@ export default function Navbar() {
             />
           </div>
         </button>
+      </div>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-40 bg-surface transition-all duration-500 ease-[var(--ease-out-premium)] lg:hidden ${
+          className={`fixed inset-0 z-[60] bg-surface transition-all duration-500 ease-[var(--ease-out-premium)] lg:hidden ${
             mobileOpen
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 -translate-y-4 pointer-events-none'
           }`}
         >
-          <div className="flex h-full flex-col items-center justify-center gap-8">
+          <div className="flex h-full flex-col items-center justify-center gap-6 px-6 pt-20 overflow-y-auto">
             {navLinks.map((link, index) => (
               <Link
                 key={link.path}
