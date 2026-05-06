@@ -6,7 +6,6 @@ import PortfolioGridItem from '../components/PortfolioGridItem';
 import { AnimatedSection, useStaggerReveal } from '../hooks/useAnimations';
 import { services } from '../data/services';
 import { projects } from '../data/portfolio';
-import { testimonials } from '../data/testimonials';
 import {
   ChatBubbleIcon,
   LightBulbIcon,

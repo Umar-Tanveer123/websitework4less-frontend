@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { testimonials, Testimonial } from '../data/testimonials';
+import { testimonials } from '../data/testimonials';
 
 export default function TestimonialCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
