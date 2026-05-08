@@ -184,43 +184,7 @@ export default function HomePage() {
               >
                 {/* Background Glow Backdrop */}
                 <div className="absolute inset-0 bg-accent/20 blur-[120px] -z-10 animate-pulse" />
-                               {/* Orbital Floating Cards */}
-                <motion.div
-                  animate={{ y: [0, 20, 0], x: [0, -5, 0] }}
-                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -top-12 -left-12 w-32 md:w-48 bg-surface/40 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl z-30 hidden lg:block"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/20 text-accent">
-                      <RocketLaunchIcon className="h-4 w-4" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="h-1.5 w-12 bg-accent/30 rounded-full" />
-                      <div className="h-1.5 w-8 bg-text-muted/20 rounded-full" />
-                    </div>
-                  </div>
-                  <div className="text-xl font-bold text-text-primary">+124%</div>
-                  <div className="text-[10px] text-text-muted uppercase tracking-tighter">Monthly Growth</div>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, -25, 0], x: [0, 10, 0] }}
-                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                  className="absolute -bottom-10 -right-10 w-28 md:w-44 bg-surface/40 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl z-30 hidden lg:block"
-                >
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="relative flex h-2 w-2">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                    </span>
-                    <div className="h-1.5 w-20 bg-text-muted/20 rounded-full" />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="h-2 w-full bg-border/50 rounded-full" />
-                    <div className="h-2 w-3/4 bg-border/50 rounded-full" />
-                  </div>
-                  <div className="mt-3 text-[10px] font-bold text-accent uppercase">Live Analytics</div>
-                </motion.div>
+                
                 {/* Browser frame */}
                 <div className="rounded-2xl border border-border bg-surface shadow-2xl shadow-accent/10 overflow-hidden">
                   {/* Browser toolbar */}
