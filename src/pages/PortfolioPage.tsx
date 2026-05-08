@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
 import PortfolioGridItem from '../components/PortfolioGridItem';
@@ -23,20 +24,30 @@ export default function PortfolioPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary pt-36 pb-20 lg:pt-44 lg:pb-28">
-        <div className="absolute inset-0">
-          <div className="absolute bottom-0 left-1/3 h-[500px] w-[500px] rounded-full bg-accent/10 blur-3xl" />
+        {/* Cinematic Background Mesh */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ x: [0, 70, 0], y: [0, 40, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[-15%] right-[-10%] h-[900px] w-[900px] rounded-full bg-accent/20 blur-[160px] opacity-40" 
+          />
+          <motion.div 
+            animate={{ x: [0, -60, 0], y: [0, -30, 0] }}
+            transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[-20%] left-[-5%] h-[800px] w-[800px] rounded-full bg-accent-light/10 blur-[140px] opacity-30" 
+          />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection animation="fade-in-up">
-            <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-light">
+            <span className="mb-4 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
               Our Portfolio
             </span>
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl leading-tight">
               Work That Makes an
               <br />
               <span className="text-accent">Impact</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary">
               Browse our portfolio of websites, applications, and digital
               experiences crafted for businesses across diverse industries.
             </p>
@@ -93,14 +104,13 @@ export default function PortfolioPage() {
         </div>
       </SectionWrapper>
 
-      {/* CTA */}
-      <section className="bg-primary py-20">
+      <section className="bg-surface-alt py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
               Want to See Your Business Here?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-secondary">
               Let's create something amazing together. Start a conversation about
               your next project today.
             </p>

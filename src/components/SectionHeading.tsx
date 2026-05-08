@@ -29,7 +29,7 @@ export default function SectionHeading({
         </span>
       )}
       <h2
-        className={`text-3xl font-bold sm:text-4xl lg:text-[2.75rem] leading-tight ${
+        className={`text-3xl font-medium sm:text-4xl lg:text-[2.75rem] leading-tight ${
           light ? 'text-white' : 'text-text-primary'
         }`}
       >

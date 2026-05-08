@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
@@ -42,20 +43,30 @@ export default function AboutPage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary pt-36 pb-20 lg:pt-44 lg:pb-28">
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-0 h-[500px] w-[500px] rounded-full bg-accent/10 blur-3xl" />
+        {/* Cinematic Background Mesh */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <motion.div 
+            animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+            className="absolute top-[-10%] right-[-10%] h-[800px] w-[800px] rounded-full bg-accent/20 blur-[150px] opacity-40" 
+          />
+          <motion.div 
+            animate={{ x: [0, -40, 0], y: [0, -20, 0] }}
+            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+            className="absolute bottom-[-20%] left-[-10%] h-[700px] w-[700px] rounded-full bg-accent-light/10 blur-[130px] opacity-30" 
+          />
         </div>
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <AnimatedSection animation="fade-in-up">
             <span className="mb-4 inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent-light">
               About Us
             </span>
-            <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight">
+            <h1 className="text-4xl font-extrabold text-text-primary sm:text-5xl lg:text-6xl leading-tight">
               The People Behind
               <br />
               <span className="text-accent">Your Success</span>
             </h1>
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
+            <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary">
               We&apos;re a team of designers, developers, and strategists passionate
               about helping businesses thrive in the digital world.
             </p>
@@ -175,10 +186,10 @@ export default function AboutPage() {
       <section className="bg-primary py-20">
         <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <AnimatedSection>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold text-text-primary sm:text-4xl">
               Want to Work With Us?
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-white/70">
+            <p className="mx-auto mt-4 max-w-2xl text-lg text-text-secondary">
               We&apos;d love to hear about your project. Reach out and let&apos;s explore
               how we can bring your vision to life.
             </p>

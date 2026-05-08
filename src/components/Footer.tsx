@@ -24,10 +24,10 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-text-inverse">
+    <footer className="bg-primary text-text-primary border-t border-border/50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Top Section */}
-        <div className="grid grid-cols-1 gap-12 border-b border-white/10 py-16 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-1 gap-12 border-b border-border/50 py-16 md:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div className="lg:col-span-2">
             <Link to="/" className="inline-flex items-center gap-2 text-xl font-bold">
@@ -50,7 +50,7 @@ export default function Footer() {
                 Website Work <span className="text-accent">4</span> Less
               </span>
             </Link>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-text-secondary">
               We build high-performance websites and digital experiences that help
               businesses grow. Professional, reliable, and results-driven.
             </p>
@@ -60,7 +60,7 @@ export default function Footer() {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-white/40">
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-text-muted">
                 {title}
               </h4>
               <ul className="space-y-3">
@@ -68,7 +68,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       to={link.path}
-                      className="text-sm text-white/60 transition-colors duration-200 hover:text-accent"
+                      className="text-sm text-text-secondary transition-colors duration-200 hover:text-accent"
                     >
                       {link.label}
                     </Link>
@@ -81,19 +81,19 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col items-center justify-between gap-4 py-8 md:flex-row">
-          <p className="text-sm text-white/40">
+          <p className="text-sm text-text-muted">
             &copy; {new Date().getFullYear()} Website Work 4 Less. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               to="/"
-              className="text-sm text-white/40 transition-colors hover:text-white/70"
+              className="text-sm text-text-muted transition-colors hover:text-text-primary"
             >
               Privacy Policy
             </Link>
             <Link
               to="/"
-              className="text-sm text-white/40 transition-colors hover:text-white/70"
+              className="text-sm text-text-muted transition-colors hover:text-text-primary"
             >
               Terms of Service
             </Link>

@@ -5,7 +5,7 @@ interface SectionWrapperProps {
   children: ReactNode;
   className?: string;
   id?: string;
-  background?: 'white' | 'light' | 'dark' | 'primary';
+  background?: 'white' | 'light' | 'dark' | 'primary' | 'transparent';
   animate?: boolean;
 }
 
@@ -23,6 +23,7 @@ export default function SectionWrapper({
     light: 'bg-surface-alt',
     dark: 'bg-primary text-text-inverse',
     primary: 'bg-primary-light text-text-inverse',
+    transparent: 'bg-transparent',
   };
 
   return (
