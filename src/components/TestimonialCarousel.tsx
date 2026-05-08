@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Quote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 import { testimonials } from '../data/testimonials';
 
 export default function TestimonialCarousel() {
@@ -87,11 +87,6 @@ export default function TestimonialCarousel() {
                         duration: 0.8, 
                         ease: [0.34, 1.56, 0.64, 1] 
                       }
-                    }}
-                    transition={{ 
-                      type: "spring", 
-                      stiffness: 220, 
-                      damping: 20,
                     }}
                     className="absolute w-full max-w-[320px] md:max-w-[560px] top-0 h-[500px] md:h-[550px]"
                   >

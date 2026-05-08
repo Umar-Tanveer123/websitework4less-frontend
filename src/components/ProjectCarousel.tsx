@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -51,7 +51,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
               const pos = getPosition(index);
               if (pos === 'hidden') return null;
 
-              const variants = {
+              const variants: Variants = {
                 active: {
                   x: 0,
                   scale: 1.1,

@@ -77,7 +77,6 @@ const stats = [
 
 export default function HomePage() {
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
-  const [processRef, processVisible] = useStaggerReveal(processSteps.length, 150);
   const [phraseIndex, setPhraseIndex] = useState(0);
 
   useEffect(() => {
@@ -375,7 +374,7 @@ export default function HomePage() {
             title="How We Bring Your Vision to Life"
             description="A proven four-step process that ensures every project is delivered on time, on budget, and beyond expectations."
           />
-        </AnimatedSection>        <div ref={processRef} className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        </AnimatedSection>        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, i) => (
             <motion.div
               key={step.step}
