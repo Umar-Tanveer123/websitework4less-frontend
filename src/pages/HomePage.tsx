@@ -92,23 +92,23 @@ export default function HomePage() {
       <section className="relative overflow-hidden pt-32 pb-20 lg:pt-40 lg:pb-32 bg-transparent">
         {/* Cinematic Background Mesh (Section 1 - Hero) */}
         <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               x: [0, 100, 0],
               y: [0, 50, 0],
               scale: [1, 1.2, 1]
             }}
             transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-            className="absolute top-[-20%] right-[-10%] h-[1000px] w-[1000px] rounded-full bg-accent/10 blur-[180px] opacity-40" 
+            className="absolute top-[-20%] right-[-10%] h-[1000px] w-[1000px] rounded-full bg-accent/10 blur-[180px] opacity-40"
           />
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               x: [0, -80, 0],
               y: [0, -100, 0],
               scale: [1, 1.1, 1]
             }}
             transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-            className="absolute bottom-[-30%] left-[-20%] h-[1200px] w-[1200px] rounded-full bg-accent-light/5 blur-[200px] opacity-30" 
+            className="absolute bottom-[-30%] left-[-20%] h-[1200px] w-[1200px] rounded-full bg-accent-light/5 blur-[200px] opacity-30"
           />
           <div className="absolute top-[20%] left-[10%] h-[600px] w-[600px] rounded-full bg-accent/5 blur-[150px] opacity-20" />
         </div>
@@ -171,8 +171,8 @@ export default function HomePage() {
             </AnimatedSection>
 
             <AnimatedSection animation="slide-in-right" delay={200}>
-              <motion.div 
-                animate={{ 
+              <motion.div
+                animate={{
                   y: [0, -15, 0],
                 }}
                 transition={{
@@ -184,7 +184,43 @@ export default function HomePage() {
               >
                 {/* Background Glow Backdrop */}
                 <div className="absolute inset-0 bg-accent/20 blur-[120px] -z-10 animate-pulse" />
-                
+                {/* Orbital Floating Cards */}
+                <motion.div
+                  animate={{ y: [0, 20, 0], x: [0, -5, 0] }}
+                  transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -top-12 -left-12 w-32 md:w-48 bg-surface/40 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl z-30 hidden lg:block"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent/20 text-accent">
+                      <RocketLaunchIcon className="h-4 w-4" />
+                    </div>
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-12 bg-accent/30 rounded-full" />
+                      <div className="h-1.5 w-8 bg-text-muted/20 rounded-full" />
+                    </div>
+                  </div>
+                  <div className="text-xl font-bold text-text-primary">+124%</div>
+                  <div className="text-[10px] text-text-muted uppercase tracking-tighter">Monthly Growth</div>
+                </motion.div>
+
+                <motion.div
+                  animate={{ y: [0, -25, 0], x: [0, 10, 0] }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -bottom-10 -right-10 w-28 md:w-44 bg-surface/40 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl z-30 hidden lg:block"
+                >
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                    </span>
+                    <div className="h-1.5 w-20 bg-text-muted/20 rounded-full" />
+                  </div>
+                  <div className="space-y-2">
+                    <div className="h-2 w-full bg-border/50 rounded-full" />
+                    <div className="h-2 w-3/4 bg-border/50 rounded-full" />
+                  </div>
+                  <div className="mt-3 text-[10px] font-bold text-accent uppercase">Live Analytics</div>
+                </motion.div>
                 {/* Browser frame */}
                 <div className="rounded-2xl border border-border bg-surface shadow-2xl shadow-accent/10 overflow-hidden">
                   {/* Browser toolbar */}
@@ -273,14 +309,14 @@ export default function HomePage() {
           <p className="mb-10 text-center text-[10px] font-bold uppercase tracking-[0.4em] text-text-muted/60">
             Trusted by industry leaders nationwide
           </p>
-          
+
           <div className="flex overflow-hidden group">
-            <motion.div 
+            <motion.div
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ 
-                duration: 25, 
-                repeat: Infinity, 
-                ease: "linear" 
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear"
               }}
               className="flex items-center gap-16 whitespace-nowrap"
             >
@@ -314,11 +350,10 @@ export default function HomePage() {
           {services.map((service, i) => (
             <div
               key={service.title}
-              className={`transition-all duration-500 ${
-                serviceVisible[i]
+              className={`transition-all duration-500 ${serviceVisible[i]
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
-              }`}
+                }`}
             >
               <Card
                 icon={service.icon}
@@ -351,7 +386,7 @@ export default function HomePage() {
               {/* Connector line (desktop) */}
               {i < processSteps.length - 1 && (
                 <div className="absolute top-12 left-1/2 hidden h-[2px] w-full bg-border lg:block overflow-hidden">
-                  <motion.div 
+                  <motion.div
                     initial={{ x: "-100%" }}
                     whileInView={{ x: "0%" }}
                     viewport={{ once: true }}
@@ -371,8 +406,8 @@ export default function HomePage() {
               <div className="relative mx-auto mb-8 flex h-24 w-24 items-center justify-center">
                 {/* Background Glow */}
                 <div className="absolute inset-0 bg-accent/5 rounded-3xl blur-xl group-hover:bg-accent/15 transition-all duration-500 scale-110" />
-                
-                <motion.div 
+
+                <motion.div
                   animate={{ y: [0, -6, 0] }}
                   transition={{ duration: 4 + i, repeat: Infinity, ease: "easeInOut" }}
                   className="relative flex h-20 w-20 items-center justify-center rounded-2xl bg-surface border border-border shadow-xl group-hover:border-accent/50 transition-colors duration-500 z-10"
@@ -458,7 +493,7 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <motion.div
-                  animate={{ 
+                  animate={{
                     y: [0, -12, 0],
                   }}
                   transition={{
@@ -470,7 +505,7 @@ export default function HomePage() {
                 >
                   {/* Background Gradient Glow (Constant) */}
                   <div className="absolute inset-0 bg-accent/5 blur-xl rounded-2xl" />
-                  
+
                   <div className="relative h-full rounded-[calc(1rem-1px)] bg-surface p-6 text-center transition-all duration-300 group-hover:bg-surface-alt group-hover:shadow-2xl">
                     <p className="text-3xl font-extrabold text-accent lg:text-4xl transition-transform duration-500 group-hover:scale-110">
                       {stat.value}

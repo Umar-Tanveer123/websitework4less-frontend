@@ -1,7 +1,7 @@
 // Central API configuration
 // Always using the production VPS URL
 
-export const API_BASE_URL = 'https://api.websitework4less.com';
+export const API_BASE_URL = 'https://websitework4less.com';
 // export const API_BASE_URL = 'http://187.77.207.147:5001';
 
 export const API_URLS = {
