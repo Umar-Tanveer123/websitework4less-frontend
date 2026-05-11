@@ -11,6 +11,7 @@ import {
   PhoneIcon,
   ClockIcon,
 } from '../components/Icons';
+import { API_URLS } from '../config';
 
 const contactInfo = [
   {
@@ -46,6 +47,8 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -55,19 +58,39 @@ export default function ContactPage() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // Simulate form submit
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      phone: '',
-      service: '',
-      message: '',
-    });
+    setLoading(true);
+    setError(null);
+
+    try {
+      const response = await fetch(API_URLS.contact, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        company: '',
+        phone: '',
+        service: '',
+        message: '',
+      });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError('Something went wrong. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -158,6 +181,14 @@ export default function ContactPage() {
                 </div>
               )}
 
+              {error && (
+                <div className="mt-6 rounded-xl bg-red-50 border border-red-200 p-4">
+                  <p className="text-sm font-medium text-red-800">
+                    ✕ {error}
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="mt-8 space-y-6">
                 <div className="grid gap-6 sm:grid-cols-2">
                   <Input
@@ -231,8 +262,8 @@ export default function ContactPage() {
                   onChange={handleChange}
                   required
                 />
-                <Button type="submit" size="lg" className="w-full sm:w-auto">
-                  Send Message
+                <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={loading}>
+                  {loading ? 'Sending...' : 'Send Message'}
                 </Button>
               </form>
             </div>
