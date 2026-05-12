@@ -30,7 +30,7 @@ export default function SectionWrapper({
     <section
       id={id}
       ref={animate ? elementRef : null}
-      className={`py-20 md:py-28 transition-all duration-1000 ease-[var(--ease-out-premium)] ${
+      className={`py-20 md:py-28 overflow-hidden transition-all duration-1000 ease-[var(--ease-out-premium)] ${
         bgClasses[background]
       } ${className} ${
         animate

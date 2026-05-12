@@ -12,9 +12,9 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col overflow-x-hidden">
       <Navbar />
-      <main key={location.pathname} className="flex-grow animate-fade-in">
+      <main key={location.pathname} className="flex-grow animate-fade-in overflow-x-hidden">
         <Outlet />
       </main>
       <Footer />

@@ -12,7 +12,7 @@ export default function Logo({ className = "h-10" }: LogoProps) {
       transition={{ type: "spring", stiffness: 400, damping: 10 }}
     >
       <svg
-        viewBox="0 0 450 100"
+        viewBox="0 0 420 100"
         className="h-full w-auto"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -69,34 +69,34 @@ export default function Logo({ className = "h-10" }: LogoProps) {
             fontSize="40"
             fontWeight="400"
             fill="url(#text-grad)"
-            letterSpacing="0.02em"
+            letterSpacing="-0.02em"
           >
             website
           </text>
           <text
-            x="152"
+            x="138"
             fontFamily="'Fredoka', sans-serif"
             fontSize="40"
             fontWeight="600"
             fill="url(#accent-grad)"
-            letterSpacing="0.02em"
+            letterSpacing="-0.02em"
           >
             work
           </text>
           <text
-            x="248"
+            x="226"
             fontFamily="'Fredoka', sans-serif"
             fontSize="40"
             fontWeight="400"
             fill="url(#text-grad)"
-            letterSpacing="0.02em"
+            letterSpacing="-0.02em"
           >
             4less
           </text>
         </g>
 
         {/* Code Icon </> with Premium 3D */}
-        <g transform="translate(390, 45)" stroke="url(#accent-grad)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#premium-3d)">
+        <g transform="translate(360, 45)" stroke="url(#accent-grad)" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round" filter="url(#premium-3d)">
           <path d="M10 5L2 12L10 19" />
           <path d="M16 5L24 12L16 19" />
           <path d="M15 3L11 21" />

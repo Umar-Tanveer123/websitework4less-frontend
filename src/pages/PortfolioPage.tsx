@@ -144,7 +144,9 @@ export default function PortfolioPage() {
               <div className="flex items-center gap-3 text-text-muted">
                 <div className="flex -space-x-2">
                   {[1,2,3].map(i => (
-                    <div key={i} className="h-10 w-10 rounded-full border-2 border-primary bg-surface-alt" />
+                    <div key={i} className="h-10 w-10 rounded-full border-2 border-primary bg-surface-alt overflow-hidden">
+                      <img src={`https://i.pravatar.cc/100?u=${i + 60}`} alt="User" className="h-full w-full object-cover" />
+                    </div>
                   ))}
                 </div>
                 <span className="text-sm font-medium">Join 200+ happy clients</span>

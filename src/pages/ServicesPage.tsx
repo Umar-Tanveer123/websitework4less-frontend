@@ -142,7 +142,9 @@ export default function ServicesPage() {
                 <div className="flex items-center gap-3 text-text-muted">
                   <div className="flex -space-x-2">
                     {[1,2,3,4].map(i => (
-                      <div key={i} className="h-10 w-10 rounded-full border-2 border-primary bg-surface-alt" />
+                      <div key={i} className="h-10 w-10 rounded-full border-2 border-primary bg-surface-alt overflow-hidden">
+                        <img src={`https://i.pravatar.cc/100?u=${i + 40}`} alt="User" className="h-full w-full object-cover" />
+                      </div>
                     ))}
                   </div>
                   <span className="text-sm font-semibold italic">Join 200+ global brands</span>
