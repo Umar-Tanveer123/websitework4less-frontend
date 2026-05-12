@@ -51,9 +51,9 @@ export default function ContactPage() {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: 
+      | React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+      | { target: { name: string; value: string } }
   ) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
