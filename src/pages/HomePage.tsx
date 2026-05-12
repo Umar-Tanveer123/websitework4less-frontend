@@ -61,10 +61,10 @@ const clientLogos = [
 ];
 
 const rotatingPhrases = [
-  'Define Your Brand',
-  'Drive Your Growth',
+  'Engineer Your Vision',
+  'Deploy Scalable Code',
   'Scale Your Business',
-  'Elevate Your Presence',
+  'Architect Elite Apps',
   'Deliver Real Results',
 ];
 
@@ -118,7 +118,7 @@ export default function HomePage() {
             {/* Left Content */}
             <AnimatedSection animation="slide-in-left">
               <span className="mb-6 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
-                Professional Web Development
+                Premium Software Engineering
               </span>
               <h1 className="text-3xl font-medium leading-[1.1] text-text-primary sm:text-4xl lg:text-5xl">
                 <span className="text-accent">W</span>ebsites That
@@ -140,7 +140,7 @@ export default function HomePage() {
               </h1>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
                 <p className="border-l-4 border-accent/20 pl-6 py-2 bg-accent/5 rounded-r-2xl italic">
-                  "We partner with ambitious businesses to design and develop exceptional digital experiences—crafted to elevate your brand, attract the right audience, and deliver measurable results."
+                  "We partner with ambitious founders to engineer high-performance software and digital products—designed to scale, automate growth, and dominate the digital landscape."
                 </p>
                 <div className="space-y-4">
                   <p>
@@ -338,8 +338,8 @@ export default function HomePage() {
         <AnimatedSection>
           <SectionHeading
             label="What We Do"
-            title="Strategic Services for Lasting Growth"
-            description="We provide end-to-end web development and digital solutions, engineered to strengthen your presence, attract the right audience, and accelerate your growth online."
+            title="Architected Solutions for Modern Enterprises"
+            description="We engineer end-to-end software and digital platforms, built for peak performance, security, and effortless scalability."
           />
         </AnimatedSection>
 

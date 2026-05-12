@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { SunIcon, MoonIcon } from './Icons';
+import Logo from './Logo';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -72,26 +73,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          className="relative z-[70] flex items-center gap-2 text-xl font-bold"
+          className="relative z-[70] flex items-center"
         >
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent">
-            <svg
-              className="h-5 w-5 text-white"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5"
-              />
-            </svg>
-          </div>
-          <span className={`transition-colors duration-300 ${isWhiteText ? 'text-white' : 'text-text-primary'}`}>
-            Website Work <span className="text-accent">4</span> Less
-          </span>
+          <Logo className="h-12 sm:h-14" />
         </Link>
 
         {/* Desktop Nav */}
