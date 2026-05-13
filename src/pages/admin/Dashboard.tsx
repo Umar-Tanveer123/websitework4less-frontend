@@ -82,7 +82,16 @@ export default function AdminDashboard() {
       setUsers(res.data);
     } catch (err: any) {
       console.error('Failed to fetch users', err);
-      setUserError(err.response?.data?.error || 'Failed to connect to VPS database.');
+      const status = err.response?.status;
+      const message = err.response?.data?.error;
+      
+      if (status === 404) {
+        setUserError('Endpoint not found (404). Please ensure the latest backend code is deployed on your VPS.');
+      } else if (status === 401 || status === 403) {
+        setUserError('Authentication failed. Please log in again.');
+      } else {
+        setUserError(message || 'Failed to connect to VPS database. Please check if the backend is running.');
+      }
     } finally {
       setLoadingUsers(false);
     }
