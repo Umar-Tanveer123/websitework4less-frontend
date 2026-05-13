@@ -3,6 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { AnimatedSection } from '../../hooks/useAnimations';
 import { API_BASE_URL } from '../../config';
+import Logo from '../../components/Logo';
 
 export default function RegisterAdmin() {
   const [email, setEmail] = useState('');
@@ -60,7 +61,7 @@ export default function RegisterAdmin() {
         <AnimatedSection className="bg-white rounded-[2.5rem] shadow-2xl shadow-gray-200/50 p-10 md:p-12 border border-gray-100">
           <div className="text-center mb-10">
             <div className="flex justify-center mb-6">
-              <img src="/logo.svg" alt="Logo" className="h-12 w-auto" />
+              <Logo className="h-16" />
             </div>
             <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">Admin Registration</h1>
             <p className="text-gray-500 mt-3 font-medium">Join the management team</p>

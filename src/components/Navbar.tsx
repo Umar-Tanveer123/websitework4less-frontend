@@ -19,7 +19,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' || 
+      return localStorage.getItem('theme') === 'dark' ||
         (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     }
     return false;
@@ -63,11 +63,10 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        showBackground
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showBackground
           ? 'bg-surface/80 backdrop-blur-xl shadow-sm border-b border-border/50'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
         {/* Logo */}
@@ -84,11 +83,10 @@ export default function Navbar() {
             <Link
               key={link.path}
               to={link.path}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
-                location.pathname === link.path
+              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${location.pathname === link.path
                   ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
                   : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
-              }`}
+                }`}
             >
               {link.label}
             </Link>
@@ -99,9 +97,8 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
-              isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
-            }`}
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
+              }`}
             aria-label="Toggle theme"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -116,9 +113,9 @@ export default function Navbar() {
               </motion.div>
             </AnimatePresence>
           </button>
-          <Button 
-            as="link" 
-            to="/contact" 
+          <Button
+            as="link"
+            to="/contact"
             size="sm"
             variant={isWhiteText ? 'outline' : 'primary'}
             className={isWhiteText ? '!border-white/20 !text-white hover:!bg-white/10' : ''}
@@ -131,73 +128,64 @@ export default function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
-              isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
-            }`}
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
+              }`}
             aria-label="Toggle theme"
           >
             {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
-              isWhiteText ? 'hover:bg-white/10' : 'hover:bg-surface-muted'
-            }`}
+            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10' : 'hover:bg-surface-muted'
+              }`}
             aria-label="Toggle menu"
           >
-          <div className="relative h-5 w-6">
-            <span
-              className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${
-                mobileOpen ? 'top-2.5 rotate-45' : 'top-0'
-              }`}
-            />
-            <span
-              className={`absolute left-0 top-2.5 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${
-                mobileOpen ? 'opacity-0' : 'opacity-100'
-              }`}
-            />
-            <span
-              className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${
-                mobileOpen ? 'top-2.5 -rotate-45' : 'top-5'
-              }`}
-            />
-          </div>
-        </button>
-      </div>
+            <div className="relative h-5 w-6">
+              <span
+                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'top-2.5 rotate-45' : 'top-0'
+                  }`}
+              />
+              <span
+                className={`absolute left-0 top-2.5 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'opacity-0' : 'opacity-100'
+                  }`}
+              />
+              <span
+                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'top-2.5 -rotate-45' : 'top-5'
+                  }`}
+              />
+            </div>
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <div
-          className={`fixed inset-0 z-[60] bg-surface transition-all duration-500 ease-[var(--ease-out-premium)] lg:hidden ${
-            mobileOpen
+          className={`fixed inset-0 z-[60] bg-surface transition-all duration-500 ease-[var(--ease-out-premium)] lg:hidden ${mobileOpen
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 -translate-y-4 pointer-events-none'
-          }`}
+            }`}
         >
           <div className="flex h-full flex-col items-center justify-center gap-6 px-6 pt-20 overflow-y-auto">
             {navLinks.map((link, index) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-2xl font-semibold transition-all duration-500 ease-[var(--ease-out-premium)] ${
-                  location.pathname === link.path
+                className={`text-2xl font-semibold transition-all duration-500 ease-[var(--ease-out-premium)] ${location.pathname === link.path
                     ? 'text-accent'
                     : 'text-text-primary hover:text-accent'
-                } ${
-                  mobileOpen 
-                    ? 'opacity-100 translate-y-0' 
+                  } ${mobileOpen
+                    ? 'opacity-100 translate-y-0'
                     : 'opacity-0 translate-y-8'
-                }`}
+                  }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 {link.label}
               </Link>
             ))}
-            <div 
-              className={`mt-4 transition-all duration-500 ease-[var(--ease-out-premium)] ${
-                mobileOpen 
-                  ? 'opacity-100 translate-y-0' 
+            <div
+              className={`mt-4 transition-all duration-500 ease-[var(--ease-out-premium)] ${mobileOpen
+                  ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
-              }`}
+                }`}
               style={{ transitionDelay: `${navLinks.length * 100}ms` }}
             >
               <Button as="link" to="/contact" size="lg">

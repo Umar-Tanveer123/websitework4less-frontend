@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { AnimatedSection } from '../../hooks/useAnimations';
 import { API_BASE_URL } from '../../config';
+import Logo from '../../components/Logo';
 
 export default function AdminLogin() {
   const [email, setEmail] = useState('');
@@ -77,13 +78,8 @@ export default function AdminLogin() {
       <AnimatedSection className="w-full max-w-md z-10 px-4" delay={100}>
         <div className="rounded-2xl border border-gray-800 bg-gray-900/80 backdrop-blur-xl p-10 shadow-2xl">
           <div className="text-center mb-10 flex flex-col items-center">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent shadow-lg shadow-accent/20">
-                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" />
-                </svg>
-              </div>
-              <span className="text-xl font-bold text-white tracking-tight">Website Work <span className="text-accent">4</span> Less</span>
+            <div className="mb-6">
+              <Logo className="h-16" />
             </div>
             <h1 className="text-2xl font-bold text-white tracking-tight">
               {view === 'login' ? 'Admin Secure Login' : view === 'forgot' ? 'Forgot Password' : 'Enter OTP'}

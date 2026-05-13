@@ -5,6 +5,7 @@ import SectionWrapper from '../../components/SectionWrapper';
 import Button from '../../components/Button';
 import { AnimatedSection } from '../../hooks/useAnimations';
 import { API_BASE_URL } from '../../config';
+import Logo from '../../components/Logo';
 
 interface Post {
   id: string;
@@ -23,10 +24,18 @@ interface Toast {
   id: number;
 }
 
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  createdAt: string;
+}
+
 export default function AdminDashboard() {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState<'posts' | 'settings' | 'users'>('posts');
   const [posts, setPosts] = useState<Post[]>([]);
+  const [users, setUsers] = useState<User[]>([]);
   const [isEditing, setIsEditing] = useState(false);
   const [currentPost, setCurrentPost] = useState<Partial<Post>>({});
   
@@ -60,12 +69,25 @@ export default function AdminDashboard() {
     }
   };
 
+  const fetchUsers = async () => {
+    try {
+      const token = localStorage.getItem('adminToken');
+      const res = await axios.get(`${API_BASE_URL}/api/auth/users`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      setUsers(res.data);
+    } catch (err) {
+      console.error('Failed to fetch users', err);
+    }
+  };
+
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
     if (!token) {
       navigate('/admin/login');
     } else {
       fetchPosts();
+      fetchUsers();
     }
   }, [navigate]);
 
@@ -161,8 +183,23 @@ export default function AdminDashboard() {
       setNewAdminEmail('');
       setNewAdminPassword('');
       setNewAdminName('');
+      fetchUsers();
     } catch (err: any) {
       showToast(err.response?.data?.error || 'Failed to create admin', 'error');
+    }
+  };
+
+  const handleDeleteUser = async (id: string) => {
+    if (!window.confirm('Are you sure you want to delete this admin?')) return;
+    const token = localStorage.getItem('adminToken');
+    try {
+      await axios.delete(`${API_BASE_URL}/api/auth/users/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      showToast('Admin deleted successfully!');
+      fetchUsers();
+    } catch (err: any) {
+      showToast(err.response?.data?.error || 'Failed to delete user', 'error');
     }
   };
 
@@ -193,6 +230,9 @@ export default function AdminDashboard() {
       </div>
 
       <SectionWrapper background="white">
+        <div className="mb-8">
+          <Logo className="h-12" />
+        </div>
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
           <div>
             <h1 className="text-4xl font-extrabold text-gray-900 tracking-tight">Dashboard</h1>
@@ -429,46 +469,81 @@ export default function AdminDashboard() {
           )}
 
           {activeTab === 'users' && !isEditing && (
-            <div className="max-w-md animate-in fade-in duration-500">
-              <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-900">Team Management</h2>
-                <p className="text-gray-500 mt-1">Invite a new administrator</p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-in fade-in duration-500">
+              {/* Registered Users List */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Registered Admins</h2>
+                  <p className="text-gray-500 mt-1">Current management team</p>
+                </div>
+                <div className="grid gap-4">
+                  {users.map(user => (
+                    <div key={user.id} className="p-5 border border-gray-100 rounded-2xl bg-gray-50/50 flex justify-between items-center group">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
+                          {user.name?.[0]?.toUpperCase() || 'A'}
+                        </div>
+                        <div>
+                          <p className="font-bold text-gray-900">{user.name}</p>
+                          <p className="text-xs text-gray-500">{user.email}</p>
+                        </div>
+                      </div>
+                      <button 
+                        onClick={() => handleDeleteUser(user.id)}
+                        className="p-2 text-gray-400 hover:text-red-500 transition-colors"
+                        title="Delete User"
+                      >
+                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                        </svg>
+                      </button>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <form onSubmit={handleCreateAdmin} className="space-y-6">
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Full Name</label>
-                  <input
-                    type="text"
-                    required
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 focus:bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
-                    placeholder="John Doe"
-                    value={newAdminName}
-                    onChange={(e) => setNewAdminName(e.target.value)}
-                  />
+
+              {/* Invitation Form */}
+              <div className="space-y-6 bg-gray-50 p-8 rounded-3xl border border-gray-100">
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900">Invite Admin</h2>
+                  <p className="text-gray-500 mt-1">Create a new administrator account</p>
                 </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Email Address</label>
-                  <input
-                    type="email"
-                    required
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 focus:bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
-                    placeholder="john@example.com"
-                    value={newAdminEmail}
-                    onChange={(e) => setNewAdminEmail(e.target.value)}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-bold text-gray-700">Temporary Password</label>
-                  <input
-                    type="password"
-                    required
-                    className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 text-gray-900 focus:bg-white focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
-                    value={newAdminPassword}
-                    onChange={(e) => setNewAdminPassword(e.target.value)}
-                  />
-                </div>
-                <Button type="submit" as="button" className="w-full justify-center">Create Admin Account</Button>
-              </form>
+                <form onSubmit={handleCreateAdmin} className="space-y-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-gray-700">Full Name</label>
+                    <input
+                      type="text"
+                      required
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
+                      placeholder="John Doe"
+                      value={newAdminName}
+                      onChange={(e) => setNewAdminName(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-gray-700">Email Address</label>
+                    <input
+                      type="email"
+                      required
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
+                      placeholder="john@example.com"
+                      value={newAdminEmail}
+                      onChange={(e) => setNewAdminEmail(e.target.value)}
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-bold text-gray-700">Temporary Password</label>
+                    <input
+                      type="password"
+                      required
+                      className="w-full rounded-xl border border-gray-200 bg-white px-4 py-3 text-gray-900 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:outline-none transition-all"
+                      value={newAdminPassword}
+                      onChange={(e) => setNewAdminPassword(e.target.value)}
+                    />
+                  </div>
+                  <Button type="submit" as="button" className="w-full justify-center">Create Admin Account</Button>
+                </form>
+              </div>
             </div>
           )}
         </AnimatedSection>
