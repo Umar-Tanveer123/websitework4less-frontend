@@ -50,6 +50,8 @@ export default function AdminDashboard() {
   
   // Upload & Toast State
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [loadingUsers, setLoadingUsers] = useState(false);
+  const [userError, setUserError] = useState('');
   const [toasts, setToasts] = useState<Toast[]>([]);
 
   const showToast = (message: string, type: 'success' | 'error' = 'success') => {
@@ -70,14 +72,19 @@ export default function AdminDashboard() {
   };
 
   const fetchUsers = async () => {
+    setLoadingUsers(true);
+    setUserError('');
     try {
       const token = localStorage.getItem('adminToken');
       const res = await axios.get(`${API_BASE_URL}/api/auth/users`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       setUsers(res.data);
-    } catch (err) {
+    } catch (err: any) {
       console.error('Failed to fetch users', err);
+      setUserError(err.response?.data?.error || 'Failed to connect to VPS database.');
+    } finally {
+      setLoadingUsers(false);
     }
   };
 
@@ -472,12 +479,48 @@ export default function AdminDashboard() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 animate-in fade-in duration-500">
               {/* Registered Users List */}
               <div className="space-y-6">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">Registered Admins</h2>
-                  <p className="text-gray-500 mt-1">Current management team</p>
+                <div className="flex justify-between items-end">
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900">Registered Admins</h2>
+                    <p className="text-gray-500 mt-1">Current management team</p>
+                  </div>
+                  <button 
+                    onClick={fetchUsers}
+                    disabled={loadingUsers}
+                    className="p-2 text-accent hover:bg-accent/10 rounded-full transition-all disabled:opacity-50"
+                    title="Refresh List"
+                  >
+                    <svg className={`w-5 h-5 ${loadingUsers ? 'animate-spin' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  </button>
                 </div>
+
+                {userError && (
+                  <div className="p-4 bg-red-50 border border-red-100 rounded-2xl text-red-600 text-sm font-medium">
+                    {userError}
+                  </div>
+                )}
+
                 <div className="grid gap-4">
-                  {users.map(user => (
+                  {loadingUsers ? (
+                    [1, 2].map(i => (
+                      <div key={i} className="p-5 border border-gray-100 rounded-2xl bg-gray-50/50 flex justify-between items-center animate-pulse">
+                        <div className="flex items-center gap-4">
+                          <div className="w-10 h-10 rounded-full bg-gray-200" />
+                          <div className="space-y-2">
+                            <div className="h-4 w-24 bg-gray-200 rounded" />
+                            <div className="h-3 w-32 bg-gray-200 rounded" />
+                          </div>
+                        </div>
+                      </div>
+                    ))
+                  ) : users.length === 0 ? (
+                    <div className="text-center py-10 bg-gray-50/50 rounded-2xl border border-dashed border-gray-200">
+                      <p className="text-gray-400 text-sm">No other admins found.</p>
+                    </div>
+                  ) : (
+                    users.map(user => (
                     <div key={user.id} className="p-5 border border-gray-100 rounded-2xl bg-gray-50/50 flex justify-between items-center group">
                       <div className="flex items-center gap-4">
                         <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-accent font-bold">
@@ -498,7 +541,8 @@ export default function AdminDashboard() {
                         </svg>
                       </button>
                     </div>
-                  ))}
+                    ))
+                  )}
                 </div>
               </div>
 
