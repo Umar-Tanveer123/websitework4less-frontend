@@ -4,7 +4,7 @@ import axios from 'axios';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
 import { AnimatedSection, useScrollToTop } from '../hooks/useAnimations';
-import { CalendarIcon, UserIcon, ArrowLeftIcon, ClockIcon } from '../components/Icons';
+import { UserIcon, ArrowLeftIcon, ClockIcon } from '../components/Icons';
 
 interface Post {
   id: string;
@@ -13,9 +13,13 @@ interface Post {
   content: string;
   thumbnail: string;
   createdAt: string;
+  excerpt?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 import { API_BASE_URL } from '../config';
+import { previewPosts } from '../data/previewPosts';
 
 export default function BlogPostPage() {
   useScrollToTop();
@@ -33,6 +37,13 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     const fetchPost = async () => {
+      // Dev-only local preview: if the slug matches a preview post, use it.
+      const local = previewPosts.find((p) => p.slug === slug);
+      if (local) {
+        setPost(local);
+        setLoading(false);
+        return;
+      }
       try {
         const res = await axios.get(`${API_BASE_URL}/api/posts/${slug}`);
         setPost(res.data);
@@ -50,6 +61,47 @@ export default function BlogPostPage() {
       setLoading(false);
     }
   }, [slug]);
+
+  // SEO: set per-post <title>, meta description and canonical URL.
+  useEffect(() => {
+    if (!post) return;
+
+    const DEFAULT_TITLE = 'Website Work 4 Less | Professional Web Development Agency';
+    const metaTitle = post.metaTitle || `${post.title} | Website Work 4 Less`;
+    const metaDescription = post.metaDescription || post.excerpt || '';
+    const canonicalUrl = `https://websitework4less.com/blog/${post.slug}`;
+
+    const upsertMeta = (name: string, content: string) => {
+      let el = document.head.querySelector<HTMLMetaElement>(`meta[name="${name}"]`);
+      if (!el) {
+        el = document.createElement('meta');
+        el.setAttribute('name', name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    const upsertCanonical = (href: string) => {
+      let el = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+      if (!el) {
+        el = document.createElement('link');
+        el.setAttribute('rel', 'canonical');
+        document.head.appendChild(el);
+      }
+      el.setAttribute('href', href);
+    };
+
+    document.title = metaTitle;
+    if (metaDescription) upsertMeta('description', metaDescription);
+    upsertCanonical(canonicalUrl);
+
+    // Restore defaults when navigating away from the post.
+    return () => {
+      document.title = DEFAULT_TITLE;
+      const canonical = document.head.querySelector('link[rel="canonical"]');
+      if (canonical) canonical.remove();
+    };
+  }, [post]);
 
   if (loading) {
     return (
@@ -89,22 +141,7 @@ export default function BlogPostPage() {
           <div className="relative z-20 flex h-full items-center justify-center pt-20">
             <div className="mx-auto max-w-4xl px-4 text-center">
               <AnimatedSection animation="fade-in-up">
-                <div className="mb-6 flex items-center justify-center gap-6 text-sm font-semibold uppercase tracking-[0.2em] text-accent-light/80">
-                  <span className="flex items-center gap-2">
-                    <UserIcon className="h-4 w-4" />
-                    Admin
-                  </span>
-                  <span className="h-1 w-1 rounded-full bg-accent-light/30" />
-                  <span className="flex items-center gap-2">
-                    <CalendarIcon className="h-4 w-4" />
-                    {new Intl.DateTimeFormat('en-US', {
-                      month: 'long',
-                      day: 'numeric',
-                      year: 'numeric',
-                    }).format(new Date(post.createdAt))}
-                  </span>
-                </div>
-                <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight drop-shadow-2xl">
+                <h1 className="text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl leading-tight drop-shadow-2xl">
                   {post.title}
                 </h1>
               </AnimatedSection>
@@ -113,9 +150,9 @@ export default function BlogPostPage() {
         </div>
       )}
 
-      <SectionWrapper background="transparent" className="-mt-20 relative z-30">
+      <SectionWrapper background="transparent" className="-mt-20 relative z-30" animate={false}>
         <article className="mx-auto max-w-4xl rounded-[2.5rem] border border-border bg-surface/90 backdrop-blur-2xl p-8 sm:p-12 md:p-16 shadow-2xl">
-          <AnimatedSection>
+          <div>
             <div className="flex flex-wrap items-center justify-between gap-6 mb-12">
               <Link
                 to="/blog"
@@ -159,7 +196,7 @@ export default function BlogPostPage() {
                 </div>
               </div>
             </div>
-          </AnimatedSection>
+          </div>
         </article>
 
         {/* Cinematic Background Decoration */}

@@ -16,6 +16,7 @@ interface Post {
 }
 
 import { API_BASE_URL } from '../config';
+import { previewPosts } from '../data/previewPosts';
 
 export default function BlogPage() {
   useScrollToTop();
@@ -26,10 +27,16 @@ export default function BlogPage() {
     const fetchPosts = async () => {
       try {
         const res = await axios.get(`${API_BASE_URL}/api/posts`);
-        // Only show published posts if we added that filter, or all posts for now
-        setPosts(res.data);
+        // Hide placeholder/test posts from the public listing.
+        const apiPosts = (res.data as Post[]).filter(
+          (p) => p.title?.trim().toLowerCase() !== 'test'
+        );
+        // previewPosts is empty in production builds (dev-only local preview).
+        setPosts([...previewPosts, ...apiPosts]);
       } catch (error) {
         console.error('Error fetching posts:', error);
+        // Still show local preview posts even if the API is unreachable.
+        setPosts(previewPosts);
       } finally {
         setLoading(false);
       }
