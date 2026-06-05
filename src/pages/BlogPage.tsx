@@ -31,7 +31,7 @@ export default function BlogPage() {
         const apiPosts = (res.data as Post[]).filter(
           (p) => p.title?.trim().toLowerCase() !== 'test'
         );
-        // previewPosts is empty in production builds (dev-only local preview).
+        // Static frontend posts first, then posts from the backend API.
         setPosts([...previewPosts, ...apiPosts]);
       } catch (error) {
         console.error('Error fetching posts:', error);

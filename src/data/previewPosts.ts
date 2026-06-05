@@ -1,14 +1,12 @@
-// DEV-ONLY local blog preview.
-// These posts render only on the Vite dev server (localhost) so a blog can be
-// reviewed/screenshotted before it is published to the live CMS.
-// Gated behind import.meta.env.DEV, so they are EXCLUDED from production builds —
-// the live site still serves blogs only from the backend API / admin dashboard.
+// Static frontend blog posts.
+// These posts are bundled with the app and shown on the blog listing alongside
+// any posts coming from the backend API / admin dashboard.
 //
 // NOTE: content is inlined here (not imported from the .html draft) because Vite
 // treats .html files as entry points and ignores ?raw on them in dev.
-// The canonical copy for dashboard paste lives in:
-//   content-drafts/why-businesses-choose-nextjs-development-company-nj.html
-// To remove a preview once the post is published live, delete its entry below.
+// The canonical HTML copies live in content-drafts/.
+// If a post is later published via the admin dashboard, delete its entry below
+// to avoid showing it twice.
 
 export interface PreviewPost {
   id: string;
@@ -496,8 +494,7 @@ const localSeoContent = `
 const localOrigin =
   typeof window !== 'undefined' ? window.location.origin : '';
 
-export const previewPosts: PreviewPost[] = import.meta.env.DEV
-  ? [
+export const previewPosts: PreviewPost[] = [
       {
         id: 'preview-nextjs-nj',
         title: 'Why Lakewood NJ Businesses Are Switching to Next.js Websites in 2026',
@@ -540,5 +537,4 @@ export const previewPosts: PreviewPost[] = import.meta.env.DEV
         published: true,
         createdAt: '2026-05-27T10:00:00Z',
       },
-    ]
-  : [];
+    ];
