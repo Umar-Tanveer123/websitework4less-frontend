@@ -75,6 +75,70 @@ const stats = [
   { value: '50+', label: 'Team Members' },
 ];
 
+const homePageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://websitework4less.com/#organization',
+  name: 'Website Work 4 Less',
+  url: 'https://websitework4less.com/',
+  image: 'https://websitework4less.com/projects/project5.png',
+  telephone: '+1-848-368-8867',
+  email: 'info@websitework4less.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '750 Forest Ave',
+    addressLocality: 'Lakewood',
+    addressRegion: 'NJ',
+    postalCode: '08701',
+    addressCountry: 'US',
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  description:
+    'Website Work 4 Less delivers high-performance digital solutions, web design, web development, digital marketing, SEO services, eCommerce solutions, custom software development, and AI-integrated web solutions. Serving businesses across all 50 states, the company helps organizations grow through innovative digital experiences, scalable technology, and results-driven online marketing strategies.',
+  keywords: [
+    'digital marketing lakewood',
+    'digital marketing agency near me',
+    'digital marketing consultant near me',
+    'internet marketing agency near me',
+    'marketing agency near me',
+    'online marketing near me',
+  ],
+  foundingDate: '2023',
+  slogan: 'Crafting the Future of Web',
+  priceRange: '$$',
+  openingHours: 'Mo-Fr 00:00-23:59',
+  serviceType: [
+    'Digital Marketing',
+    'Digital Marketing Consulting',
+    'Internet Marketing',
+    'Online Marketing',
+    'SEO Services',
+    'Web Design',
+    'Web Development',
+    'React Development',
+    'Custom Software Development',
+    'E-Commerce Solutions',
+    'UI/UX Design',
+    'Responsive Web Design',
+    'Website Maintenance',
+    'AI Web Solutions',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Digital Services',
+    itemListElement: [
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Design Services' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Web Development Services' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Digital Marketing Services' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SEO Services' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Software Development' } },
+    ],
+  },
+};
+
 export default function HomePage() {
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
   const [phraseIndex, setPhraseIndex] = useState(0);
@@ -84,6 +148,18 @@ export default function HomePage() {
       setPhraseIndex((prev) => (prev + 1) % rotatingPhrases.length);
     }, 3000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Inject ProfessionalService JSON-LD schema, scoped to the home page only
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'home-page-schema';
+    script.textContent = JSON.stringify(homePageSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById('home-page-schema')?.remove();
+    };
   }, []);
 
   return (
