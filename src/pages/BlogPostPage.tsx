@@ -141,7 +141,7 @@ export default function BlogPostPage() {
           <div className="relative z-20 flex h-full items-center justify-center pt-20">
             <div className="mx-auto max-w-4xl px-4 text-center">
               <AnimatedSection animation="fade-in-up">
-                <h1 className="text-4xl font-extrabold text-black sm:text-5xl lg:text-6xl leading-tight drop-shadow-2xl">
+                <h1 className="text-4xl font-extrabold text-white sm:text-5xl lg:text-6xl leading-tight drop-shadow-2xl">
                   {post.title}
                 </h1>
               </AnimatedSection>
