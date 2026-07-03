@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import { services } from '../data/services';
 import Logo from './Logo';
+import { landingPages } from '../data/landing';
 
 const footerLinks = {
   Company: [
@@ -10,9 +10,9 @@ const footerLinks = {
     { label: 'Blog', path: '/blog' },
     { label: 'Contact', path: '/contact' },
   ],
-  Services: services.slice(0, 4).map(s => ({
-    label: s.title,
-    path: '/services'
+  Services: landingPages.map((p) => ({
+    label: p.navLabel,
+    path: `/${p.slug}`,
   })),
   Support: [
     { label: 'Help Center', path: '/contact' },

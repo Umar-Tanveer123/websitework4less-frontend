@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
+import { Link } from 'react-router-dom';
 import ProjectCarousel from '../components/ProjectCarousel';
 import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
@@ -13,6 +14,7 @@ import {
   WrenchScrewdriverIcon,
   RocketLaunchIcon,
   ArrowRightIcon,
+  CheckCircleIcon,
 } from '../components/Icons';
 import { motion, AnimatePresence } from 'framer-motion';
 import TestimonialCarousel from '../components/TestimonialCarousel';
@@ -23,7 +25,7 @@ const processSteps = [
     icon: <ChatBubbleIcon className="h-7 w-7" />,
     title: 'Discovery',
     description:
-      'We learn about your business goals, target audience, and project requirements through in-depth consultation.',
+      'To begin, our digital marketing consultant in Lakewood learns about your business goals, target audience, and project requirements through in-depth consultation.',
   },
   {
     step: '02',
@@ -74,6 +76,90 @@ const stats = [
   { value: '3+', label: 'Years Experience' },
   { value: '50+', label: 'Team Members' },
 ];
+
+// "Why Choose Us" — from the Lakewood homepage copy. Each entry has a bold lead
+// followed by the supporting sentence.
+const whyChooseUs = [
+  {
+    title: 'Fast turnaround',
+    description:
+      'Most websites are ready to launch in just 7 to 14 days, not months. You won’t be left waiting around while your competitors get ahead.',
+  },
+  {
+    title: 'Honest, upfront pricing',
+    description:
+      'You’ll know exactly what you’re paying before we start. No hidden fees, no surprise invoices, no fine print.',
+  },
+  {
+    title: 'Flexible payment option',
+    description:
+      'Launch your project now and pay overtime. No big upfront commitment standing in your way.',
+  },
+  {
+    title: 'A real guarantee',
+    description:
+      'Every project comes with a 30-day money-back guarantee. We’re confident in our work, and we want you to feel that confidence too.',
+  },
+  {
+    title: 'A team that actually responds',
+    description:
+      'No chasing people down for updates. We answer calls and messages quickly, because staying in touch is part of doing the job right.',
+  },
+];
+
+const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[] = [
+  {
+    q: 'How much does a new website cost?',
+    a: 'Pricing depends on your specific project needs. You’ll get a clear quote before any work begins.',
+  },
+  {
+    q: 'How long does it take to build a website?',
+    a: 'Most projects are completed within 7 to 14 days. Larger or more complex builds may take a bit longer, and we’ll always give you a realistic timeline upfront.',
+  },
+  {
+    q: 'Does your digital marketing agency in Lakewood offer SEO along with web design?',
+    a: 'Yes. We build SEO into your website from the start and offer ongoing SEO services to help you rank higher and attract more local customers.',
+    link: { anchor: 'SEO services', to: '/services' },
+  },
+  {
+    q: 'What happens if I don’t like the design?',
+    a: 'We’ll keep revising until you’re happy with it. Your feedback shapes the final result, and we won’t consider the project done until it feels right to you.',
+  },
+  {
+    q: 'Are there any hidden fees?',
+    a: 'No. The price we quote is the price you pay. Everything is laid out clearly before we start any work.',
+  },
+  {
+    q: 'Can I pay over time instead of all at once?',
+    a: 'Yes. We offer flexible payment plans so you can launch your project now without a big upfront cost.',
+  },
+  {
+    q: 'Do you only build websites, or do you handle marketing too?',
+    a: 'Both. Alongside web design and development, we offer SEO, social media marketing, content, and digital marketing services to help your business grow online.',
+  },
+  {
+    q: 'What happens after my website goes live?',
+    a: 'We don’t disappear after launch. Our team offers ongoing support, updates, and maintenance to keep your site running smoothly.',
+  },
+  {
+    q: 'Do you only work with businesses near Lakewood, NJ?',
+    a: 'Not at all. While we proudly serve local businesses in and around Lakewood, we work with clients across the country too.',
+  },
+  {
+    q: 'How do I get started?',
+    a: 'Just reach out through our contact form or give us a call. We’ll talk through your goals and put together a plan that fits your business and budget.',
+  },
+];
+
+const homeFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: homeFaqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+};
 
 const homePageSchema = {
   '@context': 'https://schema.org',
@@ -142,6 +228,7 @@ const homePageSchema = {
 export default function HomePage() {
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
   const [phraseIndex, setPhraseIndex] = useState(0);
+  const [openFaq, setOpenFaq] = useState<number | null>(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -157,8 +244,16 @@ export default function HomePage() {
     script.id = 'home-page-schema';
     script.textContent = JSON.stringify(homePageSchema);
     document.head.appendChild(script);
+
+    const faqScript = document.createElement('script');
+    faqScript.type = 'application/ld+json';
+    faqScript.id = 'home-faq-schema';
+    faqScript.textContent = JSON.stringify(homeFaqSchema);
+    document.head.appendChild(faqScript);
+
     return () => {
       document.getElementById('home-page-schema')?.remove();
+      document.getElementById('home-faq-schema')?.remove();
     };
   }, []);
 
@@ -197,9 +292,13 @@ export default function HomePage() {
                 Premium Software Engineering
               </span>
               <h1 className="text-3xl font-medium leading-[1.1] text-text-primary sm:text-4xl lg:text-5xl">
+                Grow Your Business with{' '}
+                <span className="text-accent">Digital Marketing</span> in Lakewood
+              </h1>
+              <div className="mt-6 text-2xl font-medium leading-[1.1] text-text-primary sm:text-3xl">
                 <span className="text-accent">W</span>ebsites That
                 <br />
-                <div className="relative inline-block mt-4 min-h-[1.5em] w-full">
+                <div className="relative inline-block mt-3 min-h-[1.4em] w-full">
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={phraseIndex}
@@ -213,7 +312,7 @@ export default function HomePage() {
                     </motion.span>
                   </AnimatePresence>
                 </div>
-              </h1>
+              </div>
               <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
                 <p className="border-l-4 border-accent/20 pl-6 py-2 bg-accent/5 rounded-r-2xl italic">
                   "We partner with ambitious founders to engineer high-performance software and digital products—designed to scale, automate growth, and dominate the digital landscape."
@@ -223,7 +322,7 @@ export default function HomePage() {
                     From bespoke websites to advanced custom software, every project is built with precision, strategy, and a deep understanding of what drives trust and conversion.
                   </p>
                   <p>
-                    Our work goes beyond aesthetics. We create websites that feel seamless, look unmistakably professional, and instantly establish credibility.
+                    Our online marketing in Lakewood goes beyond aesthetics. We create websites that feel seamless, look unmistakably professional, and instantly establish credibility.
                   </p>
                 </div>
                 <div className="flex items-center gap-4 rounded-2xl bg-surface-alt p-4 border border-border/50">
@@ -409,13 +508,62 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ==================== MORE THAN A MARKETING COMPANY ==================== */}
+      <SectionWrapper background="transparent">
+        <div className="mx-auto max-w-3xl">
+          <AnimatedSection>
+            <SectionHeading
+              label="Under One Roof"
+              title="More Than Just a Digital Marketing Company"
+              align="left"
+            />
+            <div className="space-y-4 text-lg leading-relaxed text-text-secondary">
+              <p>
+                Every great business online needs more than a good-looking website. It needs a digital presence
+                that actually works for you, day in and day out.
+              </p>
+              <p>
+                That’s where{' '}
+                <Link to="/about" className="font-semibold text-accent hover:text-accent-hover">
+                  Website Work 4 Less
+                </Link>{' '}
+                comes in. Our digital marketing agency in Lakewood builds fast, modern websites and backs them up
+                with the marketing support that helps people actually find you. From the first line of code to your
+                ongoing growth strategy, our team handles it all under one roof.
+              </p>
+            </div>
+            <p className="mt-6 mb-4 text-lg font-semibold text-text-primary">
+              Here’s what that looks like in practice:
+            </p>
+            <ul className="space-y-4">
+              {[
+                'Custom websites built to load fast, look sharp, and turn visitors into customers.',
+                'SEO and online visibility, so your business shows up when people search for what you offer.',
+                'Digital marketing services to keep new customers coming in long after launch.',
+                'Ongoing care after your site goes live, so it keeps performing as your business grows.',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-3 text-text-secondary leading-relaxed">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <CheckCircleIcon className="h-4 w-4" />
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-lg leading-relaxed text-text-secondary">
+              We don’t just hand you a website and disappear. We stick around to make sure it keeps paying off.
+            </p>
+          </AnimatedSection>
+        </div>
+      </SectionWrapper>
+
       {/* ==================== SERVICES ==================== */}
       <SectionWrapper id="services" background="transparent">
         <AnimatedSection>
           <SectionHeading
             label="What We Do"
             title="Architected Solutions for Modern Enterprises"
-            description="We engineer end-to-end software and digital platforms, built for peak performance, security, and effortless scalability."
+            description="Our digital marketing company engineers end-to-end software and digital platforms, built for peak performance, security, and effortless scalability."
           />
         </AnimatedSection>
 
@@ -548,8 +696,8 @@ export default function HomePage() {
               A Team Dedicated to Your Digital Success
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-text-secondary">
-              With 3+ years of experience, we've helped hundreds of
-              businesses transform their online presence. Our team combines
+              With 3+ years of experience, Website Work 4 Less has helped hundreds
+              of businesses transform their online presence. Our team combines
               technical excellence with creative vision to deliver websites that
               not only look great but perform exceptionally.
             </p>
@@ -597,6 +745,42 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
+      {/* ==================== WHY CHOOSE US ==================== */}
+      <section className="relative py-24 bg-surface-alt border-y border-border overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--color-accent)_0%,_transparent_45%)] opacity-5" />
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <AnimatedSection>
+            <SectionHeading
+              label="Why Choose Us"
+              title="Why Local Businesses Choose Website Work 4 Less"
+              description="There are plenty of agencies for digital marketing in Lakewood. Here's what sets us apart from the rest."
+            />
+          </AnimatedSection>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((item, i) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+                className="rounded-2xl border border-border bg-surface p-7 transition-colors hover:border-accent/30"
+              >
+                <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                  <CheckCircleIcon className="h-6 w-6" />
+                </div>
+                <h3 className="mb-2 text-lg font-bold text-text-primary">{item.title}</h3>
+                <p className="text-text-secondary leading-relaxed">{item.description}</p>
+              </motion.div>
+            ))}
+          </div>
+          <p className="mt-10 text-center text-lg leading-relaxed text-text-secondary max-w-3xl mx-auto">
+            We built this business to be the internet marketing agency in Lakewood that we would confidently hire
+            for our own company. Affordable, dependable, and genuinely invested in your success.
+          </p>
+        </div>
+      </section>
+
       {/* ==================== TESTIMONIALS ==================== */}
       <section className="relative overflow-hidden bg-transparent py-24">
         {/* Background Decorative Glow (Section 7 - Testimonials) */}
@@ -608,7 +792,7 @@ export default function HomePage() {
             <SectionHeading
               label="Success Stories"
               title="What Our Clients Say"
-              description="Trusted by businesses nationwide to deliver exceptional results and measurable growth through strategic web development."
+              description="Trusted by businesses nationwide to deliver exceptional results and measurable growth through strategic digital marketing in Lakewood."
             />
           </AnimatedSection>
 
@@ -617,6 +801,75 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ==================== FAQ ==================== */}
+      <SectionWrapper background="transparent">
+        <div className="mx-auto max-w-3xl">
+          <AnimatedSection>
+            <SectionHeading
+              label="FAQ"
+              title="Frequently Asked Questions"
+              description="Everything you need to know about working with our digital marketing agency in Lakewood."
+            />
+          </AnimatedSection>
+          <div className="space-y-4">
+            {homeFaqs.map((faq, i) => {
+              const open = openFaq === i;
+              let answer: ReactNode = faq.a;
+              if (faq.link) {
+                const at = faq.a.indexOf(faq.link.anchor);
+                if (at >= 0) {
+                  answer = (
+                    <>
+                      {faq.a.slice(0, at)}
+                      <Link
+                        to={faq.link.to}
+                        className="font-semibold text-accent underline decoration-accent/30 underline-offset-2 hover:decoration-accent"
+                      >
+                        {faq.link.anchor}
+                      </Link>
+                      {faq.a.slice(at + faq.link.anchor.length)}
+                    </>
+                  );
+                }
+              }
+              return (
+                <div
+                  key={faq.q}
+                  className="overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-accent/30"
+                >
+                  <button
+                    onClick={() => setOpenFaq(open ? null : i)}
+                    className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+                    aria-expanded={open}
+                  >
+                    <span className="text-base font-semibold text-text-primary">{faq.q}</span>
+                    <span
+                      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent transition-transform duration-300 ${
+                        open ? 'rotate-45' : ''
+                      }`}
+                    >
+                      <span className="text-xl leading-none">+</span>
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {open && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      >
+                        <p className="px-6 pb-6 text-text-secondary leading-relaxed">{answer}</p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </SectionWrapper>
 
       {/* ==================== CTA ==================== */}
       <section className="relative overflow-hidden bg-primary/20 backdrop-blur-md py-24 border-y border-border/50">

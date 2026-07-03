@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { SunIcon, MoonIcon } from './Icons';
 import Logo from './Logo';
+import { landingPages } from '../data/landing';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -61,6 +62,11 @@ export default function Navbar() {
   // Show background if scrolled OR if not on the Home page
   const showBackground = scrolled || location.pathname !== '/';
 
+  // Highlight "Services" when on the hub page or any of its landing pages.
+  const landingPaths = landingPages.map((p) => `/${p.slug}`);
+  const isServicesActive =
+    location.pathname === '/services' || landingPaths.includes(location.pathname);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showBackground
@@ -79,18 +85,63 @@ export default function Navbar() {
 
         {/* Desktop Nav */}
         <div className="hidden items-center gap-1 lg:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${location.pathname === link.path
-                  ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
-                  : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
-                }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.label === 'Services' ? (
+              <div key={link.path} className="relative group">
+                <Link
+                  to={link.path}
+                  className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${isServicesActive
+                      ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
+                      : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
+                    }`}
+                >
+                  {link.label}
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-200 group-hover:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </Link>
+                {/* Dropdown */}
+                <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
+                  <div className="w-80 rounded-2xl border border-border bg-surface p-2 shadow-2xl shadow-black/10">
+                    <Link
+                      to="/services"
+                      className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-text-primary transition-colors hover:bg-accent/5 hover:text-accent"
+                    >
+                      All Services
+                    </Link>
+                    <div className="my-1 h-px bg-border" />
+                    {landingPages.map((page) => (
+                      <Link
+                        key={page.slug}
+                        to={`/${page.slug}`}
+                        className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent/5 hover:text-accent ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-secondary'
+                          }`}
+                      >
+                        {page.navLabel}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${location.pathname === link.path
+                    ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
+                    : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
+                  }`}
+              >
+                {link.label}
+              </Link>
+            ),
+          )}
         </div>
 
         {/* Desktop CTA */}
@@ -166,20 +217,34 @@ export default function Navbar() {
         >
           <div className="flex h-full flex-col items-center justify-center gap-6 px-6 pt-20 overflow-y-auto">
             {navLinks.map((link, index) => (
-              <Link
+              <div
                 key={link.path}
-                to={link.path}
-                className={`text-2xl font-semibold transition-all duration-500 ease-[var(--ease-out-premium)] ${location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-text-primary hover:text-accent'
-                  } ${mobileOpen
-                    ? 'opacity-100 translate-y-0'
-                    : 'opacity-0 translate-y-8'
+                className={`flex flex-col items-center transition-all duration-500 ease-[var(--ease-out-premium)] ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
                   }`}
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
-                {link.label}
-              </Link>
+                <Link
+                  to={link.path}
+                  className={`text-2xl font-semibold ${location.pathname === link.path ? 'text-accent' : 'text-text-primary hover:text-accent'
+                    }`}
+                >
+                  {link.label}
+                </Link>
+                {link.label === 'Services' && (
+                  <div className="mt-3 flex flex-col items-center gap-2.5">
+                    {landingPages.map((page) => (
+                      <Link
+                        key={page.slug}
+                        to={`/${page.slug}`}
+                        className={`text-sm font-medium ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-muted hover:text-accent'
+                          }`}
+                      >
+                        {page.navLabel}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
             ))}
             <div
               className={`mt-4 transition-all duration-500 ease-[var(--ease-out-premium)] ${mobileOpen
