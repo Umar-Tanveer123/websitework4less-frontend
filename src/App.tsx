@@ -8,6 +8,7 @@ import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
 import ServiceLandingPage from './pages/ServiceLandingPage';
+import NotFoundPage from './pages/NotFoundPage';
 import { landingPages } from './data/landing';
 import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
@@ -32,6 +33,7 @@ function App() {
               element={<ServiceLandingPage content={page} />}
             />
           ))}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
         <Route path="/admin/login" element={<AdminLogin />} />
