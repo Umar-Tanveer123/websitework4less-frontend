@@ -7,6 +7,9 @@ import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
 import BlogPage from './pages/BlogPage';
 import BlogPostPage from './pages/BlogPostPage';
+import ServiceLandingPage from './pages/ServiceLandingPage';
+import NotFoundPage from './pages/NotFoundPage';
+import { landingPages } from './data/landing';
 import AdminLogin from './pages/admin/Login';
 import AdminDashboard from './pages/admin/Dashboard';
 import AdminRegister from './pages/admin/Register';
@@ -23,6 +26,14 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          {landingPages.map((page) => (
+            <Route
+              key={page.slug}
+              path={`/${page.slug}`}
+              element={<ServiceLandingPage content={page} />}
+            />
+          ))}
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
         <Route path="/admin" element={<Navigate to="/admin/login" replace />} />
         <Route path="/admin/login" element={<AdminLogin />} />
