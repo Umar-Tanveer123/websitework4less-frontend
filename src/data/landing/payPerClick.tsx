@@ -5,9 +5,9 @@ export const payPerClick: ServiceLanding = {
   slug: 'pay-per-click-services-lakewood',
   navLabel: 'Pay-Per-Click (PPC)',
   seo: {
-    title: 'Pay Per Click (PPC) Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Pay Per Click Services - Pay Per Click Advertising Agency',
     description:
-      'Fast, budget-conscious Google Ads and PPC campaigns for Lakewood businesses that turn ad spend into real leads, not just clicks. Get a free consultation today.',
+      'Get expert pay per click services and a trusted pay per click advertising agency. Website Work 4 Less creates high-converting PPC campaigns that drive results.',
     keywords: [
       'pay per click services',
       'pay per click advertising agency',
@@ -20,6 +20,8 @@ export const payPerClick: ServiceLanding = {
       'google ppc marketing',
       'ppc advertising management',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides professional pay per click services in Lakewood, NJ, helping businesses generate qualified leads, increase website traffic, and maximize return on advertising investment. As a trusted pay per click advertising agency, we create and manage strategic campaigns tailored to your business goals, target audience, and budget. If you\'re searching for pay per click advertising near me, our experienced team delivers data-driven solutions that improve visibility and drive measurable results. Our comprehensive PPC ads services include keyword research, campaign setup, ad copy creation, audience targeting, bid optimization, conversion tracking, and ongoing performance monitoring. Businesses looking for reliable PPC advertising services or an experienced PPC management agency trust Website Work 4 Less to optimize every campaign for maximum ROI. We specialize in Google Ads pay per click campaigns, offering expert Google PPC management and customized Google PPC marketing strategies that help businesses reach customers at the right time. Our PPC advertising management services focus on reducing wasted ad spend while increasing clicks, conversions, and revenue. Whether you need pay per click services, a dependable pay per click advertising agency, or professional pay per click advertising near me, our team delivers results-driven campaigns tailored to your business. Website Work 4 Less combines advanced PPC ads services, effective PPC advertising services, expert Google PPC management, strategic Google PPC marketing, and comprehensive PPC advertising management to help businesses achieve sustainable growth through paid search advertising.',
     serviceType: 'Pay Per Click Advertising (PPC)',
   },
   hero: {

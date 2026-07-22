@@ -5,9 +5,9 @@ export const webDevelopment: ServiceLanding = {
   slug: 'web-development-services-lakewood',
   navLabel: 'Web Development',
   seo: {
-    title: 'Web Development Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Web Development Services - Website Development Near Me',
     description:
-      'Professional web development services for Lakewood businesses. Fast, responsive, conversion-focused websites with 7–14 day turnaround, upfront pricing, and a 30-day guarantee.',
+      'Get expert web development services and website development near me solutions to create fast, responsive websites. Website Work 4 Less delivers tailored web solutions.',
     keywords: [
       'web development services',
       'web development near me',
@@ -18,6 +18,8 @@ export const webDevelopment: ServiceLanding = {
       'website creators near me',
       'website makers near me',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides professional web development services in Lakewood, NJ, helping businesses create fast, secure, and scalable websites that support long-term growth. As a trusted web development company, we build custom websites tailored to your business goals, industry, and audience. If you\'re searching for web development near me or website development near me, our experienced team delivers responsive, SEO-friendly websites that enhance user experience and increase online visibility. Our skilled web developers near me specialize in business websites, custom web applications, eCommerce solutions, CMS development, landing pages, and ongoing maintenance. As a reliable website building agency, we combine modern design with advanced functionality to ensure every website performs at its best. Businesses looking for website creators near me or website makers near me trust Website Work 4 Less for innovative solutions that drive measurable results. Our comprehensive web development services focus on speed, security, mobile responsiveness, and search engine optimization, making us a preferred web development company serving Lakewood, NJ. Whether you need web development near me, website development near me, or expert web developers near me, our team delivers customized solutions designed for success. Website Work 4 Less is the website building agency businesses rely on, while our experienced website creators near me and professional website makers near me continue helping organizations build stronger digital presences through dependable web development services and industry-leading expertise from a trusted web development company.',
     serviceType: 'Web Development',
   },
   hero: {

@@ -5,9 +5,9 @@ export const seoServices: ServiceLanding = {
   slug: 'seo-services-lakewood',
   navLabel: 'SEO Services',
   seo: {
-    title: 'SEO Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'SEO Lakewood - SEO Services Near Me',
     description:
-      'Results-driven, transparent SEO in Lakewood that ranks local businesses higher on Google, drives qualified leads, and grows your revenue with clear monthly reporting.',
+      'Get expert seo lakewood and seo services near me to grow your rankings and traffic. Website Work 4 Less delivers customized SEO strategies for lasting results.',
     keywords: [
       'seo lakewood',
       'best search engine optimization company',
@@ -21,6 +21,8 @@ export const seoServices: ServiceLanding = {
       'affordable seo services for small businesses',
       'seo web marketing company',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides professional SEO Lakewood solutions that help businesses improve online visibility, attract qualified traffic, and generate long-term growth. As the best search engine optimization company, we develop customized strategies designed to increase rankings, drive organic traffic, and improve conversions. Businesses looking for the best search engine optimization agency trust our experienced team to deliver measurable results through data-driven SEO campaigns. If you\'re searching for SEO services near me, a reliable SEO agency near me, or an experienced SEO company near me, we offer comprehensive solutions including keyword research, on-page optimization, technical SEO, content optimization, local SEO, and link-building strategies. Our dedicated SEO consultant near me works closely with businesses to create personalized marketing plans that align with their goals and industry. As one of the trusted SEO firms near me, we focus on sustainable growth through ethical SEO practices and proven optimization techniques. Website Work 4 Less also offers affordable search engine optimization services and affordable SEO services for small businesses, making high-quality digital marketing accessible to organizations of every size. As a trusted SEO web marketing company, we combine search engine optimization with broader digital marketing strategies to maximize online success. Whether you need SEO Lakewood, SEO services near me, an experienced SEO agency near me, a dependable SEO company near me, or a knowledgeable SEO consultant near me, Website Work 4 Less delivers reliable results backed by expertise as the best search engine optimization company and best search engine optimization agency.',
     serviceType: 'Search Engine Optimization (SEO)',
   },
   hero: {

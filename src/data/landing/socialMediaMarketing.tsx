@@ -5,9 +5,9 @@ export const socialMediaMarketing: ServiceLanding = {
   slug: 'social-media-marketing-services-lakewood',
   navLabel: 'Social Media Marketing',
   seo: {
-    title: 'Social Media Marketing Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Social Media Marketing Lakewood - Social Media Marketing Services',
     description:
-      "Strategy-driven social media marketing in Lakewood, NJ that turns your brand's social presence into real, paying customers, not just likes and vanity metrics.",
+      'Get expert social media marketing lakewood and social media marketing services. Website Work 4 Less creates strategies that grow your brand and engagement.',
     keywords: [
       'social media marketing lakewood',
       'social media marketing services',
@@ -23,6 +23,8 @@ export const socialMediaMarketing: ServiceLanding = {
       'social media marketing agency near me',
       'social media marketing firms near me',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides expert social media marketing Lakewood solutions that help businesses build brand awareness, engage customers, and generate quality leads across today\'s leading social platforms. Our comprehensive social media marketing services are designed to create meaningful connections with your audience through customized content strategies and targeted campaigns. If you\'re looking for the best social media advertising, our team develops high-performing campaigns that maximize reach, engagement, and return on investment. Businesses searching for a trusted social media agency near me or reliable social media management near me can rely on our experienced professionals to manage every aspect of their online presence. Our social media ads services combine creative content with advanced audience targeting, while our organic social media marketing strategies help businesses build long-term relationships with their customers. We also specialize in paid social media advertising to increase brand visibility and drive qualified traffic. Website Work 4 Less offers small business social media marketing solutions tailored to local companies, along with professional social media consulting services that help businesses develop effective digital strategies. As a trusted social media management agency, we provide ongoing optimization, analytics, and performance reporting. Whether you\'re searching for a social media marketing agency near me or established social media marketing firms near me, Website Work 4 Less delivers customized social media marketing services backed by proven social media marketing Lakewood expertise, helping businesses grow through effective social media ads services, strategic organic social media marketing, and results-driven paid social media advertising.',
     serviceType: 'Social Media Marketing',
   },
   hero: {
