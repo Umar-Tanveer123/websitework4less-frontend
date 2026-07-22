@@ -5,9 +5,9 @@ export const webDesign: ServiceLanding = {
   slug: 'web-design-services-lakewood',
   navLabel: 'Web Design',
   seo: {
-    title: 'Web Design Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Web Design Lakewood - Web Design Agency',
     description:
-      'Professional web design services for Lakewood businesses. Clean, modern sites that build trust and convert, with fast 7–14 day completion and a 30-day guarantee.',
+      'Choose expert web design lakewood and a trusted web design agency for custom, responsive websites. Website Work 4 Less helps your business stand out online.',
     keywords: [
       'web design lakewood',
       'website design services',
@@ -17,6 +17,8 @@ export const webDesign: ServiceLanding = {
       'website design near me',
       'small business web design near me',
     ],
+    schemaDescription:
+      'Website Work 4 Less offers professional web design Lakewood services, helping businesses create visually appealing, user-friendly, and conversion-focused websites that leave a lasting impression. Our website design services are tailored to meet the unique needs of businesses looking to establish a strong online presence and attract more customers. As a trusted web design agency, we combine creative design with modern functionality to deliver responsive, mobile-friendly websites that perform across all devices. If you\'re searching for web design services near me or a reliable web design company, our experienced designers create custom websites that reflect your brand and business goals. Businesses looking for website design near me or small business web design near me choose Website Work 4 Less for affordable, high-quality web design solutions that drive engagement and conversions. Our web design Lakewood expertise ensures every website is optimized for user experience, speed, accessibility, and search engine visibility. Whether you need comprehensive website design services, an experienced web design agency, or dependable web design services near me, our team is committed to delivering exceptional results. As a leading web design company, we help businesses grow with custom websites that stand out in today\'s competitive market. If you\'re looking for website design near me or trusted small business web design near me, Website Work 4 Less delivers innovative, professional, and results-driven solutions backed by proven web design Lakewood expertise and industry-leading website design services.',
     serviceType: 'Web Design',
   },
   hero: {

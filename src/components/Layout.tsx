@@ -15,9 +15,9 @@ export default function Layout() {
   useEffect(() => {
     const base = 'https://websitework4less.com';
     const path = location.pathname;
-    // Normalize: root stays "/", others drop any trailing slash
+    // Normalize canonicals to the trailing-slash URLs used in the SEO plan.
     const canonicalUrl =
-      path === '/' ? `${base}/` : `${base}${path.replace(/\/+$/, '')}`;
+      path === '/' ? `${base}/` : `${base}${path.replace(/\/+$/, '')}/`;
 
     let link = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!link) {

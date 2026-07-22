@@ -152,13 +152,12 @@ function ProcessStep({ step, index }: { step: TitledItem; index: number }) {
 export default function ServiceLandingPage({ content }: { content: ServiceLanding }) {
   useScrollToTop();
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const canonical = `${SITE}/${content.slug}`;
+  const canonical = `${SITE}/${content.slug}/`;
 
   // Per-page SEO: title, meta description, keywords, canonical, and JSON-LD
-  // (Service + FAQPage). Everything is cleaned up on unmount so navigating away
-  // restores the site defaults.
+  // (ProfessionalService + Service + FAQPage + BreadcrumbList).
   useEffect(() => {
-    const DEFAULT_TITLE = 'Website Work 4 Less | Professional Web Development Agency';
+    const DEFAULT_TITLE = 'Digital Marketing Lakewood - Digital Marketing Agency';
     document.title = content.seo.title;
 
     const upsertMeta = (name: string, value: string) => {
@@ -189,17 +188,20 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
     const serviceSchema = {
       '@context': 'https://schema.org',
       '@type': 'Service',
-      name: content.seo.title.split('|')[0].trim(),
+      '@id': `${canonical}#service`,
+      name: content.seo.serviceType,
       serviceType: content.seo.serviceType,
-      description: content.seo.description,
+      description: content.seo.schemaDescription,
+      keywords: content.seo.keywords.join(', '),
       url: canonical,
-      areaServed: [
-        { '@type': 'City', name: 'Lakewood', address: { '@type': 'PostalAddress', addressRegion: 'NJ', addressCountry: 'US' } },
-        { '@type': 'AdministrativeArea', name: 'New Jersey' },
-        { '@type': 'Country', name: 'United States' },
-      ],
+      areaServed: {
+        '@type': 'City',
+        name: 'Lakewood',
+        containedInPlace: { '@type': 'State', name: 'New Jersey' },
+      },
       provider: {
         '@type': 'ProfessionalService',
+        '@id': `${SITE}/#organization`,
         name: 'Website Work 4 Less',
         url: `${SITE}/`,
         telephone: '+1-848-368-8867',
@@ -218,6 +220,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
     const faqSchema = {
       '@context': 'https://schema.org',
       '@type': 'FAQPage',
+      '@id': `${canonical}#faq`,
       mainEntity: content.faqs.map((f) => ({
         '@type': 'Question',
         name: f.q,
@@ -225,15 +228,36 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       })),
     };
 
+    const breadcrumbSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      '@id': `${canonical}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: `${SITE}/`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: content.navLabel,
+          item: canonical,
+        },
+      ],
+    };
+
     const addSchema = (id: string, data: unknown) => {
       const s = document.createElement('script');
       s.type = 'application/ld+json';
       s.id = id;
       s.textContent = JSON.stringify(data);
-      document.head.appendChild(s);
+      document.body.appendChild(s);
     };
     addSchema('landing-service-schema', serviceSchema);
     addSchema('landing-faq-schema', faqSchema);
+    addSchema('landing-breadcrumb-schema', breadcrumbSchema);
 
     return () => {
       document.title = DEFAULT_TITLE;
@@ -243,6 +267,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       else canonicalEl?.setAttribute('href', prevCanonical);
       document.getElementById('landing-service-schema')?.remove();
       document.getElementById('landing-faq-schema')?.remove();
+      document.getElementById('landing-breadcrumb-schema')?.remove();
     };
   }, [content, canonical]);
 

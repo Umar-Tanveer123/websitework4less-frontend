@@ -5,15 +5,17 @@ export const localSeo: ServiceLanding = {
   slug: 'local-seo-services-lakewood',
   navLabel: 'Local SEO',
   seo: {
-    title: 'Local SEO Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Local SEO Services Near Me - Local SEO Agency',
     description:
-      'Local SEO services that get Lakewood businesses into the Google map pack and in front of "near me" searchers, driving more calls, walk-ins, and local customers.',
+      'Get expert local seo services near me and a trusted local seo agency to grow local rankings. Website Work 4 Less delivers customized SEO strategies.',
     keywords: [
       'local seo services near me',
       'local seo agency',
       'local seo company',
       'local seo marketing services',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides professional local SEO services near me in Lakewood, NJ, helping businesses improve their visibility in local search results, Google Maps, and location-based searches. As a trusted local SEO agency, we create customized strategies that help businesses connect with nearby customers, increase website traffic, and generate more qualified leads. Our comprehensive local SEO marketing services include Google Business Profile optimization, local keyword targeting, citation management, location page optimization, online reputation management, and local link building. Businesses searching for a reliable local SEO company can count on our experienced team to improve local rankings and strengthen their online presence. Whether you\'re looking for local SEO services near me to attract more local customers or an experienced local SEO agency to manage your digital marketing, we provide data-driven solutions designed for long-term success. As a trusted local SEO company, we focus on increasing your visibility where your customers are searching while delivering measurable business results. Our tailored local SEO marketing services help businesses outperform local competitors through optimized content, accurate business listings, and targeted local search strategies. Website Work 4 Less is committed to delivering high-quality local SEO services near me that help businesses grow within their communities. If you\'re searching for a dependable local SEO agency, an experienced local SEO company, or proven local SEO marketing services, our team provides customized solutions that drive sustainable local business growth in Lakewood, NJ.',
     serviceType: 'Local SEO',
   },
   hero: {

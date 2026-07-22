@@ -34,6 +34,8 @@ export interface ServiceLanding {
     title: string;
     description: string;
     keywords: string[];
+    /** Long-form description supplied for the page's Service JSON-LD. */
+    schemaDescription: string;
     /** serviceType used in the Service JSON-LD (e.g. 'Web Development'). */
     serviceType: string;
   };
