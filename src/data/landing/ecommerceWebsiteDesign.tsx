@@ -5,14 +5,16 @@ export const ecommerceWebsiteDesign: ServiceLanding = {
   slug: 'ecommerce-website-design-services-lakewood',
   navLabel: 'eCommerce Website Design',
   seo: {
-    title: 'Ecommerce Website Design Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Ecommerce Website Design Services - Ecommerce Web Designers Near Me',
     description:
-      'Conversion-focused, mobile-first ecommerce website design in Lakewood, NJ. We build fast, easy-to-shop online stores with streamlined checkout that turn browsers into buyers.',
+      'Get expert ecommerce website design services and ecommerce web designers near me. Website Work 4 Less builds custom online stores that drive sales.',
     keywords: [
       'ecommerce website design services',
       'ecommerce web designers near me',
       'web design for ecommerce website',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides professional ecommerce website design services in Lakewood, NJ, helping businesses build visually appealing, user-friendly, and high-converting online stores. Our experienced team specializes in web design for ecommerce website projects that combine modern design, seamless navigation, and optimized shopping experiences to increase customer engagement and sales. If you\'re searching for ecommerce web designers near me, we create custom online stores tailored to your products, brand, and business goals. Our ecommerce website design services include responsive website design, intuitive product pages, secure checkout experiences, mobile optimization, and user-focused layouts that encourage conversions. As trusted ecommerce web designers near me, we work with leading eCommerce platforms to deliver scalable solutions that grow with your business. Whether you need web design for ecommerce website development for a new online store or a redesign of your existing website, our team focuses on performance, functionality, and exceptional user experience. Businesses throughout Lakewood, NJ rely on our ecommerce website design services to strengthen their online presence and maximize revenue. Our skilled ecommerce web designers near me ensure every project is optimized for speed, search engines, and customer satisfaction. From startups to established retailers, Website Work 4 Less delivers innovative web design for ecommerce website solutions that help businesses compete online. Choose our ecommerce website design services and experienced ecommerce web designers near me for a professional online store built to drive long-term success.',
     serviceType: 'E-Commerce Website Design',
   },
   hero: {

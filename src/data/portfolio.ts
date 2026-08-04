@@ -62,4 +62,16 @@ export const projects: Project[] = [
     imageUrl: '/projects/project9.png',
     url: 'https://jrvinternational.com/',
   },
+  {
+    title: 'heritagebris.com',
+    category: 'Web Design',
+    imageUrl: '/projects/heritagebris.png',
+    url: 'https://heritagebris.com',
+  },
+  {
+    title: 'rochesterkollel.org',
+    category: 'Web Design',
+    imageUrl: '/projects/rochesterkollel.png',
+    url: 'https://rochesterkollel.org',
+  },
 ];

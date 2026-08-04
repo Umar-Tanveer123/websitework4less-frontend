@@ -6,6 +6,7 @@ import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import Card from '../components/Card';
 import { AnimatedSection, useStaggerReveal } from '../hooks/useAnimations';
+import { usePageSeo } from '../hooks/usePageSeo';
 import { services } from '../data/services';
 import { projects } from '../data/portfolio';
 import {
@@ -151,6 +152,25 @@ const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[
   },
 ];
 
+const HOME_SEO = {
+  title: 'Digital Marketing Lakewood - Digital Marketing Agency',
+  description:
+    'Get expert digital marketing lakewood and digital marketing services to grow your business. Website Work 4 Less delivers customized strategies for lasting results.',
+  keywords: [
+    'digital marketing lakewood',
+    'digital marketing services',
+    'digital marketing agency near me',
+    'digital marketing company',
+    'digital marketing consultant near me',
+    'internet marketing agency near me',
+    'marketing agency near me',
+    'online marketing near me',
+  ],
+};
+
+const HOME_SCHEMA_DESCRIPTION =
+  'Website Work 4 Less is a trusted digital marketing company based in Lakewood, NJ, helping businesses grow through innovative online strategies and measurable results. As a leading digital marketing agency near me, we provide customized solutions designed to increase visibility, generate qualified leads, and improve conversions. Our comprehensive digital marketing services include SEO, PPC, social media marketing, content marketing, web development, and branding tailored to businesses of every size. Whether you\'re searching for a digital marketing consultant near me, an experienced internet marketing agency near me, or a reliable marketing agency near me, Website Work 4 Less delivers results-driven campaigns backed by industry expertise. We specialize in digital marketing Lakewood businesses can trust, offering personalized strategies that strengthen local and national online presence. Our team understands the importance of effective online marketing near me solutions and creates campaigns that help businesses outperform competitors. Website Work 4 Less is recognized as a dependable digital marketing company committed to long-term client success through exceptional digital marketing services. Businesses seeking a professional digital marketing agency near me, experienced digital marketing consultant near me, trusted internet marketing agency near me, reliable marketing agency near me, effective online marketing near me, and proven digital marketing Lakewood expertise choose Website Work 4 Less for consistent growth and lasting digital success.';
+
 const homeFaqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
@@ -163,7 +183,7 @@ const homeFaqSchema = {
 
 const homePageSchema = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
   '@id': 'https://websitework4less.com/#organization',
   name: 'Website Work 4 Less',
   url: 'https://websitework4less.com/',
@@ -179,19 +199,15 @@ const homePageSchema = {
     addressCountry: 'US',
   },
   areaServed: {
-    '@type': 'Country',
-    name: 'United States',
+    '@type': 'City',
+    name: 'Lakewood',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'New Jersey',
+    },
   },
-  description:
-    'Website Work 4 Less delivers high-performance digital solutions, web design, web development, digital marketing, SEO services, eCommerce solutions, custom software development, and AI-integrated web solutions. Serving businesses across all 50 states, the company helps organizations grow through innovative digital experiences, scalable technology, and results-driven online marketing strategies.',
-  keywords: [
-    'digital marketing lakewood',
-    'digital marketing agency near me',
-    'digital marketing consultant near me',
-    'internet marketing agency near me',
-    'marketing agency near me',
-    'online marketing near me',
-  ],
+  description: HOME_SCHEMA_DESCRIPTION,
+  keywords: HOME_SEO.keywords.join(', '),
   foundingDate: '2023',
   slogan: 'Crafting the Future of Web',
   priceRange: '$$',
@@ -225,7 +241,52 @@ const homePageSchema = {
   },
 };
 
+const homeSupportingSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': 'https://websitework4less.com/#digital-marketing-service',
+      name: 'Digital Marketing Services',
+      serviceType: 'Digital Marketing',
+      url: 'https://websitework4less.com/',
+      description: HOME_SCHEMA_DESCRIPTION,
+      keywords: HOME_SEO.keywords.join(', '),
+      provider: { '@id': 'https://websitework4less.com/#organization' },
+      areaServed: {
+        '@type': 'City',
+        name: 'Lakewood',
+        containedInPlace: { '@type': 'State', name: 'New Jersey' },
+      },
+    },
+    {
+      '@type': 'WebPage',
+      '@id': 'https://websitework4less.com/#webpage',
+      url: 'https://websitework4less.com/',
+      name: HOME_SEO.title,
+      description: HOME_SEO.description,
+      keywords: HOME_SEO.keywords.join(', '),
+      about: { '@id': 'https://websitework4less.com/#organization' },
+      mainEntity: { '@id': 'https://websitework4less.com/#digital-marketing-service' },
+      breadcrumb: { '@id': 'https://websitework4less.com/#breadcrumb' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': 'https://websitework4less.com/#breadcrumb',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://websitework4less.com/',
+        },
+      ],
+    },
+  ],
+};
+
 export default function HomePage() {
+  usePageSeo(HOME_SEO);
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
   const [phraseIndex, setPhraseIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
@@ -237,7 +298,7 @@ export default function HomePage() {
     return () => clearInterval(timer);
   }, []);
 
-  // Inject ProfessionalService JSON-LD schema, scoped to the home page only
+  // Homepage schemas belong in the head and are removed when the SPA route changes.
   useEffect(() => {
     const script = document.createElement('script');
     script.type = 'application/ld+json';
@@ -251,9 +312,16 @@ export default function HomePage() {
     faqScript.textContent = JSON.stringify(homeFaqSchema);
     document.head.appendChild(faqScript);
 
+    const supportingScript = document.createElement('script');
+    supportingScript.type = 'application/ld+json';
+    supportingScript.id = 'home-supporting-schema';
+    supportingScript.textContent = JSON.stringify(homeSupportingSchema);
+    document.head.appendChild(supportingScript);
+
     return () => {
       document.getElementById('home-page-schema')?.remove();
       document.getElementById('home-faq-schema')?.remove();
+      document.getElementById('home-supporting-schema')?.remove();
     };
   }, []);
 

@@ -5,15 +5,15 @@ export const ecommerceWebDevelopment: ServiceLanding = {
   slug: 'ecommerce-web-development-services-lakewood',
   navLabel: 'eCommerce Development',
   seo: {
-    title: 'Ecommerce Web Development Services in Lakewood, NJ | Website Work 4 Less',
+    title: 'Ecommerce Web Development Services - Ecom Website Development',
     description:
-      'Secure, scalable, and fast ecommerce stores built in Lakewood, NJ. We develop online stores that load quickly, handle real traffic, and grow with your business.',
+      'Get expert ecommerce web development services and ecom website development solutions. Website Work 4 Less builds secure online stores that drive sales.',
     keywords: [
       'ecommerce web development services',
       'ecom website development',
-      'ecommerce developers near me',
-      'online store development',
     ],
+    schemaDescription:
+      'Website Work 4 Less provides reliable ecommerce web development services in Lakewood, NJ, helping businesses build secure, scalable, and high-performing online stores that drive sales and business growth. Our team specializes in ecom website development, creating custom eCommerce solutions designed to deliver seamless shopping experiences, efficient functionality, and long-term performance. Whether you\'re launching a new online store or upgrading an existing one, our ecommerce web development services include custom development, payment gateway integration, inventory management, product catalog setup, shopping cart functionality, and mobile optimization. Businesses searching for professional ecom website development can rely on our experienced developers to build fast, responsive, and SEO-friendly websites that improve customer engagement and maximize conversions. Our ecommerce web development services are tailored to meet the unique needs of retailers across various industries, ensuring every online store is optimized for security, speed, and scalability. From custom features to third-party integrations, our ecom website development solutions help businesses streamline operations and enhance the online shopping experience. Website Work 4 Less is committed to delivering high-quality ecommerce web development services that support sustainable business growth and improve online visibility. Whether you need a completely new online store or enhancements to your existing platform, our expert ecom website development team provides innovative, reliable, and results-driven solutions. Businesses throughout Lakewood, NJ trust Website Work 4 Less for professional ecommerce web development services and customized ecom website development that help them succeed in the competitive eCommerce marketplace.',
     serviceType: 'E-Commerce Web Development',
   },
   hero: {
