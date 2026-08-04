@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { FormEvent } from 'react';
+import type { FormEvent, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
@@ -13,26 +13,43 @@ import {
 } from '../components/Icons';
 import { API_URLS } from '../config';
 
-const contactInfo = [
+const contactInfo: {
+  icon: ReactNode;
+  title: string;
+  details: { text: string; href?: string; external?: boolean }[];
+}[] = [
   {
     icon: <MapPinIcon className="h-6 w-6" />,
     title: 'Headquarters',
-    details: ['Lakewood, NJ USA'],
+    details: [{ text: 'Lakewood, NJ USA' }],
   },
   {
     icon: <EnvelopeIcon className="h-6 w-6" />,
     title: 'Email Us',
-    details: ['info@websitework4less.com'],
+    details: [
+      {
+        text: 'info@websitework4less.com',
+        // Gmail web compose — opens reliably even without an OS mail handler.
+        href: 'https://mail.google.com/mail/?view=cm&fs=1&to=info@websitework4less.com',
+        external: true,
+      },
+    ],
   },
   {
     icon: <PhoneIcon className="h-6 w-6" />,
     title: 'Call Us',
-    details: ['Call or text us anytime:', '(848) 368-8867'],
+    details: [
+      { text: 'Call or text us anytime:' },
+      { text: '(848) 368-8867', href: 'tel:+18483688867' },
+    ],
   },
   {
     icon: <ClockIcon className="h-6 w-6" />,
     title: '24/6 Support',
-    details: ['Available 24/6 (Closed on Saturdays)', 'If no one answers, we will return your call'],
+    details: [
+      { text: 'Available 24/6 (Closed on Saturdays)' },
+      { text: 'If no one answers, we will return your call' },
+    ],
   },
 ];
 
@@ -150,8 +167,19 @@ export default function ContactPage() {
                   {info.title}
                 </h3>
                 {info.details.map((detail) => (
-                  <p key={detail} className="text-sm text-text-secondary">
-                    {detail}
+                  <p key={detail.text} className="text-sm text-text-secondary">
+                    {detail.href ? (
+                      <a
+                        href={detail.href}
+                        target={detail.external ? '_blank' : undefined}
+                        rel={detail.external ? 'noopener noreferrer' : undefined}
+                        className="cursor-pointer transition-colors duration-200 hover:text-accent hover:underline underline-offset-4"
+                      >
+                        {detail.text}
+                      </a>
+                    ) : (
+                      detail.text
+                    )}
                   </p>
                 ))}
               </AnimatedSection>
