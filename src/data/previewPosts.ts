@@ -1,3 +1,5 @@
+import { clientBlogPosts } from './clientBlogPosts';
+
 // Static frontend blog posts.
 // These posts are bundled with the app and shown on the blog listing alongside
 // any posts coming from the backend API / admin dashboard.
@@ -1872,6 +1874,7 @@ const localSeoAgencyContent = `
 `;
 
 export const previewPosts: PreviewPost[] = [
+      ...clientBlogPosts,
       {
         id: 'preview-digital-marketing-lakewood-nj',
         title: 'Why Businesses Need Digital Marketing in Lakewood NJ',
