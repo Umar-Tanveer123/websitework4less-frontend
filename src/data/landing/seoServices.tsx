@@ -3,7 +3,7 @@ import type { ServiceLanding } from './types';
 
 export const seoServices: ServiceLanding = {
   slug: 'seo-services-lakewood',
-  navLabel: 'SEO Services',
+  navLabel: 'Search Engine Optimization (SEO)',
   seo: {
     title: 'SEO Lakewood - SEO Services Near Me',
     description:

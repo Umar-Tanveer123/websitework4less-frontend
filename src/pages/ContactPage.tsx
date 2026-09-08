@@ -12,6 +12,7 @@ import {
   ClockIcon,
 } from '../components/Icons';
 import { API_URLS } from '../config';
+import { serviceOptions } from '../data/serviceOptions';
 
 const contactInfo = [
   {
@@ -90,8 +91,8 @@ export default function ContactPage() {
       
       // Auto-hide success message after 8 seconds
       setTimeout(() => setSubmitted(false), 8000);
-    } catch (err: any) {
-      setError(err.message || 'Something went wrong. Please try again later.');
+    } catch (err: unknown) {
+      setError(err instanceof Error ? err.message : 'Something went wrong. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -209,8 +210,8 @@ export default function ContactPage() {
                           animate={{ 
                             opacity: [0, 1, 0], 
                             scale: [0, 1, 0],
-                            x: (i % 2 === 0 ? 1 : -1) * (Math.random() * 40 + 20),
-                            y: -(Math.random() * 40 + 20)
+                            x: (i % 2 === 0 ? 1 : -1) * (24 + i * 7),
+                            y: -(28 + i * 5)
                           }}
                           transition={{ 
                             duration: 2, 
@@ -297,10 +298,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         options={[
                           { value: '', label: 'Select a service' },
-                          { value: 'web-development', label: 'Web Development' },
-                          { value: 'ui-ux-design', label: 'UI/UX Design' },
-                          { value: 'ecommerce', label: 'E-Commerce' },
-                          { value: 'seo', label: 'SEO Optimization' },
+                          ...serviceOptions,
                           { value: 'other', label: 'Other' },
                         ]}
                       />

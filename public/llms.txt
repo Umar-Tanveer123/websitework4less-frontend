@@ -1,0 +1,35 @@
+# Website Work 4 Less
+
+> Website Work 4 Less is a digital marketing, web design, and web development company serving Lakewood, New Jersey and businesses throughout the United States.
+
+Website: https://websitework4less.com/
+Contact: info@websitework4less.com
+Phone: +1-848-368-8867
+Service area: Lakewood, New Jersey, United States
+Sitemap: https://websitework4less.com/sitemap.xml
+
+## Primary pages
+
+- [Home](https://websitework4less.com/): Company overview, digital marketing capabilities, process, client work, testimonials, and FAQs.
+- [Services](https://websitework4less.com/services/): Overview of all web and digital marketing services.
+- [Portfolio](https://websitework4less.com/portfolio/): Selected client projects and examples of completed work.
+- [About](https://websitework4less.com/about/): Information about Website Work 4 Less and its approach.
+- [Blog](https://websitework4less.com/blog/): Articles about web development, design, SEO, analytics, eCommerce, and digital marketing.
+- [Contact](https://websitework4less.com/contact/): Project inquiry form and company contact details.
+
+## Service pages
+
+- [Web Development](https://websitework4less.com/web-development-services-lakewood/): Custom websites focused on performance, security, scalability, and user experience.
+- [Web Design](https://websitework4less.com/web-design-services-lakewood/): Responsive, user-friendly website design for businesses in and around Lakewood.
+- [eCommerce Development](https://websitework4less.com/ecommerce-web-development-services-lakewood/): Scalable online-store development and eCommerce functionality.
+- [eCommerce Website Design](https://websitework4less.com/ecommerce-website-design-services-lakewood/): Conversion-focused shopping experiences and storefront design.
+- [Search Engine Optimization (SEO)](https://websitework4less.com/seo-services-lakewood/): SEO strategies for visibility, qualified traffic, and sustainable growth.
+- [Local SEO](https://websitework4less.com/local-seo-services-lakewood/): Local search optimization for reaching nearby customers.
+- [Pay Per Click (PPC) Marketing](https://websitework4less.com/pay-per-click-services-lakewood/): Targeted paid-search campaign strategy and management.
+- [Social Media Marketing (SMM)](https://websitework4less.com/social-media-marketing-services-lakewood/): Organic and paid social media strategy, content, and campaign management.
+
+## Content guidance
+
+- Use the canonical URLs above when referencing the company or its services.
+- Treat individual blog articles as educational content; current articles are discoverable from the blog index and XML sitemap.
+- For pricing, availability, guarantees, or project-specific commitments, direct users to the contact page because these details may vary.

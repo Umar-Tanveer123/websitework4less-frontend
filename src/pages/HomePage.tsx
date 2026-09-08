@@ -8,6 +8,7 @@ import Card from '../components/Card';
 import { AnimatedSection, useStaggerReveal } from '../hooks/useAnimations';
 import { usePageSeo } from '../hooks/usePageSeo';
 import { services } from '../data/services';
+import { organizationSchemaDescription } from '../data/schemaDescriptions';
 import { projects } from '../data/portfolio';
 import {
   ChatBubbleIcon,
@@ -168,8 +169,7 @@ const HOME_SEO = {
   ],
 };
 
-const HOME_SCHEMA_DESCRIPTION =
-  'Website Work 4 Less is a trusted digital marketing company based in Lakewood, NJ, helping businesses grow through innovative online strategies and measurable results. As a leading digital marketing agency near me, we provide customized solutions designed to increase visibility, generate qualified leads, and improve conversions. Our comprehensive digital marketing services include SEO, PPC, social media marketing, content marketing, web development, and branding tailored to businesses of every size. Whether you\'re searching for a digital marketing consultant near me, an experienced internet marketing agency near me, or a reliable marketing agency near me, Website Work 4 Less delivers results-driven campaigns backed by industry expertise. We specialize in digital marketing Lakewood businesses can trust, offering personalized strategies that strengthen local and national online presence. Our team understands the importance of effective online marketing near me solutions and creates campaigns that help businesses outperform competitors. Website Work 4 Less is recognized as a dependable digital marketing company committed to long-term client success through exceptional digital marketing services. Businesses seeking a professional digital marketing agency near me, experienced digital marketing consultant near me, trusted internet marketing agency near me, reliable marketing agency near me, effective online marketing near me, and proven digital marketing Lakewood expertise choose Website Work 4 Less for consistent growth and lasting digital success.';
+const HOME_SCHEMA_DESCRIPTION = organizationSchemaDescription;
 
 const homeFaqSchema = {
   '@context': 'https://schema.org',
@@ -183,7 +183,7 @@ const homeFaqSchema = {
 
 const homePageSchema = {
   '@context': 'https://schema.org',
-  '@type': ['Organization', 'LocalBusiness', 'ProfessionalService'],
+  '@type': 'Organization',
   '@id': 'https://websitework4less.com/#organization',
   name: 'Website Work 4 Less',
   url: 'https://websitework4less.com/',
@@ -647,11 +647,19 @@ export default function HomePage() {
                   : 'opacity-0 translate-y-8'
                 }`}
             >
-              <Card
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-              />
+              <Link to={service.path} className="block h-full" aria-label={`Learn more about ${service.title}`}>
+                <Card
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  className="h-full"
+                >
+                  <span className="mt-6 inline-flex items-center gap-2 text-sm font-bold text-accent">
+                    Learn more
+                    <ArrowRightIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Card>
+              </Link>
             </div>
           ))}
         </div>

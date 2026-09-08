@@ -1,13 +1,14 @@
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useRef, MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import SectionHeading from '../components/SectionHeading';
 import Button from '../components/Button';
 import { AnimatedSection, useScrollToTop } from '../hooks/useAnimations';
-import { services } from '../data/services';
-import { CheckCircleIcon, ArrowRightIcon, SparklesIcon } from '../components/Icons';
+import { services, type Service } from '../data/services';
+import { ArrowRightIcon, SparklesIcon } from '../components/Icons';
 
-function ServiceCard({ service, index }: { service: any; index: number }) {
+function ServiceCard({ service, index }: { service: Service; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -37,7 +38,8 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
   };
 
   return (
-    <motion.div
+    <Link to={service.path} className="block h-full" aria-label={`Learn more about ${service.title}`}>
+      <motion.div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -50,8 +52,8 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group relative p-8 rounded-[2rem] border border-border bg-surface shadow-2xl shadow-black/5 hover:border-accent/30 transition-colors duration-500"
-    >
+        className="group relative h-full p-8 rounded-[2rem] border border-border bg-surface shadow-2xl shadow-black/5 hover:border-accent/30 transition-colors duration-500"
+      >
       {/* Background Glow */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem]" />
       
@@ -64,20 +66,13 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
           {service.title}
         </h3>
         
-        <p className="text-text-secondary leading-relaxed mb-8">
-          {service.longDescription}
+        <p className="text-text-secondary leading-relaxed">
+          {service.description}
         </p>
-
-        <ul className="space-y-4">
-          {service.features.map((feature: string) => (
-            <li key={feature} className="flex items-center gap-3 text-sm font-medium text-text-secondary group/item">
-              <div className="h-6 w-6 rounded-full bg-accent/10 flex items-center justify-center text-accent group-hover/item:bg-accent group-hover/item:text-white transition-all duration-300">
-                <CheckCircleIcon className="h-4 w-4" />
-              </div>
-              {feature}
-            </li>
-          ))}
-        </ul>
+        <span className="mt-8 inline-flex items-center gap-2 text-sm font-bold text-accent">
+          Explore this service
+          <ArrowRightIcon className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-2" />
+        </span>
       </div>
 
       {/* Floating Sparkle on Hover */}
@@ -87,7 +82,8 @@ function ServiceCard({ service, index }: { service: any; index: number }) {
 
       {/* 3D Border Effect */}
       <div className="absolute inset-0 z-0 rounded-[2rem] border-2 border-transparent group-hover:border-accent/10 pointer-events-none transition-colors duration-500" />
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }
 

@@ -20,6 +20,7 @@ import {
   MapPinIcon,
 } from '../components/Icons';
 import type { ServiceLanding, TitledItem, FaqItem } from '../data/landing/types';
+import { serviceSchemaDescriptions } from '../data/schemaDescriptions';
 
 const SITE = 'https://websitework4less.com';
 
@@ -155,7 +156,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
   const canonical = `${SITE}/${content.slug}/`;
 
   // Per-page SEO: title, meta description, keywords, canonical, and JSON-LD
-  // (ProfessionalService + Service + FAQPage + BreadcrumbList).
+  // (LocalBusiness + Service offer + FAQPage + BreadcrumbList).
   useEffect(() => {
     const DEFAULT_TITLE = 'Digital Marketing Lakewood - Digital Marketing Agency';
     document.title = content.seo.title;
@@ -185,34 +186,48 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
     }
     canonicalEl.setAttribute('href', canonical);
 
-    const serviceSchema = {
+    const schemaDescription =
+      serviceSchemaDescriptions[content.slug] ?? content.seo.schemaDescription;
+    const localBusinessSchema = {
       '@context': 'https://schema.org',
-      '@type': 'Service',
-      '@id': `${canonical}#service`,
-      name: content.seo.serviceType,
-      serviceType: content.seo.serviceType,
-      description: content.seo.schemaDescription,
-      keywords: content.seo.keywords.join(', '),
+      '@type': 'LocalBusiness',
+      '@id': `${canonical}#local-business`,
+      name: 'Website Work 4 Less',
       url: canonical,
+      image: `${SITE}/projects/project5.png`,
+      telephone: '+1-848-368-8867',
+      email: 'info@websitework4less.com',
+      description: schemaDescription,
+      keywords: content.seo.keywords.join(', '),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '750 Forest Ave',
+        addressLocality: 'Lakewood',
+        addressRegion: 'NJ',
+        postalCode: '08701',
+        addressCountry: 'US',
+      },
       areaServed: {
         '@type': 'City',
         name: 'Lakewood',
         containedInPlace: { '@type': 'State', name: 'New Jersey' },
       },
-      provider: {
-        '@type': 'ProfessionalService',
+      parentOrganization: {
+        '@type': 'Organization',
         '@id': `${SITE}/#organization`,
         name: 'Website Work 4 Less',
         url: `${SITE}/`,
-        telephone: '+1-848-368-8867',
-        email: 'info@websitework4less.com',
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: '750 Forest Ave',
-          addressLocality: 'Lakewood',
-          addressRegion: 'NJ',
-          postalCode: '08701',
-          addressCountry: 'US',
+      },
+      makesOffer: {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          '@id': `${canonical}#service`,
+          name: content.seo.serviceType,
+          serviceType: content.seo.serviceType,
+          description: schemaDescription,
+          url: canonical,
+          provider: { '@id': `${canonical}#local-business` },
         },
       },
     };
@@ -255,7 +270,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       s.textContent = JSON.stringify(data);
       document.body.appendChild(s);
     };
-    addSchema('landing-service-schema', serviceSchema);
+    addSchema('landing-local-business-schema', localBusinessSchema);
     addSchema('landing-faq-schema', faqSchema);
     addSchema('landing-breadcrumb-schema', breadcrumbSchema);
 
@@ -265,7 +280,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       upsertMeta('keywords', prevKeywords);
       if (createdCanonical) canonicalEl?.remove();
       else canonicalEl?.setAttribute('href', prevCanonical);
-      document.getElementById('landing-service-schema')?.remove();
+      document.getElementById('landing-local-business-schema')?.remove();
       document.getElementById('landing-faq-schema')?.remove();
       document.getElementById('landing-breadcrumb-schema')?.remove();
     };

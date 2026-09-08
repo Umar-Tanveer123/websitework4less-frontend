@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
-import { SunIcon, MoonIcon } from './Icons';
+import { EnvelopeIcon, MoonIcon, PhoneIcon, SunIcon } from './Icons';
 import Logo from './Logo';
 import { landingPages } from '../data/landing';
 
@@ -43,10 +43,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [location]);
-
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? 'hidden' : '';
@@ -74,10 +70,30 @@ export default function Navbar() {
           : 'bg-transparent'
         }`}
     >
+      <div className="bg-accent text-white">
+        <div className="mx-auto flex min-h-8 max-w-7xl items-center justify-center gap-x-5 gap-y-1 px-4 py-1 text-xs font-semibold sm:justify-end sm:px-6 lg:px-8">
+          <a
+            href="mailto:info@websitework4less.com"
+            className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+          >
+            <EnvelopeIcon className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">info@websitework4less.com</span>
+            <span className="sm:hidden">Email us</span>
+          </a>
+          <a
+            href="tel:+18483688867"
+            className="inline-flex items-center gap-1.5 transition-opacity hover:opacity-80"
+          >
+            <PhoneIcon className="h-3.5 w-3.5" />
+            (848) 368-8867
+          </a>
+        </div>
+      </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
         {/* Logo */}
         <Link
           to="/"
+          onClick={() => setMobileOpen(false)}
           className="relative z-[70] flex items-center"
         >
           <Logo className="h-12 sm:h-14" />
@@ -90,6 +106,7 @@ export default function Navbar() {
               <div key={link.path} className="relative group">
                 <Link
                   to={link.path}
+                  onClick={() => setMobileOpen(false)}
                   className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${isServicesActive
                       ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
                       : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
@@ -120,6 +137,7 @@ export default function Navbar() {
                       <Link
                         key={page.slug}
                         to={`/${page.slug}`}
+                        onClick={() => setMobileOpen(false)}
                         className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent/5 hover:text-accent ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-secondary'
                           }`}
                       >
@@ -225,6 +243,7 @@ export default function Navbar() {
               >
                 <Link
                   to={link.path}
+                  onClick={() => setMobileOpen(false)}
                   className={`text-2xl font-semibold ${location.pathname === link.path ? 'text-accent' : 'text-text-primary hover:text-accent'
                     }`}
                 >
@@ -236,6 +255,7 @@ export default function Navbar() {
                       <Link
                         key={page.slug}
                         to={`/${page.slug}`}
+                        onClick={() => setMobileOpen(false)}
                         className={`text-sm font-medium ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-muted hover:text-accent'
                           }`}
                       >
@@ -253,7 +273,7 @@ export default function Navbar() {
                 }`}
               style={{ transitionDelay: `${navLinks.length * 100}ms` }}
             >
-              <Button as="link" to="/contact" size="lg">
+              <Button as="link" to="/contact" size="lg" onClick={() => setMobileOpen(false)}>
                 Get Started
               </Button>
             </div>
