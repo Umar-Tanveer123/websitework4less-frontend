@@ -202,7 +202,7 @@ export default function BlogPostPage() {
           </aside>
         </article>
 
-        <aside className="space-y-6 lg:sticky lg:top-32 lg:max-h-[calc(100vh-9rem)] lg:self-start lg:overflow-y-auto lg:pr-2">
+        <aside className="space-y-6 lg:sticky lg:top-32 lg:self-start">
           <section className="rounded-2xl border border-border bg-surface-alt p-6 shadow-sm sm:p-7">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Free consultation</p>
             <h2 className="mt-2 text-2xl font-bold text-text-primary">Let?s discuss your project</h2>
