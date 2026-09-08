@@ -30,9 +30,9 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden">
+    <div className="flex min-h-screen flex-col overflow-x-clip">
       <Navbar />
-      <main key={location.pathname} className="flex-grow animate-fade-in overflow-x-hidden">
+      <main key={location.pathname} className="flex-grow animate-fade-in overflow-x-clip">
         <Outlet />
       </main>
       <Footer />
