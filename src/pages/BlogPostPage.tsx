@@ -164,7 +164,7 @@ export default function BlogPostPage() {
   const imageUrl = resolveImage(post.thumbnail);
 
   return (
-    <div className="relative overflow-hidden">
+    <div className="relative">
       <motion.div className="fixed left-0 right-0 top-0 z-[100] h-1.5 origin-left bg-accent" style={{ scaleX }} />
 
       <header className="relative flex min-h-[520px] items-center overflow-hidden bg-slate-950 px-4 pb-20 pt-40 sm:px-6 lg:min-h-[600px] lg:pt-48">
@@ -202,7 +202,7 @@ export default function BlogPostPage() {
           </aside>
         </article>
 
-        <aside className="space-y-6 lg:sticky lg:top-32">
+        <aside className="space-y-6 lg:sticky lg:top-32 lg:max-h-[calc(100vh-9rem)] lg:self-start lg:overflow-y-auto lg:pr-2">
           <section className="rounded-2xl border border-border bg-surface-alt p-6 shadow-sm sm:p-7">
             <p className="text-xs font-bold uppercase tracking-[0.18em] text-accent">Free consultation</p>
             <h2 className="mt-2 text-2xl font-bold text-text-primary">Let?s discuss your project</h2>
