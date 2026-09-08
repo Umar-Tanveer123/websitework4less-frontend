@@ -1,112 +1,84 @@
 import type { ReactNode } from 'react';
 import {
+  ChartBarIcon,
   CodeIcon,
+  DevicePhoneMobileIcon,
+  MagnifyingGlassIcon,
   PaletteIcon,
   ShoppingBagIcon,
-  ChartBarIcon,
-  MagnifyingGlassIcon,
-  DevicePhoneMobileIcon,
 } from '../components/Icons';
 
 export interface Service {
   id: string;
   title: string;
   description: string;
-  longDescription: string;
+  path: string;
   icon: ReactNode;
-  features: string[];
 }
 
 export const services: Service[] = [
   {
-    id: 'web-dev',
+    id: 'web-development',
     title: 'Web Development',
-    description: 'Custom-built websites using cutting-edge technologies for optimal speed, security, and scalability.',
-    longDescription: 'We build fast, secure, and scalable websites using React, Next.js, and modern frameworks. Every line of code is crafted for performance and maintainability.',
+    description:
+      'Custom-built websites focused on performance, security, scalability, and seamless user experiences.',
+    path: '/web-development-services-lakewood',
     icon: <CodeIcon className="h-7 w-7" />,
-    features: [
-      'Custom front-end & back-end development',
-      'API integration & third-party services',
-      'Performance optimization & caching',
-      'Accessibility compliance (WCAG)',
-    ],
   },
   {
-    id: 'ui-ux',
-    title: 'UI/UX Design',
-    description: 'Thoughtfully crafted interfaces that delight users and drive conversions through intuitive design.',
-    longDescription: 'Our design process focuses on user needs, creating intuitive interfaces that drive engagement and conversions while reflecting your brand identity.',
+    id: 'web-design',
+    title: 'Web Design',
+    description:
+      'Modern, responsive, and user-friendly website designs created to engage visitors and strengthen your brand.',
+    path: '/web-design-services-lakewood',
     icon: <PaletteIcon className="h-7 w-7" />,
-    features: [
-      'User research & persona development',
-      'Wireframing & interactive prototyping',
-      'Visual design & branding',
-      'Usability testing & iteration',
-    ],
   },
   {
-    id: 'ecommerce',
-    title: 'E-Commerce Solutions',
-    description: 'End-to-end online stores designed to maximize sales and deliver seamless shopping experiences.',
-    longDescription: 'Complete e-commerce platforms built for conversion. From product catalogs to checkout, we handle the entire shopping experience.',
+    id: 'ecommerce-development',
+    title: 'eCommerce Development',
+    description:
+      'Powerful eCommerce solutions designed to streamline online selling, improve performance, and drive business growth.',
+    path: '/ecommerce-web-development-services-lakewood',
     icon: <ShoppingBagIcon className="h-7 w-7" />,
-    features: [
-      'Shopify, WooCommerce, custom stores',
-      'Payment gateway integration',
-      'Inventory management systems',
-      'Order tracking & analytics',
-    ],
+  },
+  {
+    id: 'ecommerce-website-design',
+    title: 'eCommerce Website Design',
+    description:
+      'Conversion-focused eCommerce designs that make online shopping simple, intuitive, and engaging.',
+    path: '/ecommerce-website-design-services-lakewood',
+    icon: <DevicePhoneMobileIcon className="h-7 w-7" />,
   },
   {
     id: 'seo',
-    title: 'SEO Optimization',
-    description: 'Search engine optimization that puts your business in front of your ideal customers.',
-    longDescription: 'Get found by the right people. Our SEO strategies are data-driven and focused on sustainable, long-term organic growth.',
+    title: 'Search Engine Optimization (SEO)',
+    description:
+      'Data-driven SEO strategies that improve search visibility, attract qualified traffic, and grow your business online.',
+    path: '/seo-services-lakewood',
     icon: <MagnifyingGlassIcon className="h-7 w-7" />,
-    features: [
-      'Technical SEO audits & fixes',
-      'Keyword research & strategy',
-      'On-page & off-page optimization',
-      'Performance & Core Web Vitals',
-    ],
   },
   {
-    id: 'responsive',
-    title: 'Responsive Design',
-    description: 'Responsive designs that look stunning and perform flawlessly on every device and screen size.',
-    longDescription: 'Every website we build looks and works beautifully across all devices—phones, tablets, laptops, and desktops.',
-    icon: <DevicePhoneMobileIcon className="h-7 w-7" />,
-    features: [
-      'Mobile-first design approach',
-      'Cross-browser compatibility',
-      'Touch-friendly interactions',
-      'Adaptive layouts & images',
-    ],
+    id: 'local-seo',
+    title: 'Local SEO',
+    description:
+      'Local search optimization that helps your business appear in front of nearby customers searching for your services.',
+    path: '/local-seo-services-lakewood',
+    icon: <MagnifyingGlassIcon className="h-7 w-7" />,
   },
   {
-    id: 'analytics',
-    title: 'Analytics & Strategy',
-    description: 'Data-driven strategies to grow your online presence and understand your users better.',
-    longDescription: 'Understand your users with comprehensive analytics dashboards and actionable insights that drive business decisions.',
+    id: 'ppc',
+    title: 'Pay Per Click (PPC) Marketing',
+    description:
+      'Targeted PPC campaigns designed to reach the right audience, generate qualified leads, and maximize your advertising budget.',
+    path: '/pay-per-click-services-lakewood',
     icon: <ChartBarIcon className="h-7 w-7" />,
-    features: [
-      'Google Analytics setup & config',
-      'Custom KPI dashboards',
-      'Conversion tracking & funnels',
-      'Monthly performance reports',
-    ],
   },
   {
-    id: 'custom-software',
-    title: 'Custom Software Solutions',
-    description: 'We do custom software to help businesses run smoothly and efficiently and be able to manage everything from one dashboard.',
-    longDescription: 'We do custom software to help businesses run smoothly and efficiently and be able to manage everything from one dashboard. Like workers, jobs, orders coming in and orders going out, inventory.',
-    icon: <CodeIcon className="h-7 w-7" />,
-    features: [
-      'Employee & Job Management',
-      'Order Tracking & Processing',
-      'Inventory Control Systems',
-      'Centralized Business Dashboard',
-    ],
+    id: 'social-media-marketing',
+    title: 'Social Media Marketing (SMM)',
+    description:
+      'Strategic social media campaigns that build brand awareness, engage your audience, and drive meaningful business results.',
+    path: '/social-media-marketing-services-lakewood',
+    icon: <DevicePhoneMobileIcon className="h-7 w-7" />,
   },
 ];

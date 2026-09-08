@@ -3,7 +3,7 @@ import type { ServiceLanding } from './types';
 
 export const socialMediaMarketing: ServiceLanding = {
   slug: 'social-media-marketing-services-lakewood',
-  navLabel: 'Social Media Marketing',
+  navLabel: 'Social Media Marketing (SMM)',
   seo: {
     title: 'Social Media Marketing Lakewood - Social Media Marketing Services',
     description:

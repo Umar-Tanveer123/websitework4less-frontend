@@ -3,7 +3,7 @@ import type { ServiceLanding } from './types';
 
 export const payPerClick: ServiceLanding = {
   slug: 'pay-per-click-services-lakewood',
-  navLabel: 'Pay-Per-Click (PPC)',
+  navLabel: 'Pay Per Click (PPC) Marketing',
   seo: {
     title: 'Pay Per Click Services - Pay Per Click Advertising Agency',
     description:

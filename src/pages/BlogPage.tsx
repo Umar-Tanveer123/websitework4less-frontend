@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
@@ -22,6 +22,12 @@ export default function BlogPage() {
   useScrollToTop();
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState(true);
+  const [searchParams] = useSearchParams();
+  const searchTerm = searchParams.get('search')?.trim().toLowerCase() ?? '';
+  const visiblePosts = useMemo(
+    () => posts.filter((post) => !searchTerm || `${post.title} ${post.excerpt}`.toLowerCase().includes(searchTerm)),
+    [posts, searchTerm],
+  );
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -31,8 +37,9 @@ export default function BlogPage() {
         const apiPosts = (res.data as Post[]).filter(
           (p) => p.title?.trim().toLowerCase() !== 'test'
         );
-        // Static frontend posts first, then posts from the backend API.
-        setPosts([...previewPosts, ...apiPosts]);
+        // Static frontend posts first, then unique posts from the backend API.
+        const staticSlugs = new Set(previewPosts.map((post) => post.slug));
+        setPosts([...previewPosts, ...apiPosts.filter((post) => !staticSlugs.has(post.slug))]);
       } catch (error) {
         console.error('Error fetching posts:', error);
         // Still show local preview posts even if the API is unreachable.
@@ -86,13 +93,14 @@ export default function BlogPage() {
                 <div key={i} className="h-[450px] rounded-2xl bg-surface/50 border border-border animate-pulse shadow-sm" />
               ))}
             </div>
-          ) : posts.length === 0 ? (
+          ) : visiblePosts.length === 0 ? (
             <div className="text-center py-20 bg-surface/50 backdrop-blur-md rounded-3xl border border-border">
-              <p className="text-lg text-text-secondary">No blog posts found. Check back soon!</p>
+              <p className="text-lg text-text-secondary">{searchTerm ? `No articles found for ?${searchParams.get('search')}?.` : 'No blog posts found. Check back soon!'}</p>
+              {searchTerm && <Link to="/blog" className="mt-5 inline-flex text-sm font-bold text-accent hover:text-accent-hover">View all articles</Link>}
             </div>
           ) : (
             <div className="grid gap-8 md:grid-cols-2">
-              {posts.map((post, i) => (
+              {visiblePosts.map((post, i) => (
                 <AnimatedSection 
                   key={post.slug} 
                   delay={i * 100}
