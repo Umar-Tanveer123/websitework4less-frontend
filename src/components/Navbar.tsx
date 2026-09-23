@@ -18,10 +18,14 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isDark, setIsDark] = useState(() => {
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      return (
+        localStorage.getItem('theme') === 'dark' ||
+        (!localStorage.getItem('theme') &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      );
     }
     return false;
   });
@@ -45,30 +49,45 @@ export default function Navbar() {
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? 'hidden' : '';
+    if (mobileOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
     return () => {
       document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
     };
   }, [mobileOpen]);
 
-  // Only use white text on the Home page (if it has a dark hero)
-  // Or just default to dark text everywhere if backgrounds are light.
-  const isWhiteText = !scrolled && location.pathname === '/dark-hero-page'; // Assuming no dark hero for now, text will be dark.
-
-  // Show background if scrolled OR if not on the Home page
-  const showBackground = scrolled || location.pathname !== '/';
+  // Only use white text on transparent hero if applicable
+  const isWhiteText = !scrolled && location.pathname === '/dark-hero-page';
+  const showBackground = scrolled || location.pathname !== '/' || mobileOpen;
 
   // Highlight "Services" when on the hub page or any of its landing pages.
   const landingPaths = landingPages.map((p) => `/${p.slug}`);
   const isServicesActive =
     location.pathname === '/services' || landingPaths.includes(location.pathname);
 
+// Remove auto-opening mobileServicesOpen to prevent layout jump on mobile menu open
+
+  const navIconColor = mobileOpen
+    ? 'bg-text-primary'
+    : isWhiteText
+    ? 'bg-white'
+    : 'bg-text-primary';
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${showBackground
-          ? 'bg-surface/80 backdrop-blur-xl shadow-sm border-b border-border/50'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        mobileOpen
+          ? 'bg-transparent shadow-none border-b-0'
+          : showBackground
+          ? 'bg-surface/90 backdrop-blur-xl shadow-sm border-b border-border/50'
           : 'bg-transparent'
-        }`}
+      }`}
     >
       <div className="bg-accent text-white">
         <div className="mx-auto flex min-h-8 max-w-7xl items-center justify-center gap-x-5 gap-y-1 px-4 py-1 text-xs font-semibold sm:justify-end sm:px-6 lg:px-8">
@@ -91,11 +110,7 @@ export default function Navbar() {
       </div>
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
         {/* Logo */}
-        <Link
-          to="/"
-          onClick={() => setMobileOpen(false)}
-          className="relative z-[70] flex items-center"
-        >
+        <Link to="/" className="relative z-[70] flex items-center">
           <Logo className="h-12 sm:h-14" />
         </Link>
 
@@ -106,11 +121,15 @@ export default function Navbar() {
               <div key={link.path} className="relative group">
                 <Link
                   to={link.path}
-                  onClick={() => setMobileOpen(false)}
-                  className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${isServicesActive
+                  className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                    isServicesActive
                       ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
-                      : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
-                    }`}
+                      : `${
+                          isWhiteText
+                            ? 'text-white/70 hover:text-white hover:bg-white/10'
+                            : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'
+                        }`
+                  }`}
                 >
                   {link.label}
                   <svg
@@ -120,7 +139,11 @@ export default function Navbar() {
                     stroke="currentColor"
                     strokeWidth={2.5}
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                    />
                   </svg>
                 </Link>
                 {/* Dropdown */}
@@ -137,9 +160,11 @@ export default function Navbar() {
                       <Link
                         key={page.slug}
                         to={`/${page.slug}`}
-                        onClick={() => setMobileOpen(false)}
-                        className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent/5 hover:text-accent ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-secondary'
-                          }`}
+                        className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent/5 hover:text-accent ${
+                          location.pathname === `/${page.slug}`
+                            ? 'text-accent'
+                            : 'text-text-secondary'
+                        }`}
                       >
                         {page.navLabel}
                       </Link>
@@ -151,14 +176,19 @@ export default function Navbar() {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${location.pathname === link.path
+                className={`rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${
+                  location.pathname === link.path
                     ? `text-accent ${isWhiteText ? 'bg-white/10' : 'bg-accent/5'}`
-                    : `${isWhiteText ? 'text-white/70 hover:text-white hover:bg-white/10' : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'}`
-                  }`}
+                    : `${
+                        isWhiteText
+                          ? 'text-white/70 hover:text-white hover:bg-white/10'
+                          : 'text-text-secondary hover:text-text-primary hover:bg-surface-muted'
+                      }`
+                }`}
               >
                 {link.label}
               </Link>
-            ),
+            )
           )}
         </div>
 
@@ -166,8 +196,11 @@ export default function Navbar() {
         <div className="hidden lg:flex items-center gap-4">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
-              }`}
+            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              isWhiteText
+                ? 'hover:bg-white/10 text-white'
+                : 'hover:bg-surface-muted text-text-primary'
+            }`}
             aria-label="Toggle theme"
           >
             <AnimatePresence mode="wait" initial={false}>
@@ -178,7 +211,11 @@ export default function Navbar() {
                 exit={{ y: 20, opacity: 0, rotate: 45 }}
                 transition={{ duration: 0.2 }}
               >
-                {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+                {isDark ? (
+                  <SunIcon className="h-5 w-5" />
+                ) : (
+                  <MoonIcon className="h-5 w-5" />
+                )}
               </motion.div>
             </AnimatePresence>
           </button>
@@ -187,7 +224,9 @@ export default function Navbar() {
             to="/contact"
             size="sm"
             variant={isWhiteText ? 'outline' : 'primary'}
-            className={isWhiteText ? '!border-white/20 !text-white hover:!bg-white/10' : ''}
+            className={
+              isWhiteText ? '!border-white/20 !text-white hover:!bg-white/10' : ''
+            }
           >
             Get Started
           </Button>
@@ -197,83 +236,162 @@ export default function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <button
             onClick={() => setIsDark(!isDark)}
-            className={`flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10 text-white' : 'hover:bg-surface-muted text-text-primary'
-              }`}
+            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              mobileOpen
+                ? 'hover:bg-surface-muted text-text-primary'
+                : isWhiteText
+                ? 'hover:bg-white/10 text-white'
+                : 'hover:bg-surface-muted text-text-primary'
+            }`}
             aria-label="Toggle theme"
           >
-            {isDark ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+            {isDark ? (
+              <SunIcon className="h-5 w-5" />
+            ) : (
+              <MoonIcon className="h-5 w-5" />
+            )}
           </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${isWhiteText ? 'hover:bg-white/10' : 'hover:bg-surface-muted'
-              }`}
+            className={`relative z-[70] flex h-10 w-10 items-center justify-center rounded-lg transition-colors ${
+              mobileOpen
+                ? 'hover:bg-surface-muted'
+                : isWhiteText
+                ? 'hover:bg-white/10'
+                : 'hover:bg-surface-muted'
+            }`}
             aria-label="Toggle menu"
           >
             <div className="relative h-5 w-6">
               <span
-                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'top-2.5 rotate-45' : 'top-0'
-                  }`}
+                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${navIconColor} ${
+                  mobileOpen ? 'top-2.5 rotate-45' : 'top-0'
+                }`}
               />
               <span
-                className={`absolute left-0 top-2.5 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'opacity-0' : 'opacity-100'
-                  }`}
+                className={`absolute left-0 top-2.5 h-0.5 w-full transition-all duration-300 ${navIconColor} ${
+                  mobileOpen ? 'opacity-0' : 'opacity-100'
+                }`}
               />
               <span
-                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${isWhiteText ? 'bg-white' : 'bg-text-primary'} ${mobileOpen ? 'top-2.5 -rotate-45' : 'top-5'
-                  }`}
+                className={`absolute left-0 h-0.5 w-full transition-all duration-300 ${navIconColor} ${
+                  mobileOpen ? 'top-2.5 -rotate-45' : 'top-5'
+                }`}
               />
             </div>
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-[60] bg-surface transition-all duration-500 ease-[var(--ease-out-premium)] lg:hidden ${mobileOpen
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 -translate-y-4 pointer-events-none'
-            }`}
+          className={`fixed inset-0 z-[60] transition-all duration-300 ease-[var(--ease-out-premium)] lg:hidden ${
+            mobileOpen
+              ? 'opacity-100 pointer-events-auto'
+              : 'opacity-0 pointer-events-none'
+          }`}
+          style={{
+            backgroundColor: isDark ? 'hsl(220, 40%, 4%)' : 'hsl(220, 20%, 98%)',
+          }}
         >
-          <div className="flex h-full flex-col items-center justify-center gap-6 px-6 pt-20 overflow-y-auto">
+          <div className="flex h-full w-full flex-col items-center justify-start gap-5 px-6 pt-28 pb-12 overflow-y-auto">
             {navLinks.map((link, index) => (
               <div
                 key={link.path}
-                className={`flex flex-col items-center transition-all duration-500 ease-[var(--ease-out-premium)] ${mobileOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-                  }`}
-                style={{ transitionDelay: `${index * 100}ms` }}
+                className={`flex w-full flex-col items-center transition-all duration-300 ease-[var(--ease-out-premium)] ${
+                  mobileOpen
+                    ? 'opacity-100 translate-y-0'
+                    : 'opacity-0 translate-y-4'
+                }`}
+                style={{ transitionDelay: `${index * 50}ms` }}
               >
-                <Link
-                  to={link.path}
-                  onClick={() => setMobileOpen(false)}
-                  className={`text-2xl font-semibold ${location.pathname === link.path ? 'text-accent' : 'text-text-primary hover:text-accent'
-                    }`}
-                >
-                  {link.label}
-                </Link>
-                {link.label === 'Services' && (
-                  <div className="mt-3 flex flex-col items-center gap-2.5">
-                    {landingPages.map((page) => (
+                {link.label === 'Services' ? (
+                  <div className="flex w-full max-w-xs flex-col items-center">
+                    <div className="flex items-center justify-center gap-2">
                       <Link
-                        key={page.slug}
-                        to={`/${page.slug}`}
-                        onClick={() => setMobileOpen(false)}
-                        className={`text-sm font-medium ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-muted hover:text-accent'
-                          }`}
+                        to={link.path}
+                        className={`text-2xl font-semibold ${
+                          isServicesActive ? 'text-accent' : 'text-text-primary hover:text-accent'
+                        }`}
                       >
-                        {page.navLabel}
+                        {link.label}
                       </Link>
-                    ))}
+                      <button
+                        type="button"
+                        onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+                        className="p-1 text-text-muted hover:text-accent focus:outline-none"
+                        aria-label="Toggle sub-services"
+                      >
+                        <svg
+                          className={`h-5 w-5 transition-transform duration-200 ${
+                            mobileServicesOpen ? 'rotate-180' : ''
+                          }`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+
+                    {mobileServicesOpen && (
+                      <div className="mt-3 flex w-full flex-col items-center gap-2 rounded-xl bg-surface-muted/60 p-3">
+                        <Link
+                          to="/services"
+                          className={`text-sm font-semibold transition-colors ${
+                            location.pathname === '/services'
+                              ? 'text-accent'
+                              : 'text-text-primary hover:text-accent'
+                          }`}
+                        >
+                          All Services
+                        </Link>
+                        <div className="h-px w-3/4 bg-border/60" />
+                        {landingPages.map((page) => (
+                          <Link
+                            key={page.slug}
+                            to={`/${page.slug}`}
+                            className={`text-sm font-medium transition-colors ${
+                              location.pathname === `/${page.slug}`
+                                ? 'text-accent font-semibold'
+                                : 'text-text-muted hover:text-accent'
+                            }`}
+                          >
+                            {page.navLabel}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </div>
+                ) : (
+                  <Link
+                    to={link.path}
+                    className={`text-2xl font-semibold ${
+                      location.pathname === link.path
+                        ? 'text-accent'
+                        : 'text-text-primary hover:text-accent'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
                 )}
               </div>
             ))}
+
             <div
-              className={`mt-4 transition-all duration-500 ease-[var(--ease-out-premium)] ${mobileOpen
+              className={`mt-4 w-full max-w-xs flex justify-center transition-all duration-300 ease-[var(--ease-out-premium)] ${
+                mobileOpen
                   ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-8'
-                }`}
-              style={{ transitionDelay: `${navLinks.length * 100}ms` }}
+                  : 'opacity-0 translate-y-4'
+              }`}
+              style={{ transitionDelay: `${navLinks.length * 50}ms` }}
             >
-              <Button as="link" to="/contact" size="lg" onClick={() => setMobileOpen(false)}>
+              <Button as="link" to="/contact" size="lg" className="w-full text-center justify-center">
                 Get Started
               </Button>
             </div>
@@ -283,3 +401,4 @@ export default function Navbar() {
     </header>
   );
 }
+
