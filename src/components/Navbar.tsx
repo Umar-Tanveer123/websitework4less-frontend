@@ -81,15 +81,20 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[70] transition-all duration-300 ${
         mobileOpen
-          ? 'bg-transparent shadow-none border-b-0'
+          ? 'bg-surface shadow-md border-b border-border/50'
           : showBackground
           ? 'bg-surface/90 backdrop-blur-xl shadow-sm border-b border-border/50'
           : 'bg-transparent'
       }`}
+      style={
+        mobileOpen
+          ? { backgroundColor: isDark ? 'hsl(220, 40%, 4%)' : 'hsl(220, 20%, 98%)' }
+          : undefined
+      }
     >
-      <div className="bg-accent text-white">
+      <div className={`bg-accent text-white ${mobileOpen ? 'hidden' : 'hidden sm:block'}`}>
         <div className="mx-auto flex min-h-8 max-w-7xl items-center justify-center gap-x-5 gap-y-1 px-4 py-1 text-xs font-semibold sm:justify-end sm:px-6 lg:px-8">
           <a
             href="mailto:info@websitework4less.com"
@@ -108,7 +113,7 @@ export default function Navbar() {
           </a>
         </div>
       </div>
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-20">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 h-16 lg:h-20">
         {/* Logo */}
         <Link to="/" className="relative z-[70] flex items-center">
           <Logo className="h-12 sm:h-14" />
@@ -284,7 +289,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Overlay */}
         <div
-          className={`fixed inset-0 z-[60] transition-all duration-300 ease-[var(--ease-out-premium)] lg:hidden ${
+          className={`fixed inset-0 z-[60] flex flex-col transition-all duration-300 ease-[var(--ease-out-premium)] lg:hidden ${
             mobileOpen
               ? 'opacity-100 pointer-events-auto'
               : 'opacity-0 pointer-events-none'
@@ -293,7 +298,11 @@ export default function Navbar() {
             backgroundColor: isDark ? 'hsl(220, 40%, 4%)' : 'hsl(220, 20%, 98%)',
           }}
         >
-          <div className="flex h-full w-full flex-col items-center justify-start gap-5 px-6 pt-28 pb-12 overflow-y-auto">
+          {/* Spacer for fixed navbar header height */}
+          <div className="h-16 shrink-0 border-b border-border/40" />
+
+          {/* Scrollable menu items container */}
+          <div className="flex-1 w-full overflow-y-auto px-6 pt-1 pb-8 flex flex-col items-center justify-start gap-3.5">
             {navLinks.map((link, index) => (
               <div
                 key={link.path}
@@ -309,6 +318,7 @@ export default function Navbar() {
                     <div className="flex items-center justify-center gap-2">
                       <Link
                         to={link.path}
+                        onClick={() => setMobileOpen(false)}
                         className={`text-2xl font-semibold ${
                           isServicesActive ? 'text-accent' : 'text-text-primary hover:text-accent'
                         }`}
@@ -343,6 +353,7 @@ export default function Navbar() {
                       <div className="mt-3 flex w-full flex-col items-center gap-2 rounded-xl bg-surface-muted/60 p-3">
                         <Link
                           to="/services"
+                          onClick={() => setMobileOpen(false)}
                           className={`text-sm font-semibold transition-colors ${
                             location.pathname === '/services'
                               ? 'text-accent'
@@ -356,6 +367,7 @@ export default function Navbar() {
                           <Link
                             key={page.slug}
                             to={`/${page.slug}`}
+                            onClick={() => setMobileOpen(false)}
                             className={`text-sm font-medium transition-colors ${
                               location.pathname === `/${page.slug}`
                                 ? 'text-accent font-semibold'
@@ -371,6 +383,7 @@ export default function Navbar() {
                 ) : (
                   <Link
                     to={link.path}
+                    onClick={() => setMobileOpen(false)}
                     className={`text-2xl font-semibold ${
                       location.pathname === link.path
                         ? 'text-accent'
@@ -391,7 +404,7 @@ export default function Navbar() {
               }`}
               style={{ transitionDelay: `${navLinks.length * 50}ms` }}
             >
-              <Button as="link" to="/contact" size="lg" className="w-full text-center justify-center">
+              <Button as="link" to="/contact" onClick={() => setMobileOpen(false)} size="lg" className="w-full text-center justify-center">
                 Get Started
               </Button>
             </div>
