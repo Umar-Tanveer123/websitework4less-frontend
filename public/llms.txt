@@ -1,11 +1,11 @@
 # Website Work 4 Less
 
-> Website Work 4 Less is a digital marketing, web design, and web development company serving Lakewood, New Jersey and businesses throughout the United States.
+> Website Work 4 Less is a digital marketing, web design, and web development company serving businesses throughout New Jersey and the United States.
 
 Website: https://websitework4less.com/
 Contact: info@websitework4less.com
 Phone: +1-848-368-8867
-Service area: Lakewood, New Jersey, United States
+Service area: New Jersey, United States
 Sitemap: https://websitework4less.com/sitemap.xml
 
 ## Primary pages
@@ -19,14 +19,36 @@ Sitemap: https://websitework4less.com/sitemap.xml
 
 ## Service pages
 
-- [Web Development](https://websitework4less.com/web-development-services-lakewood/): Custom websites focused on performance, security, scalability, and user experience.
-- [Web Design](https://websitework4less.com/web-design-services-lakewood/): Responsive, user-friendly website design for businesses in and around Lakewood.
-- [eCommerce Development](https://websitework4less.com/ecommerce-web-development-services-lakewood/): Scalable online-store development and eCommerce functionality.
-- [eCommerce Website Design](https://websitework4less.com/ecommerce-website-design-services-lakewood/): Conversion-focused shopping experiences and storefront design.
-- [Search Engine Optimization (SEO)](https://websitework4less.com/seo-services-lakewood/): SEO strategies for visibility, qualified traffic, and sustainable growth.
-- [Local SEO](https://websitework4less.com/local-seo-services-lakewood/): Local search optimization for reaching nearby customers.
-- [Pay Per Click (PPC) Marketing](https://websitework4less.com/pay-per-click-services-lakewood/): Targeted paid-search campaign strategy and management.
-- [Social Media Marketing (SMM)](https://websitework4less.com/social-media-marketing-services-lakewood/): Organic and paid social media strategy, content, and campaign management.
+- [Web Development](https://websitework4less.com/web-development-nj/): Responsive, reliable website development focused on performance and future growth.
+- [Web Design](https://websitework4less.com/web-design-nj/): Clean, intuitive website design that reflects the brand and supports visitor action.
+- [Search Engine Optimization (SEO)](https://websitework4less.com/seo-nj/): SEO strategies for relevant traffic, organic visibility, and sustainable growth.
+- [Local SEO](https://websitework4less.com/local-seo-nj/): Local search optimization that helps nearby customers discover a business.
+- [Pay Per Click (PPC) Marketing](https://websitework4less.com/ppc-management-nj/): Targeted paid-search campaign strategy, tracking, and management.
+- [Social Media Marketing (SMM)](https://websitework4less.com/social-media-marketing-nj/): Audience-focused content and targeted social campaign management.
+
+## Newark service pages
+
+- [Digital Marketing in Newark](https://websitework4less.com/nj/essex-county/digital-marketing-newark/): Connected digital strategy for businesses serving Newark customers.
+- [Web Development in Newark](https://websitework4less.com/nj/essex-county/web-development-newark/): Responsive website development and custom web solutions for Newark businesses.
+- [Web Design in Newark](https://websitework4less.com/nj/essex-county/web-design-newark/): Customer-focused, responsive website design for Newark businesses.
+- [SEO in Newark](https://websitework4less.com/nj/essex-county/seo-newark/): Organic and local search optimization for businesses serving Newark.
+- [Local SEO in Newark](https://websitework4less.com/nj/essex-county/local-seo-company-newark/): Google Business Profile, citation, and local search optimization for Newark businesses.
+- [PPC Management in Newark](https://websitework4less.com/nj/essex-county/ppc-management-newark/): Structured paid-search campaign management for the Newark market.
+- [Social Media Marketing in Newark](https://websitework4less.com/nj/essex-county/social-media-marketing-newark/): Content, social advertising, and ongoing account management for Newark businesses.
+
+## East Orange service pages
+
+- [Digital Marketing in East Orange](https://websitework4less.com/nj/essex-county/digital-marketing-east-orange/): Connected digital strategy for businesses serving East Orange customers.
+- [Web Development in East Orange](https://websitework4less.com/nj/essex-county/web-development-east-orange/): Responsive website development and custom web solutions for East Orange businesses.
+- [Web Design in East Orange](https://websitework4less.com/nj/essex-county/web-design-east-orange/): Customer-focused, responsive website design for East Orange businesses.
+- [SEO in East Orange](https://websitework4less.com/nj/essex-county/seo-east-orange/): Organic and local search optimization for businesses serving East Orange.
+- [Local SEO in East Orange](https://websitework4less.com/nj/essex-county/local-seo-company-east-orange/): Google Business Profile, citation, and local search optimization for East Orange businesses.
+- [PPC Management in East Orange](https://websitework4less.com/nj/essex-county/ppc-management-east-orange/): Structured paid-search campaign management for the East Orange market.
+- [Social Media Marketing in East Orange](https://websitework4less.com/nj/essex-county/social-media-marketing-east-orange/): Content, social advertising, and ongoing account management for East Orange businesses.
+
+## Lakewood digital marketing
+
+- [Digital Marketing in Lakewood](https://websitework4less.com/nj/ocean-county/digital-marketing-lakewood/): Digital marketing, web, SEO, PPC, and social media services for Lakewood businesses.
 
 ## Content guidance
 

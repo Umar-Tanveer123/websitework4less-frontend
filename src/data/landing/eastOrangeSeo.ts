@@ -1,0 +1,95 @@
+import type { ServiceLanding } from './types';
+
+export const eastOrangeSeo: ServiceLanding = {
+  slug: 'nj/essex-county/seo-east-orange',
+  navLabel: 'SEO in East Orange',
+  seo: {
+    title: 'SEO East Orange | SEO Company & Services | Website Work 4 Less',
+    description: 'Our East Orange SEO company help local businesses rank higher on Google. On-page, technical & local SEO with clear reporting and no hidden costs.',
+    keywords: ['seo east orange', 'east orange seo', 'seo company east orange', 'east orange nj seo company', 'seo east orange nj', 'east orange seo company', 'seo company east orange nj', 'seo agency east orange', 'seo expert east orange', 'seo services east orange'],
+    schemaDescription: 'Website Work 4 Less provides SEO in East Orange to help businesses improve organic and local search visibility. Our services combine keyword research, content improvements, technical optimization, local search strategies, and performance tracking around each business and its customers.',
+    serviceType: 'Search Engine Optimization',
+    areaServed: { type: 'City', name: 'East Orange' },
+  },
+  hero: {
+    eyebrow: 'SEO in East Orange, NJ',
+    h1: 'SEO in East Orange That Helps Local Customers Find Your Business',
+    intro: ['Having a website is only part of building an online presence. If prospective customers cannot find your pages when they search for products or services, your website may generate little business value regardless of how strong your offer is.', 'Website Work 4 Less provides SEO in East Orange to help businesses improve their organic and local search presence. We combine keyword research, content improvements, technical optimization, local search strategies, and performance tracking to create a practical foundation for sustainable visibility.'],
+    highlights: ['Local Search Knowledge', 'Clear Performance Reporting', 'Strategies Aligned With Your Business'],
+    ctaLabel: 'Get a Free Consultation',
+  },
+  value: {
+    heading: 'Turn Online Searches into Greater Business Visibility',
+    body: ['Search engines evaluate more than whether a webpage contains particular keywords. Content quality, relevance, website structure, usability, authority, local information, and other signals can influence how pages are presented to searchers.', 'Our East Orange SEO strategy considers these factors together. We examine your current website, understand what customers are searching for, assess competing businesses, and identify where optimization can create useful opportunities.'],
+    bullets: ['Research search phrases related to your services and offerings', 'Rework important pages to provide clearer answers', 'Build stronger relevance for East Orange-related searches', 'Resolve technical problems that interfere with crawling or usability', 'Develop content that demonstrates knowledge and supports your services', 'Review results regularly and change priorities when necessary'],
+    outro: 'There is no universal SEO formula that works equally well for every company. Your campaign should reflect your industry, audience, competition, and goals.',
+  },
+  pricing: {
+    heading: 'Clear SEO Support Without Complicated Explanations',
+    body: ['Marketing reports should help you understand your investment. As an SEO company in East Orange, we communicate the work in practical terms and explain how individual activities relate to broader objectives.'],
+    bullets: ['Defined deliverables before optimization begins', 'Cost-conscious options based on your business requirements', 'Payment arrangements that offer greater flexibility', 'Recurring reports focused on useful performance information', 'Adjustments when priorities, audiences, or market conditions change'],
+    outro: 'Rather than overwhelming you with disconnected statistics, we provide context around the work being performed and the progress being observed.',
+    ctaLabel: 'Discuss Your SEO Strategy',
+  },
+  problem: {
+    heading: 'Why Organic Search Visibility Can Influence Customer Decisions',
+    body: ['When someone needs a nearby service, they may search online before contacting a company. They can compare websites, read reviews, examine services, and assess which businesses appear relevant.', 'Effective SEO in East Orange, NJ can help close that visibility gap by making relevant pages easier for search engines and potential customers to locate.'],
+    bullets: ['Help repair providers reach nearby residents searching for assistance', 'Connect healthcare practices with people researching treatments', 'Help retailers attract shoppers looking for nearby products', 'Support professional firms reaching people seeking specialized local expertise'],
+    outro: 'Search visibility alone cannot guarantee enquiries or sales, but appearing when people are actively researching relevant solutions creates more opportunities to enter their consideration.',
+  },
+  included: {
+    heading: 'Our SEO Services in East Orange',
+    intro: 'Search optimization works best when technical, content, keyword, and local improvements support one another.',
+    items: [
+      { title: 'Local Search Optimization', desc: 'We strengthen location-related information, business details, and local signals that can help East Orange customers find your company.' },
+      { title: 'On-Site Optimization', desc: 'We improve headings, page titles, content structure, internal links, and other elements that help users and search engines interpret important pages.' },
+      { title: 'Technical Website SEO', desc: 'We look for obstacles involving architecture, crawling, loading performance, mobile functionality, indexing, and related technical factors.' },
+      { title: 'Search Term Research', desc: 'We identify the phrases, questions, and topics customers use when researching your products or services.' },
+      { title: 'Content Enhancement', desc: 'Existing copy can be strengthened while new material is developed around useful topics, expertise, and customer questions.' },
+      { title: 'Results Monitoring', desc: 'You receive understandable updates covering relevant search visibility, traffic, and other indicators that guide next steps.' },
+    ],
+  },
+  process: {
+    heading: 'Our Process for Managing Your SEO Campaign',
+    intro: 'Research informs planning, implementation follows those priorities, and performance information guides future decisions.',
+    steps: [
+      { title: 'Website & Market Review', desc: 'We examine your website, competitors, industry, existing search presence, audience, and customer behavior to uncover areas that may deserve attention.' },
+      { title: 'Strategy Development', desc: 'We organize potential improvements according to their relevance to your goals and establish a practical sequence for the work.' },
+      { title: 'Search Optimization', desc: 'Relevant pages, content, technical concerns, and local signals are improved according to the agreed strategy.' },
+      { title: 'Progress Analysis', desc: 'We evaluate useful indicators such as organic traffic, search visibility, rankings, and other relevant data.' },
+      { title: 'Ongoing Refinement', desc: 'We use campaign information to determine which areas require additional attention or a different approach as search behavior changes.' },
+    ],
+  },
+  industries: {
+    heading: 'Search Strategies for Different East Orange Businesses',
+    intro: 'Different industries attract customers through different types of searches, so the work adapts to your services, audience, and market.',
+    items: [
+      { title: 'Home Improvement & Property Services', desc: 'Service and location combinations can connect contractors and similar providers with relevant local searches.' },
+      { title: 'Healthcare & Personal Wellness', desc: 'Informative content can organize treatments and services around the questions prospective patients research.' },
+      { title: 'Shops & Online Retailers', desc: 'SEO can connect product, category, brand, location, and purchasing-intent searches with useful pages.' },
+      { title: 'Lawyers & Professional Specialists', desc: 'Informative content can demonstrate knowledge while reaching people searching for specialized assistance.' },
+      { title: 'Restaurants & Local Hospitality', desc: 'Accurate business information, relevant content, and location signals can support local discovery.' },
+      { title: 'Startups & Expanding Companies', desc: 'Search research and scalable structures can support new services, markets, and future content.' },
+    ],
+  },
+  whyUs: {
+    heading: 'Why Businesses Choose Our SEO Team',
+    intro: 'Effective optimization depends on how closely the strategy reflects your company, customers, competition, and commercial priorities.',
+    bullets: ['Evidence-led recommendations: Research informs decisions before changes are proposed.', 'Useful optimization: We prioritize activities that have a clear reason for being completed.', 'Open communication: You receive understandable explanations about the work and its purpose.', 'Continual evaluation: Performance information helps shape future campaign priorities.', 'Business-focused planning: Search visibility remains connected to meaningful customer opportunities.'],
+  },
+  results: { heading: 'Practical SEO With Understandable Reporting', body: 'Our approach keeps attention on useful website improvements, informed decisions, measurable activity, and long-term visibility rather than shortcuts.' },
+  finalCta: {
+    heading: 'Ready to Strengthen Your Search Presence?',
+    body: ['Tell us what your business offers, which customers you want to reach, and what your website currently achieves. We will help create a search strategy designed around your market, website, and growth objectives.'],
+    ctaLabel: 'Request an SEO Consultation',
+  },
+  faqs: [
+    { q: 'How can SEO support a business serving East Orange customers?', a: 'SEO can improve the ability of relevant customers to locate your website through organic searches. Local optimization, service-focused pages, useful content, technical improvements, and location signals can all contribute to a stronger search presence.' },
+    { q: 'Does my business need SEO if most of my customers come from East Orange?', a: 'Local customers still use search engines to compare nearby businesses, research services, and find contact information. Optimizing for relevant local searches can help your company remain visible while they consider their options.' },
+    { q: 'Can SEO help a newly launched East Orange website?', a: 'Yes. Starting early can establish a useful website structure, target relevant search terms, address technical requirements, and create content around your core services.' },
+    { q: 'What happens during an initial SEO assessment?', a: 'An assessment can review website structure, existing content, search visibility, technical condition, keywords, competitors, and local presence to identify priorities.' },
+    { q: 'Can you optimize individual service pages?', a: 'Yes. Individual service pages can be reviewed for search intent, page structure, headings, content quality, internal linking, keywords, and user experience.' },
+    { q: 'Is SEO useful for businesses that already receive website traffic?', a: 'Yes. Existing traffic can reveal which pages attract visitors and where opportunities exist. Optimization can strengthen valuable pages, expand relevant topics, and improve customer pathways.' },
+    { q: 'How does competition in East Orange affect an SEO strategy?', a: 'Competition influences which search terms are realistic targets and how much work may be required. Reviewing competing websites and results can reveal gaps and useful opportunities.' },
+  ],
+};

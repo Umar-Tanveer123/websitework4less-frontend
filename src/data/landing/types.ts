@@ -18,13 +18,13 @@ export interface FaqItem {
 }
 
 /**
- * All content for one Lakewood service landing page. Every page in the set
+ * All content for one service landing page. Every page in the set
  * shares this exact shape, which is why a single template can render them all.
  * Body fields are ReactNode so the authored copy can embed internal <Link>s
  * exactly where the source document places them.
  */
 export interface ServiceLanding {
-  /** URL slug, e.g. 'web-development-services-lakewood' (no leading/trailing slash). */
+  /** URL slug, e.g. 'web-development-nj' (no leading/trailing slash). */
   slug: string;
 
   /** Short label for navigation menus (navbar dropdown + footer). */
@@ -38,6 +38,8 @@ export interface ServiceLanding {
     schemaDescription: string;
     /** serviceType used in the Service JSON-LD (e.g. 'Web Development'). */
     serviceType: string;
+    /** Defaults to Lakewood when omitted. */
+    areaServed?: { type: 'City' | 'State'; name: string };
   };
 
   hero: {

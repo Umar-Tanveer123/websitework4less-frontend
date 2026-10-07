@@ -1,0 +1,95 @@
+import type { ServiceLanding } from './types';
+
+export const eastOrangePpc: ServiceLanding = {
+  slug: 'nj/essex-county/ppc-management-east-orange',
+  navLabel: 'PPC Management in East Orange',
+  seo: {
+    title: 'PPC Management Agency in East Orange | Website Work 4 Less',
+    description: 'Get PPC management & advertising services in East Orange, NJ. Google Ads campaigns built, tracked & tuned to cut wasted spend & deliver qualified local leads.',
+    keywords: ['ppc management east orange', 'pay per click services near me', 'pay per click advertising near me', 'ppc advertising services near me', 'ppc management agency near me', 'ppc management company near me', 'ppc agency east orange', 'ppc advertising services east orange', 'ppc services east orange', 'ppc management agency east orange'],
+    schemaDescription: 'Website Work 4 Less provides PPC management in East Orange for businesses that need focused paid-search advertising. Our services combine audience targeting, keyword and search-query management, relevant ad messaging, landing-page alignment, controlled spending, conversion measurement, and ongoing optimization.',
+    serviceType: 'PPC Management',
+    areaServed: { type: 'City', name: 'East Orange' },
+  },
+  hero: {
+    eyebrow: 'PPC Management in East Orange, NJ',
+    h1: 'PPC Management in East Orange That Helps Turn Clicks into Customers',
+    intro: ['Paid search can bring immediate visibility, but visibility alone does not guarantee useful results. Poor targeting, weak landing pages, irrelevant searches, or uncontrolled spending can quickly reduce a campaign\'s value.', 'Website Work 4 Less connects advertisements with people who have a genuine reason to take action. We bring together audience targeting, relevant messaging, conversion measurement, and continuous improvements to give paid advertising a clearer purpose.'],
+    highlights: ['Focused Search Advertising', 'Controlled Campaign Spending', 'Conversion-Oriented Planning'],
+    ctaLabel: 'Get a Free Consultation',
+  },
+  value: {
+    heading: 'Put Your Advertising in Front of Relevant Searchers',
+    body: ['PPC performs best when search intent matches the offer, advertisements communicate value quickly, and landing pages make the desired action straightforward. We manage these as connected parts of one campaign.'],
+    bullets: ['Identify searches closely related to your products and services', 'Filter broad or unsuitable searches that may waste funds', 'Organize campaigns and ad groups around specific customer needs', 'Develop copy that reflects what prospective customers are searching for', 'Send visitors to appropriate product or service pages', 'Track valuable conversions so decisions reflect business outcomes'],
+    outro: 'Campaigns can be organized around phone calls, consultation requests, appointments, purchases, forms, or another measurable action that matters to your business.',
+  },
+  pricing: {
+    heading: 'Understand How Your Paid Search Budget Is Being Used',
+    body: ['Advertising becomes harder to control when business owners cannot see where their money is going. We provide useful information about spending, performance, and the decisions being made.'],
+    bullets: ['Campaign recommendations based on your audience and commercial priorities', 'Budget allocation designed around your available investment', 'Regular account oversight instead of unattended advertising', 'Reporting focused on meaningful performance information', 'Changes to keywords, ads, targeting, or campaigns when results indicate a need'],
+    outro: 'The purpose of reporting is to make advertising easier to understand and give you a clearer basis for future decisions.',
+    ctaLabel: 'Discuss Your PPC Campaign',
+  },
+  problem: {
+    heading: 'A Paid Click Matters When It Supports a Business Goal',
+    body: ['A person clicking an advertisement is not automatically a qualified prospect. Some visitors may only be researching, others may misunderstand the offer, and broad searches can attract people who have no intention of becoming customers.', 'Effective pay per click advertising considers the complete customer journey instead of focusing exclusively on click volume.'],
+    bullets: ['Prevent service providers paying for do-it-yourself research searches', 'Connect ecommerce product searches with convenient purchasing pages', 'Reduce broad professional-service traffic that does not generate suitable enquiries', 'Align search terms, exclusions, ads, audiences, destinations, and conversion measurement'],
+    outro: 'The important question is whether visitors match the intended audience and whether their actions contribute something valuable to the business.',
+  },
+  included: {
+    heading: 'Our Pay Per Click Services in East Orange',
+    intro: 'Successful advertising requires more than opening an account and publishing a few ads. We cover the key areas involved in building, monitoring, and improving paid search.',
+    items: [
+      { title: 'Campaign Research & Structure', desc: 'We examine your market, competitors, offers, customer intent, and objectives before organizing campaigns and ad groups.' },
+      { title: 'Keyword & Search Query Management', desc: 'We identify valuable searches while excluding terms unlikely to attract suitable prospects or support campaign goals.' },
+      { title: 'Advertisement Creation', desc: 'Ad messaging communicates relevant benefits, reflects search intent, and gives people a useful reason to continue.' },
+      { title: 'Landing Page Relevance', desc: 'We consider whether destination pages support the ad message and make the next action clear.' },
+      { title: 'Bid & Spending Management', desc: 'We monitor account activity and adjust bids and budgets to keep spending aligned with campaign priorities.' },
+      { title: 'Conversion Measurement & Reporting', desc: 'Calls, enquiries, purchases, appointments, and forms can be measured so performance goes beyond basic traffic.' },
+    ],
+  },
+  process: {
+    heading: 'How We Build and Manage Your PPC Campaign',
+    intro: 'Effective paid search develops through research, implementation, testing, analysis, and repeated refinement.',
+    steps: [
+      { title: 'Business Discovery', desc: 'We learn about your company, customers, services, competitors, budget, target locations, and desired outcomes.' },
+      { title: 'Campaign Strategy', desc: 'We establish campaign organization, audience targeting, keyword themes, ad direction, geographic settings, and conversion actions.' },
+      { title: 'Account Development', desc: 'We build campaigns, ad groups, advertisements, keyword selections, exclusions, targeting, and tracking.' },
+      { title: 'Launch Observation', desc: 'We review early activity for irrelevant searches, inefficient spending, weak ads, poor audience matches, or other issues.' },
+      { title: 'Ongoing Optimization', desc: 'Performance information guides changes to targeting, bids, search terms, ads, budgets, and other components.' },
+    ],
+  },
+  industries: {
+    heading: 'Paid Advertising Strategies for Different East Orange Businesses',
+    intro: 'Campaigns are shaped around the outcome most relevant to your business, whether that is a call, appointment, enquiry, or online purchase.',
+    items: [
+      { title: 'Home Services & Contractors', desc: 'Service-focused and geographic targeting can help generate qualified enquiries from defined coverage areas.' },
+      { title: 'eCommerce Companies', desc: 'Product searches can connect with appropriate shopping pages through clear campaign organization.' },
+      { title: 'Medical & Wellness Providers', desc: 'Campaigns can focus on relevant treatment, appointment, and service searches.' },
+      { title: 'Professional Service Providers', desc: 'Specific targeting can keep spending centered on valuable services and suitable audiences.' },
+      { title: 'Real Estate Professionals', desc: 'Campaigns can address neighborhoods, property categories, and distinct buyer or seller needs.' },
+      { title: 'Local Stores & Service Companies', desc: 'Geographic targeting and service-focused advertising can reach people actively seeking nearby providers.' },
+    ],
+  },
+  whyUs: {
+    heading: 'Why Businesses Choose Our PPC Management Company in East Orange',
+    intro: 'Paid search requires active attention. Our approach emphasizes campaign visibility, spending control, useful data, and ongoing improvement.',
+    bullets: ['Campaign structures developed around specific services, audiences, and objectives', 'Close attention to irrelevant searches and avoidable advertising expenditure', 'Advertisement messaging connected to genuine customer intent', 'Performance reviews that support informed account decisions', 'Clear explanations about campaign activity, results, and required changes'],
+  },
+  results: { heading: 'Paid Advertising That Learns from Performance', body: 'The aim is to create an advertising system that improves from useful account information instead of repeatedly rebuilding campaigns without learning from the data already collected.' },
+  finalCta: {
+    heading: 'Put Your Paid Search Investment to Work',
+    body: ['Tell us about your business, target customers, service area, advertising goals, and current campaign challenges. We will help create a paid search strategy around the actions that matter most to your company.'],
+    ctaLabel: 'Request a PPC Consultation',
+  },
+  faqs: [
+    { q: 'What is included in PPC management for an East Orange business?', a: 'PPC management can cover keyword research, campaign organization, audience and location targeting, ad development, search-term review, negative keywords, budget management, conversion tracking, analysis, and ongoing adjustments.' },
+    { q: 'Can PPC advertising reach customers specifically in East Orange?', a: 'Yes. Geographic targeting can focus advertisements on East Orange and other genuine service areas, depending on the platform and campaign configuration.' },
+    { q: 'How can I reduce wasted clicks on my PPC campaigns?', a: 'Refining keyword targeting, reviewing search queries, adding negative keywords, improving ad relevance, narrowing audiences, and using closely matched landing pages can reduce irrelevant traffic.' },
+    { q: 'Should my landing page be different from my homepage?', a: 'Often, yes. A focused landing page can create a more direct connection between the service or offer in an advertisement and what a visitor sees after clicking.' },
+    { q: 'Can PPC work for a business with a limited advertising budget?', a: 'A smaller budget can support a focused campaign when targeting, keywords, geographic settings, and conversion goals are carefully defined. Appropriate investment depends on competition, customer value, and search demand.' },
+    { q: 'What is the role of negative keywords in paid advertising?', a: 'Negative keywords prevent advertisements from appearing for searches unlikely to produce suitable visitors, helping direct more budget toward relevant searches.' },
+    { q: 'Can PPC campaigns target different East Orange services separately?', a: 'Yes. Separate campaigns or ad groups make it easier to align keywords, ads, landing pages, budgets, and conversion goals with distinct services.' },
+  ],
+};

@@ -1732,7 +1732,7 @@ const seoSmallBusinessGuideContent = `
 
 <h2>How We Approach SEO for Small Businesses</h2>
 <p>Every business is different, which is why we never rely on a generic, one-size-fits-all template. Instead, we take the time to understand your specific goals, audience, and competitive landscape before building a strategy around them.</p>
-<p>If you would like a closer look at how we structure our approach, we invite you to explore our <a href="/seo-services-lakewood">SEO services page</a>, where we outline exactly how we combine organic traffic growth, Google rankings improvement, and website optimization into one cohesive strategy built around measurable results.</p>
+<p>If you would like a closer look at how we structure our approach, we invite you to explore our <a href="/seo-nj">SEO services page</a>, where we outline exactly how we combine organic traffic growth, Google rankings improvement, and website optimization into one cohesive strategy built around measurable results.</p>
 <p>We believe transparency matters just as much as technical expertise. That is why we prioritize clear reporting, honest timelines, and ongoing communication throughout every project we take on. We would rather set realistic expectations from the start than promise results we cannot consistently deliver.</p>
 
 <h2>Let's Build Your SEO Strategy Together</h2>
@@ -1833,7 +1833,7 @@ const localSeoAgencyContent = `
 
 <h2>Why Businesses Choose to Work With Us</h2>
 <p>Choosing the right local SEO agency is a significant decision, and we understand why businesses take it seriously. We have built our reputation on transparent communication, measurable results, and strategies tailored specifically to each client's market. We know that trust is earned through consistency, not promises, which is why we focus on steady, demonstrable progress from the very first month.</p>
-<p>If you want to see exactly how we structure our services, we invite you to explore our <a href="/local-seo-services-lakewood">local SEO services page</a>, where we break down our full approach to neighborhood SEO, local visibility, and long-term growth strategies designed around your specific business goals.</p>
+<p>If you want to see exactly how we structure our services, we invite you to explore our <a href="/local-seo-nj">local SEO services page</a>, where we break down our full approach to neighborhood SEO, local visibility, and long-term growth strategies designed around your specific business goals.</p>
 <p>We do not believe in one-size-fits-all packages. Instead, we take the time to understand your competitive landscape, target audience, and growth goals before recommending a strategy tailored specifically to your situation.</p>
 
 <h2>Measuring Success: What Real Growth Looks Like</h2>
