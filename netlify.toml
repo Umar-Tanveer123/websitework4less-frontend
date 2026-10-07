@@ -6,6 +6,54 @@
   NPM_FLAGS = "--legacy-peer-deps"
 
 [[redirects]]
+  from = "/web-development-services-lakewood"
+  to = "/nj/ocean-county/web-development-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/web-design-services-lakewood"
+  to = "/nj/ocean-county/web-design-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ecommerce-web-development-services-lakewood"
+  to = "/nj/ocean-county/ecommerce-web-design-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/ecommerce-website-design-services-lakewood"
+  to = "/nj/ocean-county/ecommerce-web-development-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/seo-services-lakewood"
+  to = "/nj/ocean-county/seo-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/local-seo-services-lakewood"
+  to = "/nj/ocean-county/local-seo-company-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/pay-per-click-services-lakewood"
+  to = "/nj/ocean-county/ppc-management-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/social-media-marketing-services-lakewood"
+  to = "/nj/ocean-county/social-media-marketing-lakewood/"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

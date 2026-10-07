@@ -21,6 +21,7 @@ import {
 } from '../components/Icons';
 import type { ServiceLanding, TitledItem, FaqItem } from '../data/landing/types';
 import { serviceSchemaDescriptions } from '../data/schemaDescriptions';
+import { newJerseyServiceAreas } from '../data/newJerseyServiceAreas';
 
 const SITE = 'https://websitework4less.com';
 
@@ -156,9 +157,9 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
   const canonical = `${SITE}/${content.slug}/`;
 
   // Per-page SEO: title, meta description, keywords, canonical, and JSON-LD
-  // (LocalBusiness + Service offer + FAQPage + BreadcrumbList).
+  // (Service + FAQPage + BreadcrumbList).
   useEffect(() => {
-    const DEFAULT_TITLE = 'Digital Marketing Lakewood - Digital Marketing Agency';
+    const DEFAULT_TITLE = 'Digital Marketing Agency in NJ | Website Work 4 Less';
     document.title = content.seo.title;
 
     const upsertMeta = (name: string, value: string) => {
@@ -188,9 +189,62 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
 
     const schemaDescription =
       serviceSchemaDescriptions[content.slug] ?? content.seo.schemaDescription;
+    const isStatewideNewJersey =
+      content.seo.areaServed?.type === 'State' && content.seo.areaServed.name === 'New Jersey';
+    const areaServed =
+      isStatewideNewJersey
+        ? newJerseyServiceAreas
+      : content.seo.areaServed
+      ? {
+          '@type': content.seo.areaServed.type,
+          name: content.seo.areaServed.name,
+          ...(content.seo.areaServed.type === 'City' &&
+          ['Newark', 'East Orange'].includes(content.seo.areaServed.name)
+            ? {
+                containedInPlace: {
+                  '@type': 'AdministrativeArea',
+                  name: 'Essex County, New Jersey',
+                },
+              }
+            : {}),
+        }
+      : {
+          '@type': 'City',
+          name: 'Lakewood',
+          containedInPlace: { '@type': 'State', name: 'New Jersey' },
+        };
+    const serviceSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      '@id': `${canonical}#service`,
+      name: content.seo.serviceType,
+      serviceType: content.seo.serviceType,
+      url: canonical,
+      description: schemaDescription,
+      keywords: content.seo.keywords.join(', '),
+      areaServed,
+      provider: {
+        '@type': 'Organization',
+        '@id': `${SITE}/#organization`,
+        name: 'Website Work 4 Less',
+        url: `${SITE}/`,
+        image: `${SITE}/projects/project5.png`,
+        telephone: '+1-848-368-8867',
+        email: 'info@websitework4less.com',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '750 Forest Ave',
+          addressLocality: 'Lakewood',
+          addressRegion: 'NJ',
+          postalCode: '08701',
+          addressCountry: 'US',
+        },
+      },
+    };
+
     const localBusinessSchema = {
       '@context': 'https://schema.org',
-      '@type': 'LocalBusiness',
+      '@type': ['LocalBusiness', 'ProfessionalService'],
       '@id': `${canonical}#local-business`,
       name: 'Website Work 4 Less',
       url: canonical,
@@ -207,11 +261,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
         postalCode: '08701',
         addressCountry: 'US',
       },
-      areaServed: {
-        '@type': 'City',
-        name: 'Lakewood',
-        containedInPlace: { '@type': 'State', name: 'New Jersey' },
-      },
+      areaServed,
       parentOrganization: {
         '@type': 'Organization',
         '@id': `${SITE}/#organization`,
@@ -270,7 +320,10 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       s.textContent = JSON.stringify(data);
       document.body.appendChild(s);
     };
-    addSchema('landing-local-business-schema', localBusinessSchema);
+    const primarySchemaId = isStatewideNewJersey
+      ? 'landing-service-schema'
+      : 'landing-local-business-schema';
+    addSchema(primarySchemaId, isStatewideNewJersey ? serviceSchema : localBusinessSchema);
     addSchema('landing-faq-schema', faqSchema);
     addSchema('landing-breadcrumb-schema', breadcrumbSchema);
 
@@ -280,7 +333,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
       upsertMeta('keywords', prevKeywords);
       if (createdCanonical) canonicalEl?.remove();
       else canonicalEl?.setAttribute('href', prevCanonical);
-      document.getElementById('landing-local-business-schema')?.remove();
+      document.getElementById(primarySchemaId)?.remove();
       document.getElementById('landing-faq-schema')?.remove();
       document.getElementById('landing-breadcrumb-schema')?.remove();
     };

@@ -7,9 +7,9 @@ import Button from '../components/Button';
 import Card from '../components/Card';
 import { AnimatedSection, useStaggerReveal } from '../hooks/useAnimations';
 import { usePageSeo } from '../hooks/usePageSeo';
-import { services } from '../data/services';
+import { lakewoodServices as services } from '../data/lakewoodServices';
+import { organizationSchemaDescription } from '../data/schemaDescriptions';
 import { projects } from '../data/portfolio';
-import { newJerseyServiceAreas } from '../data/newJerseyServiceAreas';
 import {
   ChatBubbleIcon,
   LightBulbIcon,
@@ -25,30 +25,30 @@ const processSteps = [
   {
     step: '01',
     icon: <ChatBubbleIcon className="h-7 w-7" />,
-    title: 'Discovery & Consultation',
+    title: 'Discovery',
     description:
-      'We start by learning about your business, customers, competitors, current online presence, and the results you want to achieve. This gives our digital marketing consultant in NJ the information needed to recommend the right direction.',
+      'To begin, our digital marketing consultant in Lakewood learns about your business goals, target audience, and project requirements through in-depth consultation.',
   },
   {
     step: '02',
     icon: <LightBulbIcon className="h-7 w-7" />,
-    title: 'Planning & Creative Direction',
+    title: 'Strategy & Design',
     description:
-      'Once we understand your requirements, we establish the structure, messaging, visual direction, marketing priorities, and functionality needed for the project.',
+      'Our team creates wireframes and high-fidelity designs aligned with your brand identity and user needs.',
   },
   {
     step: '03',
     icon: <WrenchScrewdriverIcon className="h-7 w-7" />,
-    title: 'Build & Implementation',
+    title: 'Development',
     description:
-      'Our development and marketing teams turn the strategy into a working digital experience using modern tools, responsive design principles, and performance-focused practices.',
+      'We build your site with clean, performant code using modern frameworks and best practices.',
   },
   {
     step: '04',
     icon: <RocketLaunchIcon className="h-7 w-7" />,
-    title: 'Launch, Measure & Improve',
+    title: 'Launch & Support',
     description:
-      'Before launch, we test the completed work across key devices and user experiences. Once live, we can continue supporting your digital presence and identify opportunities for ongoing improvement.',
+      'After thorough testing, we launch your site and provide ongoing support to ensure continued success.',
   },
 ];
 
@@ -64,6 +64,14 @@ const clientLogos = [
   'Jrv International',
 ];
 
+const rotatingPhrases = [
+  'Engineer Your Vision',
+  'Deploy Scalable Code',
+  'Scale Your Business',
+  'Architect Elite Apps',
+  'Deliver Real Results',
+];
+
 const stats = [
   { value: '200+', label: 'Projects Delivered' },
   { value: '50', label: 'States Served' },
@@ -71,104 +79,104 @@ const stats = [
   { value: '50+', label: 'Team Members' },
 ];
 
+// "Why Choose Us" — from the Lakewood homepage copy. Each entry has a bold lead
+// followed by the supporting sentence.
 const whyChooseUs = [
   {
-    title: 'Quick Project Turnarounds',
+    title: 'Fast turnaround',
     description:
-      'We understand that waiting months for a website can delay your plans. Many projects can be completed within 7 to 14 days, depending on their scope and requirements.',
+      'Most websites are ready to launch in just 7 to 14 days, not months. You won’t be left waiting around while your competitors get ahead.',
   },
   {
-    title: 'Pricing You Can Understand',
+    title: 'Honest, upfront pricing',
     description:
-      "You shouldn't have to decode complicated agency packages to understand your investment. We provide straightforward pricing and clear expectations before work begins.",
+      'You’ll know exactly what you’re paying before we start. No hidden fees, no surprise invoices, no fine print.',
   },
   {
-    title: 'Flexible Ways to Pay',
+    title: 'Flexible payment option',
     description:
-      "Getting your business online shouldn't require a large upfront expense. Our flexible payment options make it easier to start your project while managing your budget.",
+      'Launch your project now and pay overtime. No big upfront commitment standing in your way.',
   },
   {
-    title: '30-Day Money-Back Guarantee',
+    title: 'A real guarantee',
     description:
-      'We stand behind the work we deliver. Our 30-day money-back guarantee provides an additional layer of confidence when starting your project with us.',
+      'Every project comes with a 30-day money-back guarantee. We’re confident in our work, and we want you to feel that confidence too.',
   },
   {
-    title: 'Responsive Communication',
+    title: 'A team that actually responds',
     description:
-      "Questions shouldn't sit unanswered for days. Our team stays accessible throughout the project so you can receive updates and get the information you need.",
+      'No chasing people down for updates. We answer calls and messages quickly, because staying in touch is part of doing the job right.',
   },
 ];
 
 const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[] = [
   {
-    q: 'What does a digital marketing agency in New Jersey do?',
-    a: 'A digital marketing agency helps businesses promote their products or services through online channels such as websites, search engines, paid advertising, social media, and local search. The specific strategy depends on the business, audience, competition, and growth objectives.',
+    q: 'How much does a new website cost?',
+    a: 'Pricing depends on your specific project needs. You’ll get a clear quote before any work begins.',
   },
   {
-    q: 'Which digital marketing services does Website Work 4 Less provide?',
-    a: 'Our services include web design, web development, eCommerce development, SEO, local SEO, PPC marketing, and social media marketing. Businesses can use individual services or combine multiple solutions as part of a broader online growth strategy.',
+    q: 'How long does it take to build a website?',
+    a: 'Most projects are completed within 7 to 14 days. Larger or more complex builds may take a bit longer, and we’ll always give you a realistic timeline upfront.',
   },
   {
-    q: 'How long does it take to see results from digital marketing in New Jersey?',
-    a: 'The timeline depends on the service and starting point. Website improvements can create immediate usability benefits, while SEO typically requires consistent work over time. Paid advertising may generate traffic and leads sooner, depending on targeting, budget, offer, and campaign setup.',
+    q: 'Does your digital marketing agency in Lakewood offer SEO along with web design?',
+    a: 'Yes. We build SEO into your website from the start and offer ongoing SEO services to help you rank higher and attract more local customers.',
+    link: { anchor: 'SEO services', to: '/services' },
   },
   {
-    q: 'Is digital marketing useful for small businesses in NJ?',
-    a: "Yes. Small businesses can use online marketing to build local visibility, attract targeted traffic, generate inquiries, and compete for attention in their market. The strategy should match the company's budget, customer base, location, and specific business goals.",
+    q: 'What happens if I don’t like the design?',
+    a: 'We’ll keep revising until you’re happy with it. Your feedback shapes the final result, and we won’t consider the project done until it feels right to you.',
   },
   {
-    q: 'How much does digital marketing cost in New Jersey?',
-    a: 'There is no single price because digital marketing requirements vary significantly. Costs depend on factors such as the services involved, website scope, advertising budget, competition, and level of ongoing management. A tailored plan provides a more useful estimate than a standard package.',
+    q: 'Are there any hidden fees?',
+    a: 'No. The price we quote is the price you pay. Everything is laid out clearly before we start any work.',
   },
   {
-    q: 'Do I need SEO and PPC at the same time?',
-    a: 'Not necessarily. SEO and PPC serve different purposes. SEO focuses on building organic visibility, while PPC provides paid opportunities to appear in search results and other advertising placements. Depending on your goals, one or both may form part of your marketing strategy.',
+    q: 'Can I pay over time instead of all at once?',
+    a: 'Yes. We offer flexible payment plans so you can launch your project now without a big upfront cost.',
   },
   {
-    q: 'Can you help improve an existing website instead of building a new one?',
-    a: 'Yes. A complete rebuild is not always necessary. Depending on the condition of your current website, improvements may include redesigning key pages, improving mobile usability, strengthening calls to action, increasing speed, updating content, or addressing technical issues.',
+    q: 'Do you only build websites, or do you handle marketing too?',
+    a: 'Both. Alongside web design and development, we offer SEO, social media marketing, content, and digital marketing services to help your business grow online.',
   },
   {
-    q: 'Why should I work with a New Jersey digital marketing agency?',
-    a: 'Working with a New Jersey digital marketing agency can provide access to multiple digital capabilities through one team. This can make it easier to maintain consistent messaging across your website, SEO, advertising, and other online channels while keeping the strategy aligned with your business objectives.',
+    q: 'What happens after my website goes live?',
+    a: 'We don’t disappear after launch. Our team offers ongoing support, updates, and maintenance to keep your site running smoothly.',
+  },
+  {
+    q: 'Do you only work with businesses near Lakewood, NJ?',
+    a: 'Not at all. While we proudly serve local businesses in and around Lakewood, we work with clients across the country too.',
+  },
+  {
+    q: 'How do I get started?',
+    a: 'Just reach out through our contact form or give us a call. We’ll talk through your goals and put together a plan that fits your business and budget.',
   },
 ];
 
+const LAKEWOOD_URL = 'https://websitework4less.com/nj/ocean-county/digital-marketing-lakewood/';
+
 const HOME_SEO = {
-  title: 'Digital Marketing Agency in NJ | Website Work 4 Less',
+  title: 'Digital Marketing Lakewood - Digital Marketing Agency',
   description:
-    'Website Work 4 Less is the trusted digital marketing agency in NJ. Grow your business with web design & development, SEO, PPC & social media services.',
+    'Get expert digital marketing lakewood and digital marketing services to grow your business. Website Work 4 Less delivers customized strategies for lasting results.',
   keywords: [
-    'digital marketing agency nj',
-    'digital marketing nj',
-    'digital marketing agency new jersey',
-    'new jersey digital marketing company',
-    'digital marketing company nj',
-    'digital marketing agency in new jersey',
-    'digital marketing new jersey',
-    'nj digital marketing',
-    'digital marketing company new jersey',
-    'new jersey digital marketing agency',
-    'digital marketing consultant nj',
-    'digital marketing services nj',
-    'nj digital marketing agency',
-    'internet marketing company nj',
-    'online marketing new jersey',
+    'digital marketing lakewood',
+    'digital marketing services',
+    'digital marketing agency near me',
+    'digital marketing company',
+    'digital marketing consultant near me',
+    'internet marketing agency near me',
+    'marketing agency near me',
+    'online marketing near me',
   ],
 };
 
-const HOME_SCHEMA_DESCRIPTION = [
-  'WebsiteWork4Less is a trusted digital marketing agency nj and digital marketing company nj providing professional digital marketing services nj to businesses across New Jersey. As an experienced digital marketing agency new jersey, we help businesses build a strong online presence, improve search visibility, attract qualified customers, and achieve sustainable growth through strategic SEO, website development, online marketing, and customized digital solutions.',
-  'Our digital marketing nj services are available throughout New Jersey, including businesses across Essex County, Hudson County, Bergen County, Passaic County, Morris County, Sussex County, Warren County, Union County, Middlesex County, Somerset County, Mercer County, Monmouth County, Ocean County, Camden County, Burlington County, and Atlantic County.',
-  "As a new jersey digital marketing company, digital marketing company new jersey, and new jersey digital marketing agency, WebsiteWork4Less provides tailored strategies based on each business's goals, target audience, and competitive market. Our team works with businesses looking for an experienced digital marketing agency in new jersey to improve their online reach and generate meaningful results.",
-  "Whether you need a digital marketing consultant nj, digital marketing services nj, nj digital marketing agency, or an internet marketing company nj, our team provides solutions designed to help businesses compete and grow in today's digital landscape. We also offer online marketing new jersey strategies to help businesses strengthen their brand visibility, reach local customers, increase website traffic, and build long-term digital growth.",
-  "WebsiteWork4Less is committed to delivering effective nj digital marketing solutions for businesses throughout New Jersey and its major counties, providing practical, results-focused digital marketing strategies tailored to each client's unique requirements.",
-].join(' ');
-
+const HOME_SCHEMA_DESCRIPTION = organizationSchemaDescription;
 
 const homeFaqSchema = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
+  '@id': LAKEWOOD_URL + '#faq',
   mainEntity: homeFaqs.map((f) => ({
     '@type': 'Question',
     name: f.q,
@@ -193,7 +201,14 @@ const homePageSchema = {
     postalCode: '08701',
     addressCountry: 'US',
   },
-  areaServed: newJerseyServiceAreas,
+  areaServed: {
+    '@type': 'City',
+    name: 'Lakewood',
+    containedInPlace: {
+      '@type': 'State',
+      name: 'New Jersey',
+    },
+  },
   description: HOME_SCHEMA_DESCRIPTION,
   keywords: HOME_SEO.keywords.join(', '),
   foundingDate: '2023',
@@ -234,29 +249,33 @@ const homeSupportingSchema = {
   '@graph': [
     {
       '@type': 'Service',
-      '@id': 'https://websitework4less.com/#digital-marketing-service',
+      '@id': LAKEWOOD_URL + '#digital-marketing-service',
       name: 'Digital Marketing Services',
       serviceType: 'Digital Marketing',
-      url: 'https://websitework4less.com/',
+      url: LAKEWOOD_URL,
       description: HOME_SCHEMA_DESCRIPTION,
       keywords: HOME_SEO.keywords.join(', '),
       provider: { '@id': 'https://websitework4less.com/#organization' },
-      areaServed: newJerseyServiceAreas,
+      areaServed: {
+        '@type': 'City',
+        name: 'Lakewood',
+        containedInPlace: { '@type': 'State', name: 'New Jersey' },
+      },
     },
     {
       '@type': 'WebPage',
-      '@id': 'https://websitework4less.com/#webpage',
-      url: 'https://websitework4less.com/',
+      '@id': LAKEWOOD_URL + '#webpage',
+      url: LAKEWOOD_URL,
       name: HOME_SEO.title,
       description: HOME_SEO.description,
       keywords: HOME_SEO.keywords.join(', '),
       about: { '@id': 'https://websitework4less.com/#organization' },
-      mainEntity: { '@id': 'https://websitework4less.com/#digital-marketing-service' },
-      breadcrumb: { '@id': 'https://websitework4less.com/#breadcrumb' },
+      mainEntity: { '@id': LAKEWOOD_URL + '#digital-marketing-service' },
+      breadcrumb: { '@id': LAKEWOOD_URL + '#breadcrumb' },
     },
     {
       '@type': 'BreadcrumbList',
-      '@id': 'https://websitework4less.com/#breadcrumb',
+      '@id': LAKEWOOD_URL + '#breadcrumb',
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -264,15 +283,29 @@ const homeSupportingSchema = {
           name: 'Home',
           item: 'https://websitework4less.com/',
         },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Digital Marketing Lakewood',
+          item: LAKEWOOD_URL,
+        },
       ],
     },
   ],
 };
 
-export default function HomePage() {
-  usePageSeo(HOME_SEO);
+export default function LakewoodDigitalMarketingPage() {
+  usePageSeo({ ...HOME_SEO, canonical: LAKEWOOD_URL });
   const [servicesRef, serviceVisible] = useStaggerReveal(services.length, 100);
+  const [phraseIndex, setPhraseIndex] = useState(0);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setPhraseIndex((prev) => (prev + 1) % rotatingPhrases.length);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
 
   // Homepage schemas belong in the head and are removed when the SPA route changes.
   useEffect(() => {
@@ -333,27 +366,50 @@ export default function HomePage() {
             {/* Left Content */}
             <AnimatedSection animation="slide-in-left">
               <span className="mb-6 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-accent">
-                Website Work 4 Less
+                Premium Software Engineering
               </span>
               <h1 className="text-3xl font-medium leading-[1.1] text-text-primary sm:text-4xl lg:text-5xl">
-                Grow Your Business With{' '}
-                <span className="text-accent">Digital Marketing Agency in NJ</span>
+                Grow Your Business with{' '}
+                <span className="text-accent">Digital Marketing</span> in Lakewood
               </h1>
-              <div className="mt-8 space-y-4 text-lg leading-relaxed text-text-secondary">
-                <p>
-                  Your website should do more than exist online. It should help people discover your business,
-                  understand what you offer, and take the next step.
+              <div className="mt-6 text-2xl font-medium leading-[1.1] text-text-primary sm:text-3xl">
+                <span className="text-accent">W</span>ebsites That
+                <br />
+                <div className="relative inline-block mt-3 min-h-[1.4em] w-full">
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={phraseIndex}
+                      initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+                      exit={{ opacity: 0, y: -30, filter: "blur(10px)" }}
+                      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                      className="absolute left-0 font-medium bg-gradient-to-r from-accent via-accent-light to-accent bg-[length:200%_auto] animate-gradient-x bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(59,130,246,0.2)]"
+                    >
+                      {rotatingPhrases[phraseIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </div>
+              </div>
+              <div className="mt-8 space-y-6 text-lg leading-relaxed text-text-secondary">
+                <p className="border-l-4 border-accent/20 pl-6 py-2 bg-accent/5 rounded-r-2xl italic">
+                  "We partner with ambitious founders to engineer high-performance software and digital products—designed to scale, automate growth, and dominate the digital landscape."
                 </p>
-                <p>
-                  At Website Work 4 Less, we combine web development, SEO, paid advertising, social media, and
-                  conversion-focused design to build digital experiences that support real business growth. Whether
-                  you're launching a new brand or improving an established online presence, our team creates practical
-                  solutions around your goals.
-                </p>
-                <p>
-                  Our approach to digital marketing in NJ brings strategy, technology, and creative execution together
-                  under one roof.
-                </p>
+                <div className="space-y-4">
+                  <p>
+                    From bespoke websites to advanced custom software, every project is built with precision, strategy, and a deep understanding of what drives trust and conversion.
+                  </p>
+                  <p>
+                    Our online marketing in Lakewood goes beyond aesthetics. We create websites that feel seamless, look unmistakably professional, and instantly establish credibility.
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 rounded-2xl bg-surface-alt p-4 border border-border/50">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
+                    <RocketLaunchIcon className="h-5 w-5" />
+                  </div>
+                  <p className="text-sm font-medium">
+                    <span className="text-accent font-bold">Flexible Payments:</span> Launch now, pay over time with no upfront commitment.
+                  </p>
+                </div>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
                 <Button as="link" to="/contact" size="lg">
@@ -535,33 +591,33 @@ export default function HomePage() {
           <AnimatedSection>
             <SectionHeading
               label="Under One Roof"
-              title="Everything You Need to Build a Stronger Online Presence"
+              title="More Than Just a Digital Marketing Company"
               align="left"
             />
             <div className="space-y-4 text-lg leading-relaxed text-text-secondary">
               <p>
-                A successful digital presence is rarely the result of one service working alone. Your website,
-                search visibility, advertising, social channels, and customer experience all influence how people
-                discover and interact with your business.
+                Every great business online needs more than a good-looking website. It needs a digital presence
+                that actually works for you, day in and day out.
               </p>
               <p>
-                As a digital marketing agency in NJ,{' '}
+                That’s where{' '}
                 <Link to="/about" className="font-semibold text-accent hover:text-accent-hover">
                   Website Work 4 Less
                 </Link>{' '}
-                brings these elements together so your marketing efforts have a consistent direction.
+                comes in. Our digital marketing agency in Lakewood builds fast, modern websites and backs them up
+                with the marketing support that helps people actually find you. From the first line of code to your
+                ongoing growth strategy, our team handles it all under one roof.
               </p>
             </div>
             <p className="mt-6 mb-4 text-lg font-semibold text-text-primary">
-              Here's how we help businesses move forward:
+              Here’s what that looks like in practice:
             </p>
             <ul className="space-y-4">
               {[
-                'Websites developed around usability, speed, mobile performance, and conversions.',
-                'SEO strategies designed to improve visibility for searches that matter to your business.',
-                'Paid campaigns that put your offers in front of relevant audiences.',
-                'Social media strategies that keep your brand active and connected with potential customers.',
-                'Ongoing optimization and support as your business, audience, and goals evolve.',
+                'Custom websites built to load fast, look sharp, and turn visitors into customers.',
+                'SEO and online visibility, so your business shows up when people search for what you offer.',
+                'Digital marketing services to keep new customers coming in long after launch.',
+                'Ongoing care after your site goes live, so it keeps performing as your business grows.',
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-text-secondary leading-relaxed">
                   <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent/10 text-accent">
@@ -572,9 +628,7 @@ export default function HomePage() {
               ))}
             </ul>
             <p className="mt-6 text-lg leading-relaxed text-text-secondary">
-              You don't need to coordinate several disconnected providers to manage your online presence. Our team
-              gives you access to the skills needed to build, promote, and improve your digital ecosystem from one
-              place.
+              We don’t just hand you a website and disappear. We stick around to make sure it keeps paying off.
             </p>
           </AnimatedSection>
         </div>
@@ -584,9 +638,9 @@ export default function HomePage() {
       <SectionWrapper id="services" background="transparent">
         <AnimatedSection>
           <SectionHeading
-            label="Our Digital Marketing Services"
-            title="Digital Solutions Designed Around Your Growth"
-            description="From your first website build to ongoing search and advertising campaigns, our digital marketing services in NJ are designed to address the different stages of your online growth."
+            label="What We Do"
+            title="Architected Solutions for Modern Enterprises"
+            description="Our digital marketing company engineers end-to-end software and digital platforms, built for peak performance, security, and effortless scalability."
           />
         </AnimatedSection>
 
@@ -624,9 +678,9 @@ export default function HomePage() {
       <SectionWrapper id="process" background="transparent">
         <AnimatedSection>
           <SectionHeading
-            label="From First Conversation to Final Launch"
-            title="A Clear Process for Building Your Digital Presence"
-            description="Good digital work starts with understanding the business behind it. Our four-stage process keeps communication clear while giving every project a defined direction."
+            label="Our Process"
+            title="How We Bring Your Vision to Life"
+            description="A proven four-step process that ensures every project is delivered on time, on budget, and beyond expectations."
           />
         </AnimatedSection>        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {processSteps.map((step, i) => (
@@ -694,9 +748,9 @@ export default function HomePage() {
       <SectionWrapper id="portfolio" background="transparent">
         <AnimatedSection>
           <SectionHeading
-            label="See What We've Built"
-            title="Digital Experiences Created for Real Businesses"
-            description="Our portfolio reflects work completed across different industries, business models, and digital requirements. Explore examples of our design, development, and branding capabilities."
+            label="Our Work"
+            title="Projects That Speak for Themselves"
+            description="A selection of recent projects showcasing our expertise across different industries and technologies."
           />
         </AnimatedSection>
 
@@ -721,18 +775,16 @@ export default function HomePage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <AnimatedSection animation="slide-in-left">
             <span className="mb-3 inline-block rounded-full bg-accent/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wider text-accent">
-              Meet the Team Behind the Work
+              About Us
             </span>
             <h2 className="text-3xl font-bold sm:text-4xl text-text-primary leading-tight">
-              A Digital Partner Focused on Your Business Goals
+              A Team Dedicated to Your Digital Success
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-text-secondary">
-              Website Work 4 Less brings technical expertise, creative thinking, and marketing knowledge together
-              to help businesses strengthen their online presence. With 3+ years of experience and hundreds of
-              completed projects, our team works with businesses at different stages of growth. We do not believe in
-              delivering a website and walking away. Our goal is to create digital assets that continue to support
-              your business after launch. From website development and design to search optimization and paid
-              marketing, we help businesses build an online presence with a clear purpose.
+              With 3+ years of experience, Website Work 4 Less has helped hundreds
+              of businesses transform their online presence. Our team combines
+              technical excellence with creative vision to deliver websites that
+              not only look great but perform exceptionally.
             </p>
             <Button as="link" to="/about" variant="ghost" className="mt-6 !px-0">
               Learn More About Us
@@ -784,9 +836,9 @@ export default function HomePage() {
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <SectionHeading
-              label="Why Businesses Choose Website Work 4 Less"
-              title="Practical Digital Marketing Without the Agency Runaround"
-              description="Choosing a New Jersey digital marketing company is about more than finding people who know how to build websites or run campaigns. You need a team that communicates clearly, respects your budget, and understands that your digital presence has a direct connection to your business."
+              label="Why Choose Us"
+              title="Why Local Businesses Choose Website Work 4 Less"
+              description="There are plenty of agencies for digital marketing in Lakewood. Here's what sets us apart from the rest."
             />
           </AnimatedSection>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -808,8 +860,8 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-10 text-center text-lg leading-relaxed text-text-secondary max-w-3xl mx-auto">
-            We are building the kind of digital marketing company in NJ businesses can turn to for websites,
-            visibility, advertising, and ongoing online growth without unnecessary complexity.
+            We built this business to be the internet marketing agency in Lakewood that we would confidently hire
+            for our own company. Affordable, dependable, and genuinely invested in your success.
           </p>
         </div>
       </section>
@@ -823,9 +875,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <AnimatedSection>
             <SectionHeading
-              label="Results That Matter to Our Clients"
-              title="What Businesses Say About Working With Us"
-              description="Businesses across different industries rely on Website Work 4 Less for practical digital solutions designed around visibility, customer experience, and growth."
+              label="Success Stories"
+              title="What Our Clients Say"
+              description="Trusted by businesses nationwide to deliver exceptional results and measurable growth through strategic digital marketing in Lakewood."
             />
           </AnimatedSection>
 
@@ -840,8 +892,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl">
           <AnimatedSection>
             <SectionHeading
-              label="FAQs"
+              label="FAQ"
               title="Frequently Asked Questions"
+              description="Everything you need to know about working with our digital marketing agency in Lakewood."
             />
           </AnimatedSection>
           <div className="space-y-4">
@@ -913,13 +966,13 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
           <AnimatedSection>
             <h2 className="text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl leading-tight">
-              Ready to Build a Stronger Digital Presence?
+              Ready to Transform Your
+              <br />
+              Online Presence?
             </h2>
             <p className="mx-auto mt-6 max-w-2xl text-lg text-text-secondary">
-              Your customers are searching, comparing, browsing, and making decisions online every day. The right
-              digital strategy helps your business become easier to discover and gives potential customers a better
-              reason to choose you. Let's build a digital presence that works for your business, not just one that
-              looks good.
+              Let's discuss your project and discover how we can help your business
+              grow with a website that works as hard as you do.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button as="link" to="/contact" size="lg">

@@ -34,7 +34,7 @@ export default function Footer() {
               <Logo className="h-12" />
             </Link>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-text-secondary">
-              Tell us what you want to build or grow. Our Lakewood team will follow up with clear next steps for your website or marketing project.
+              Tell us what you want to build or grow. Our team will follow up with clear next steps for your website or marketing project.
             </p>
             <h3 className="mt-7 text-xl font-bold text-text-primary">Start a conversation</h3>
             <FooterContactForm />

@@ -4,6 +4,7 @@ interface PageSeo {
   title: string;
   description: string;
   keywords: string[];
+  canonical?: string;
 }
 
 function upsertMeta(name: string, content: string) {
@@ -31,18 +32,37 @@ function upsertMeta(name: string, content: string) {
 }
 
 /** Keeps route-specific title, description, and keywords in sync in the SPA. */
-export function usePageSeo({ title, description, keywords }: PageSeo) {
+export function usePageSeo({ title, description, keywords, canonical }: PageSeo) {
   useEffect(() => {
     const previousTitle = document.title;
     document.title = title;
 
     const restoreDescription = upsertMeta('description', description);
     const restoreKeywords = upsertMeta('keywords', keywords.join(', '));
+    let canonicalElement = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    const createdCanonical = Boolean(canonical) && !canonicalElement;
+    const previousCanonical = canonicalElement?.getAttribute('href') ?? null;
+
+    if (canonical) {
+      if (!canonicalElement) {
+        canonicalElement = document.createElement('link');
+        canonicalElement.rel = 'canonical';
+        document.head.appendChild(canonicalElement);
+      }
+      canonicalElement.href = canonical;
+    }
 
     return () => {
       document.title = previousTitle;
       restoreDescription();
       restoreKeywords();
+      if (createdCanonical) {
+        canonicalElement?.remove();
+      } else if (canonical && previousCanonical === null) {
+        canonicalElement?.removeAttribute('href');
+      } else if (canonical && previousCanonical !== null) {
+        canonicalElement?.setAttribute('href', previousCanonical);
+      }
     };
-  }, [title, description, keywords]);
+  }, [title, description, keywords, canonical]);
 }
