@@ -2,7 +2,7 @@ import type { ServiceLanding } from './types';
 
 export const seoNJ: ServiceLanding = {
   slug: 'seo-nj',
-  navLabel: 'SEO in NJ',
+  navLabel: 'SEO in New Jersey',
   seo: {
     title: 'SEO in New Jersey | SEO Company | Website Work 4 Less',
     description:
@@ -35,11 +35,11 @@ export const seoNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'SEO in NJ',
-    h1: 'SEO in NJ That Turns Search Visibility Into Business Growth',
+    eyebrow: 'SEO in New Jersey',
+    h1: 'SEO in New Jersey That Turns Search Visibility Into Business Growth',
     intro: [
       'A strong website only works as a business asset when people can actually find it. If your pages are buried beneath competitors, potential customers may never discover your services, no matter how good your offer is.',
-      'At Website Work 4 Less, we provide SEO in NJ designed to improve how your business appears in organic and local search. We combine practical optimization, useful content, technical improvements, and ongoing measurement to help you build visibility that supports real business goals.',
+      'At Website Work 4 Less, we provide SEO in New Jersey designed to improve how your business appears in organic and local search. We combine practical optimization, useful content, technical improvements, and ongoing measurement to help you build visibility that supports real business goals.',
     ],
     highlights: ['Local Search Expertise', 'Straightforward Monthly Reporting', 'Strategies Built Around Your Market'],
     ctaLabel: 'Get a Free Consultation',
@@ -92,12 +92,12 @@ export const seoNJ: ServiceLanding = {
       'A professional firm reaching prospects looking for specialized expertise',
     ],
     outro:
-      'Better visibility does not guarantee a sale, but it puts your business in front of people who are already looking for relevant solutions. That makes search optimization an important part of a broader digital marketing strategy. Businesses looking to strengthen search engine optimization in NJ can use this approach to build a stronger foundation for long-term organic growth.',
+      'Better visibility does not guarantee a sale, but it puts your business in front of people who are already looking for relevant solutions. That makes search optimization an important part of a broader digital marketing strategy. Businesses looking to strengthen search engine optimization in New Jersey can use this approach to build a stronger foundation for long-term organic growth.',
   },
   included: {
-    heading: "What's Included in Our SEO in NJ",
+    heading: "What's Included in Our SEO in New Jersey",
     intro:
-      'SEO is most effective when the individual pieces work together instead of operating as isolated tasks. Our SEO in NJ strategy can include the following areas.',
+      'SEO is most effective when the individual pieces work together instead of operating as isolated tasks. Our SEO in New Jersey strategy can include the following areas.',
     items: [
       { title: 'Local SEO', desc: 'We improve location signals, business information, and local search elements so nearby customers have a better chance of finding your company.' },
       { title: 'On-Page SEO', desc: 'We refine page titles, headings, content, internal links, and other elements to make each important page more useful and easier to understand.' },
@@ -119,12 +119,12 @@ export const seoNJ: ServiceLanding = {
       { title: 'Adjustment', desc: 'We use performance data to identify what deserves more attention and adapt the campaign as search behavior and competition change.' },
     ],
     outro:
-      'Working with an NJ SEO company should not mean handing over your website and receiving unexplained updates. We keep the process understandable so you can see how each phase connects to the larger goal. For businesses evaluating SEO in New Jersey, this structured approach creates a clear path from research through ongoing optimization.',
+      'Working with an New Jersey SEO company should not mean handing over your website and receiving unexplained updates. We keep the process understandable so you can see how each phase connects to the larger goal. For businesses evaluating SEO in New Jersey, this structured approach creates a clear path from research through ongoing optimization.',
   },
   industries: {
     heading: 'SEO Strategies for Different New Jersey Businesses',
     intro:
-      'Search behavior varies considerably from one industry to another, so we adapt our SEO services in NJ around the way your customers actually look for businesses.',
+      'Search behavior varies considerably from one industry to another, so we adapt our SEO services in New Jersey around the way your customers actually look for businesses.',
     items: [
       { title: 'Home Services', desc: 'Contractors, plumbers, electricians, cleaners, and landscapers often depend on location-based searches. We focus on improving local relevance and service-specific visibility.' },
       { title: 'Healthcare and Wellness', desc: 'Medical, dental, fitness, and wellness businesses need clear service information and trustworthy online signals. We organize content so prospective customers can understand what the business offers.' },
@@ -148,7 +148,7 @@ export const seoNJ: ServiceLanding = {
       'A business-first mindset that keeps visibility connected to meaningful customer opportunities',
     ],
     outro:
-      'Our team can also provide guidance as an NJ SEO consulting company when you need strategic direction, whether you are launching a new website, rebuilding existing pages, or trying to understand why organic performance has stalled. Our approach to NJ search engine optimization keeps the emphasis on useful improvements, measurable activity, and sustainable visibility rather than shortcuts.',
+      'Our team can also provide guidance as an New Jersey SEO consulting company when you need strategic direction, whether you are launching a new website, rebuilding existing pages, or trying to understand why organic performance has stalled. Our approach to New Jersey search engine optimization keeps the emphasis on useful improvements, measurable activity, and sustainable visibility rather than shortcuts.',
   },
   results: {
     heading: 'Search Visibility Connected to Business Goals',
@@ -158,17 +158,17 @@ export const seoNJ: ServiceLanding = {
   finalCta: {
     heading: 'Ready to Build Stronger Search Visibility?',
     body: [
-      'If you are looking for an SEO company in NJ that takes a practical approach to visibility, Website Work 4 Less can help you identify opportunities, improve your website, and build a strategy around measurable progress.',
-      'Whether you need a focused local campaign or broader support from a search engine optimization firm in NJ, the first step is understanding where your website stands and what can be improved.',
+      'If you are looking for an SEO company in New Jersey that takes a practical approach to visibility, Website Work 4 Less can help you identify opportunities, improve your website, and build a strategy around measurable progress.',
+      'Whether you need a focused local campaign or broader support from a search engine optimization firm in New Jersey, the first step is understanding where your website stands and what can be improved.',
     ],
     ctaLabel: 'Get a Free Consultation',
   },
   faqs: [
-    { q: 'What does SEO in NJ include for a local business?', a: 'SEO can include keyword research, on-page improvements, technical optimization, local search work, content development, performance tracking, and ongoing strategy adjustments based on your business and market.' },
+    { q: 'What does SEO in New Jersey include for a local business?', a: 'SEO can include keyword research, on-page improvements, technical optimization, local search work, content development, performance tracking, and ongoing strategy adjustments based on your business and market.' },
     { q: 'How long does it take to see results from SEO?', a: 'The timeline varies based on competition, website condition, industry, and the work required. Some improvements may appear relatively quickly, while stronger organic growth generally requires consistent optimization over time.' },
     { q: 'How is local SEO different from traditional SEO?', a: 'Local SEO focuses more heavily on location-based searches, business listings, geographic relevance, reviews, and other signals that help businesses reach customers in specific areas.' },
     { q: 'Can you improve SEO for a website that is already ranking?', a: 'Yes. Existing rankings can provide useful data about what is working and where opportunities exist. Optimization can focus on strengthening important pages, improving content, addressing technical issues, and targeting additional relevant searches.' },
-    { q: 'Do you offer SEO consulting for businesses with an internal marketing team?', a: 'Yes. An NJ SEO consulting company can provide strategic guidance, audits, keyword research, content direction, and recommendations for internal teams that want expert input without outsourcing every task.' },
+    { q: 'Do you offer SEO consulting for businesses with an internal marketing team?', a: 'Yes. An New Jersey SEO consulting company can provide strategic guidance, audits, keyword research, content direction, and recommendations for internal teams that want expert input without outsourcing every task.' },
     { q: 'What should I look for when choosing an SEO company?', a: 'Look for clear communication, a strategy based on your industry and competition, transparent reporting, realistic expectations, and a willingness to explain what is being done and how it supports your business goals.' },
     { q: 'What is the difference between ongoing SEO and a one-time SEO audit?', a: 'A one-time SEO audit identifies technical, content, keyword, and visibility issues on your website, while ongoing SEO involves implementing improvements, monitoring performance, and adapting the strategy as search trends and competition change.' },
     { q: 'Can SEO help my business appear in local searches across New Jersey?', a: "Yes. A local SEO strategy can improve your website and business's relevance for location-based searches. The approach can target specific cities, service areas, and customer search terms based on where your business operates." },

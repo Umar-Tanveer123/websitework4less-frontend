@@ -25,8 +25,8 @@ export const newarkWebDevelopment: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'Web Development in Newark, NJ',
-    h1: 'Top-Notch Web Development in Newark, NJ',
+    eyebrow: 'Web Development in Newark, New Jersey',
+    h1: 'Top-Notch Web Development in Newark, New Jersey',
     intro: [
       'At Website Work 4 Less, we provide web development services in Newark for businesses that want a professional and functional online presence without unnecessary complexity. From new websites and eCommerce stores to redesigns and custom web solutions, we develop digital experiences that support your day-to-day business objectives.',
     ],

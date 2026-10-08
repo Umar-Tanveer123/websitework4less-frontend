@@ -22,7 +22,7 @@ const contactInfo: {
   {
     icon: <MapPinIcon className="h-6 w-6" />,
     title: 'Headquarters',
-    details: [{ text: 'Lakewood, NJ USA' }],
+    details: [{ text: 'Lakewood, New Jersey USA' }],
   },
   {
     icon: <EnvelopeIcon className="h-6 w-6" />,

@@ -12,7 +12,7 @@ export const eastOrangeWebDesign: ServiceLanding = {
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'Web Design in East Orange, NJ',
+    eyebrow: 'Web Design in East Orange, New Jersey',
     h1: 'East Orange Web Design That Helps Your Business Stand Out Online',
     intro: ['Your website often shapes a customer\'s first impression of your business. It should communicate who you are, explain what you offer, and guide visitors toward a useful next step.', 'Website Work 4 Less creates customer-focused website designs for East Orange businesses that want a professional, modern, and consistent online presence.'],
     highlights: ['7-14 Day Completion', '30-Day Guarantee', 'Flexible Payment Options'],

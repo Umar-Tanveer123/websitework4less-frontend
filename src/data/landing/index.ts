@@ -27,6 +27,13 @@ import { eastOrangeSeo } from './eastOrangeSeo';
 import { eastOrangeLocalSeo } from './eastOrangeLocalSeo';
 import { eastOrangePpc } from './eastOrangePpc';
 import { eastOrangeSocialMedia } from './eastOrangeSocialMedia';
+import { westOrangeDigitalMarketing } from './westOrangeDigitalMarketing';
+import { westOrangeWebDevelopment } from './westOrangeWebDevelopment';
+import { westOrangeWebDesign } from './westOrangeWebDesign';
+import { westOrangeSeo } from './westOrangeSeo';
+import { westOrangeLocalSeo } from './westOrangeLocalSeo';
+import { westOrangePpc } from './westOrangePpc';
+import { westOrangeSocialMedia } from './westOrangeSocialMedia';
 
 export const newJerseyLandingPages: ServiceLanding[] = [
   webDevelopmentNJ,
@@ -74,11 +81,23 @@ export const eastOrangeLandingPages: ServiceLanding[] = [
   eastOrangeSocialMedia,
 ];
 
+/** West Orange content pages under the Essex County URL structure. */
+export const westOrangeLandingPages: ServiceLanding[] = [
+  westOrangeDigitalMarketing,
+  westOrangeWebDevelopment,
+  westOrangeWebDesign,
+  westOrangeSeo,
+  westOrangeLocalSeo,
+  westOrangePpc,
+  westOrangeSocialMedia,
+];
+
 export const allLandingPages: ServiceLanding[] = [
   ...landingPages,
   ...oceanCountyLandingPages,
   ...newarkLandingPages,
   ...eastOrangeLandingPages,
+  ...westOrangeLandingPages,
 ];
 
 export const landingBySlug: Record<string, ServiceLanding> = Object.fromEntries(

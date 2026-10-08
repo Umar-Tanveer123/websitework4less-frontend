@@ -2,11 +2,11 @@ import type { ServiceLanding } from './types';
 
 export const webDesignNJ: ServiceLanding = {
   slug: 'web-design-nj',
-  navLabel: 'Web Design in NJ',
+  navLabel: 'Web Design in New Jersey',
   seo: {
     title: 'Web Design in New Jersey | Web Designer | Website Work 4 Less',
     description:
-      'Hire our web design company in NJ for building modern, mobile-friendly websites for small businesses. Fast 7–14 day completion. Get free consultation.',
+      'Hire our web design company in New Jersey for building modern, mobile-friendly websites for small businesses. Fast 7–14 day completion. Get free consultation.',
     keywords: [
       'web design nj',
       'web design company nj',
@@ -30,8 +30,8 @@ export const webDesignNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'Web Design in NJ',
-    h1: 'Web Design in NJ That Gives Your Brand a Stronger Online Presence',
+    eyebrow: 'Web Design in New Jersey',
+    h1: 'Web Design in New Jersey That Gives Your Brand a Stronger Online Presence',
     intro: [
       'Your website should immediately tell people who you are, what you offer, and why they should choose your business. At Website Work 4 Less, we create polished, purposeful websites that combine strong visual presentation with an effortless customer experience. From your homepage to your contact page, every element is considered with your brand and audience in mind.',
     ],
@@ -39,7 +39,7 @@ export const webDesignNJ: ServiceLanding = {
     ctaLabel: 'Get a Free Consultation',
   },
   value: {
-    heading: 'Make Every Page Count With Web Design in NJ',
+    heading: 'Make Every Page Count With Web Design in New Jersey',
     body: [
       'A website can have great information and still struggle to hold attention if the presentation feels dated or confusing. Effective design gives your content structure, establishes visual consistency, and helps visitors understand what matters without making them work for it.',
       "Our approach begins with your business identity and the people you're trying to reach. Rather than starting with a standard template, we develop a visual direction that reflects your company and creates a natural path through the site.",
@@ -53,7 +53,7 @@ export const webDesignNJ: ServiceLanding = {
       'Responsive presentation that remains attractive across screen sizes',
     ],
     outro:
-      "Good design should feel natural to the person using the website. That's why we consider how your customers browse, what questions they may have, and which information needs to appear first. Whether you're establishing a new brand or refreshing an existing online presence, our web design company in NJ creates a visual experience that feels intentional from the first page to the last.",
+      "Good design should feel natural to the person using the website. That's why we consider how your customers browse, what questions they may have, and which information needs to appear first. Whether you're establishing a new brand or refreshing an existing online presence, our web design company in New Jersey creates a visual experience that feels intentional from the first page to the last.",
   },
   pricing: {
     heading: 'Clear Pricing and Flexible Project Terms',
@@ -85,7 +85,7 @@ export const webDesignNJ: ServiceLanding = {
       'A weaker brand image when different pages lack visual consistency',
     ],
     outro:
-      "This is why web design in NJ should be considered part of your customer experience. A thoughtfully designed site doesn't simply decorate your business online; it helps shape how people understand and interact with your brand.",
+      "This is why web design in New Jersey should be considered part of your customer experience. A thoughtfully designed site doesn't simply decorate your business online; it helps shape how people understand and interact with your brand.",
   },
   included: {
     heading: 'Design Services Built Around Your Brand',
@@ -132,7 +132,7 @@ export const webDesignNJ: ServiceLanding = {
   whyUs: {
     heading: 'Why Businesses Choose Our Design Team',
     intro:
-      'Finding a web designer in NJ is about more than finding someone who can make a page look attractive. You also need a team that listens, communicates clearly, understands your objectives, and gives you room to shape the final result.',
+      'Finding a web designer in New Jersey is about more than finding someone who can make a page look attractive. You also need a team that listens, communicates clearly, understands your objectives, and gives you room to shape the final result.',
     bullets: [
       'Design with purpose: Visual decisions are made around your customers and business goals.',
       'Fast completion: Many projects move from concept to launch within 7 to 14 days.',
@@ -141,7 +141,7 @@ export const webDesignNJ: ServiceLanding = {
       'Straightforward pricing: Project expectations are established before work begins.',
     ],
     outro:
-      "As a web design agency in NJ, we focus on creating websites that look professional while making the customer's experience feel simple and natural.",
+      "As a web design agency in New Jersey, we focus on creating websites that look professional while making the customer's experience feel simple and natural.",
   },
   results: {
     heading: 'Purposeful Design for Real Businesses',
@@ -164,6 +164,6 @@ export const webDesignNJ: ServiceLanding = {
     { q: 'Do you design websites for small businesses?', a: 'Yes. We work with businesses at different stages, including companies creating their first professional website and established businesses looking to update an older online presence.' },
     { q: 'Can you incorporate my existing logo and branding?', a: 'Absolutely. Existing logos, brand colors, fonts, imagery, and style guidelines can be incorporated into the website so your online presence remains consistent with the rest of your marketing.' },
     { q: 'Do you provide design for landing pages?', a: 'Yes. We can create dedicated landing page designs for advertising campaigns, individual services, promotions, or specific offers, keeping the layout focused on the desired visitor action.' },
-    { q: 'How do I choose the right NJ web design company for my business?', a: 'Look for an NJ web design company that offers custom design, responsive layouts, clear communication, transparent pricing, and a process tailored to your business goals rather than relying on generic templates.' },
+    { q: 'How do I choose the right New Jersey web design company for my business?', a: 'Look for an New Jersey web design company that offers custom design, responsive layouts, clear communication, transparent pricing, and a process tailored to your business goals rather than relying on generic templates.' },
   ],
 };

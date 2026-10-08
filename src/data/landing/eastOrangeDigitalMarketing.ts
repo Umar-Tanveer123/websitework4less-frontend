@@ -6,7 +6,7 @@ export const eastOrangeDigitalMarketing: ServiceLanding = {
   seo: {
     title: 'Digital Marketing Agency in East Orange | Website Work 4 Less',
     description:
-      'Digital marketing agency in East Orange, NJ. SEO, web design, PPC and social media built to bring local customers to your business. Free quote.',
+      'Digital marketing agency in East Orange, New Jersey. SEO, web design, PPC and social media built to bring local customers to your business. Free quote.',
     keywords: [
       'digital marketing east orange',
       'digital marketing services near me',
@@ -25,7 +25,7 @@ export const eastOrangeDigitalMarketing: ServiceLanding = {
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'Digital Marketing in East Orange, NJ',
+    eyebrow: 'Digital Marketing in East Orange, New Jersey',
     h1: 'Build a Stronger Online Presence with Digital Marketing in East Orange',
     intro: [
       'Being visible online is no longer enough. Your website and marketing should help prospective customers find your business, understand what you offer, and feel confident enough to contact you or make a purchase.',

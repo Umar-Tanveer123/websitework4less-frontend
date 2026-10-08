@@ -4,9 +4,9 @@ export const newarkPpc: ServiceLanding = {
   slug: 'nj/essex-county/ppc-management-newark',
   navLabel: 'PPC Management in Newark',
   seo: {
-    title: 'PPC Management in Newark, NJ | Website Work 4 Less',
+    title: 'PPC Management in Newark, New Jersey | Website Work 4 Less',
     description:
-      'Get PPC management & advertising services in Newark, NJ. Pay per click campaigns built & managed to cut wasted ad spend & bring Essex County customers to your door.',
+      'Get PPC management & advertising services in Newark, New Jersey. Pay per click campaigns built & managed to cut wasted ad spend & bring Essex County customers to your door.',
     keywords: [
       'ppc management newark',
       'pay per click services near me',
@@ -25,8 +25,8 @@ export const newarkPpc: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'PPC Management in Newark, NJ',
-    h1: 'PPC Management in Newark, NJ',
+    eyebrow: 'PPC Management in Newark, New Jersey',
+    h1: 'PPC Management in Newark, New Jersey',
     intro: [
       'When customers are ready to hire, buy, book, or request information, paid search can put your business in front of them at an important point in their decision-making process. However, simply paying for clicks does not guarantee useful traffic. Campaign structure, search intent, geographic targeting, ad messaging, landing pages, and conversion tracking all influence how effectively your advertising budget works.',
       'Website Work 4 Less provides PPC management in Newark for businesses that want a more organized approach to paid search. We build campaigns around your services, audience, location, and business objectives while using campaign data to identify areas that need adjustment.',

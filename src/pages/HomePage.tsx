@@ -27,7 +27,7 @@ const processSteps = [
     icon: <ChatBubbleIcon className="h-7 w-7" />,
     title: 'Discovery & Consultation',
     description:
-      'We start by learning about your business, customers, competitors, current online presence, and the results you want to achieve. This gives our digital marketing consultant in NJ the information needed to recommend the right direction.',
+      'We start by learning about your business, customers, competitors, current online presence, and the results you want to achieve. This gives our digital marketing consultant in New Jersey the information needed to recommend the right direction.',
   },
   {
     step: '02',
@@ -113,7 +113,7 @@ const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[
     a: 'The timeline depends on the service and starting point. Website improvements can create immediate usability benefits, while SEO typically requires consistent work over time. Paid advertising may generate traffic and leads sooner, depending on targeting, budget, offer, and campaign setup.',
   },
   {
-    q: 'Is digital marketing useful for small businesses in NJ?',
+    q: 'Is digital marketing useful for small businesses in New Jersey?',
     a: "Yes. Small businesses can use online marketing to build local visibility, attract targeted traffic, generate inquiries, and compete for attention in their market. The strategy should match the company's budget, customer base, location, and specific business goals.",
   },
   {
@@ -135,9 +135,9 @@ const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[
 ];
 
 const HOME_SEO = {
-  title: 'Digital Marketing Agency in NJ | Website Work 4 Less',
+  title: 'Digital Marketing Agency in New Jersey | Website Work 4 Less',
   description:
-    'Website Work 4 Less is the trusted digital marketing agency in NJ. Grow your business with web design & development, SEO, PPC & social media services.',
+    'Website Work 4 Less is the trusted digital marketing agency in New Jersey. Grow your business with web design & development, SEO, PPC & social media services.',
   keywords: [
     'digital marketing agency nj',
     'digital marketing nj',
@@ -337,7 +337,7 @@ export default function HomePage() {
               </span>
               <h1 className="text-3xl font-medium leading-[1.1] text-text-primary sm:text-4xl lg:text-5xl">
                 Grow Your Business With{' '}
-                <span className="text-accent">Digital Marketing Agency in NJ</span>
+                <span className="text-accent">Digital Marketing Agency in New Jersey</span>
               </h1>
               <div className="mt-8 space-y-4 text-lg leading-relaxed text-text-secondary">
                 <p>
@@ -351,7 +351,7 @@ export default function HomePage() {
                   solutions around your goals.
                 </p>
                 <p>
-                  Our approach to digital marketing in NJ brings strategy, technology, and creative execution together
+                  Our approach to digital marketing in New Jersey brings strategy, technology, and creative execution together
                   under one roof.
                 </p>
               </div>
@@ -545,7 +545,7 @@ export default function HomePage() {
                 discover and interact with your business.
               </p>
               <p>
-                As a digital marketing agency in NJ,{' '}
+                As a digital marketing agency in New Jersey,{' '}
                 <Link to="/about" className="font-semibold text-accent hover:text-accent-hover">
                   Website Work 4 Less
                 </Link>{' '}
@@ -586,7 +586,7 @@ export default function HomePage() {
           <SectionHeading
             label="Our Digital Marketing Services"
             title="Digital Solutions Designed Around Your Growth"
-            description="From your first website build to ongoing search and advertising campaigns, our digital marketing services in NJ are designed to address the different stages of your online growth."
+            description="From your first website build to ongoing search and advertising campaigns, our digital marketing services in New Jersey are designed to address the different stages of your online growth."
           />
         </AnimatedSection>
 
@@ -808,7 +808,7 @@ export default function HomePage() {
             ))}
           </div>
           <p className="mt-10 text-center text-lg leading-relaxed text-text-secondary max-w-3xl mx-auto">
-            We are building the kind of digital marketing company in NJ businesses can turn to for websites,
+            We are building the kind of digital marketing company in New Jersey businesses can turn to for websites,
             visibility, advertising, and ongoing online growth without unnecessary complexity.
           </p>
         </div>

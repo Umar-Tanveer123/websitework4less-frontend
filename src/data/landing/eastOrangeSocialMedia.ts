@@ -12,7 +12,7 @@ export const eastOrangeSocialMedia: ServiceLanding = {
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'Social Media Marketing in East Orange, NJ',
+    eyebrow: 'Social Media Marketing in East Orange, New Jersey',
     h1: 'Social Media Marketing in East Orange That Makes Your Brand Easier to Find',
     intro: ['Simply maintaining social profiles does not guarantee new business. Content needs to capture attention, speak to the right people, and encourage prospective customers to take meaningful action.', 'Website Work 4 Less combines audience research, purposeful content, advertising campaigns, and ongoing account oversight to make social channels more valuable to your business.'],
     highlights: ['Audience-Led Content', 'Focused Campaign Development', 'Reliable Brand Presence'],

@@ -4,9 +4,9 @@ export const newarkSocialMedia: ServiceLanding = {
   slug: 'nj/essex-county/social-media-marketing-newark',
   navLabel: 'Social Media Marketing in Newark',
   seo: {
-    title: 'Social Media Marketing in Newark NJ | Website Work 4 Less',
+    title: 'Social Media Marketing in Newark New Jersey | Website Work 4 Less',
     description:
-      'Hire us for Social media marketing in Newark, NJ. We handle content, management & paid social ads that grow your local following & bring Essex County customers in.',
+      'Hire us for Social media marketing in Newark, New Jersey. We handle content, management & paid social ads that grow your local following & bring Essex County customers in.',
     keywords: [
       'social media marketing newark',
       'social media marketing services near me',
@@ -25,8 +25,8 @@ export const newarkSocialMedia: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'Social Media Marketing in Newark, NJ',
-    h1: 'Social Media Marketing in Newark, NJ',
+    eyebrow: 'Social Media Marketing in Newark, New Jersey',
+    h1: 'Social Media Marketing in Newark, New Jersey',
     intro: [
       'Social media gives businesses a direct way to communicate with current customers and introduce their brand to new audiences. However, simply maintaining a profile is not enough. Your content needs to reflect your brand, speak to the right people, and create meaningful opportunities for engagement, website visits, inquiries, and sales.',
       'Website Work 4 Less provides social media marketing in Newark for businesses that want a more purposeful presence across social platforms. We combine content strategy, creative planning, audience research, social advertising, community engagement, and performance analysis to build social campaigns around your business objectives.',

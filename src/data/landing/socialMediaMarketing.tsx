@@ -28,8 +28,8 @@ export const socialMediaMarketing: ServiceLanding = {
     serviceType: 'Social Media Marketing',
   },
   hero: {
-    eyebrow: 'Social Media Marketing · Lakewood, NJ',
-    h1: 'Professional Social Media Marketing in Lakewood, NJ',
+    eyebrow: 'Social Media Marketing · Lakewood, New Jersey',
+    h1: 'Professional Social Media Marketing in Lakewood, New Jersey',
     intro: [
       "Posting consistently isn't the same as growing your business. A lot of local companies have active social pages with barely any leads to show for it. That gap between activity and actual results is exactly where we come in.",
       "At Website Work 4 Less, our social media marketing services are built around one goal: turning your social presence into a real source of customers, not just likes.",

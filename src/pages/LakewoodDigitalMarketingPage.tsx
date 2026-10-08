@@ -144,7 +144,7 @@ const homeFaqs: { q: string; a: string; link?: { anchor: string; to: string } }[
     a: 'We don’t disappear after launch. Our team offers ongoing support, updates, and maintenance to keep your site running smoothly.',
   },
   {
-    q: 'Do you only work with businesses near Lakewood, NJ?',
+    q: 'Do you only work with businesses near Lakewood, New Jersey?',
     a: 'Not at all. While we proudly serve local businesses in and around Lakewood, we work with clients across the country too.',
   },
   {

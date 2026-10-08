@@ -5,14 +5,14 @@ export const eastOrangeLocalSeo: ServiceLanding = {
   navLabel: 'Local SEO in East Orange',
   seo: {
     title: 'Local SEO Company in East Orange | Website Work 4 Less',
-    description: 'Hire Local SEO company in East Orange, NJ. Google Business Profile optimization, citations & map pack rankings so nearby customers find you first. Free audit.',
+    description: 'Hire Local SEO company in East Orange, New Jersey. Google Business Profile optimization, citations & map pack rankings so nearby customers find you first. Free audit.',
     keywords: ['local seo company east orange', 'east orange nj local seo company', 'local seo agency east orange nj', 'local seo east orange', 'local seo services east orange', 'east orange local seo', 'local seo near me', 'local seo company near me', 'local seo agency near me', 'local seo services near me'],
     schemaDescription: 'Website Work 4 Less is a local SEO company in East Orange helping businesses improve visibility across geographically relevant searches. Our services cover Google Business Profile optimization, business listing consistency, reputation guidance, localized content, local authority, and visibility tracking.',
     serviceType: 'Local SEO',
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'East Orange, NJ Local SEO Company',
+    eyebrow: 'East Orange, New Jersey Local SEO Company',
     h1: 'Your Trusted Local SEO Company in East Orange',
     intro: ['Having an online presence does not automatically put your company in front of nearby customers. When residents search for a service, retailer, restaurant, or professional provider, appearing prominently can create a valuable opportunity to earn their attention.', 'Website Work 4 Less delivers local SEO services that strengthen visibility across geographically relevant searches. We work across business listings, website signals, reviews, localized content, and the other factors that influence local discovery.'],
     highlights: ['Local Search Knowledge', 'Easy-to-Understand Reporting', 'Campaigns Built Around Your Coverage Area'],

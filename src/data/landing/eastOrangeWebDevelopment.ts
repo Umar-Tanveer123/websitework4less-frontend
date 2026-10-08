@@ -6,7 +6,7 @@ export const eastOrangeWebDevelopment: ServiceLanding = {
   seo: {
     title: 'Web Development Service in East Orange | Website Work 4 Less',
     description:
-      'Get Web development services in East Orange, NJ. Custom sites, redesigns & eCommerce builds that load fast, work on mobile and are ready to rank. Free quote',
+      'Get Web development services in East Orange, New Jersey. Custom sites, redesigns & eCommerce builds that load fast, work on mobile and are ready to rank. Free quote',
     keywords: ['web development east orange', 'web development near me', 'web development services near me', 'web development company near me', 'web development agency near me', 'web developer near me', 'web development services east orange', 'web development company east orange', 'web development agency east orange', 'web developer east orange'],
     schemaDescription:
       'Website Work 4 Less provides web development in East Orange for businesses that need fast, responsive, manageable, and dependable websites. Our services include custom websites, ecommerce development, redesigns, business tools, mobile-responsive development, and search-ready technical foundations.',
@@ -14,7 +14,7 @@ export const eastOrangeWebDevelopment: ServiceLanding = {
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'Web Development in East Orange, NJ',
+    eyebrow: 'Web Development in East Orange, New Jersey',
     h1: 'Build a Better Online Foundation with Web Development in East Orange',
     intro: [
       'Your website should do more than create an online presence. It should explain your business clearly, work reliably across devices, and give customers an easy path toward making contact or completing a purchase.',

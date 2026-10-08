@@ -6,7 +6,7 @@ export const newarkDigitalMarketing: ServiceLanding = {
   seo: {
     title: 'Digital Marketing Agency in Newark | Website Work 4 Less',
     description:
-      'Hire trusted digital marketing agency serving Newark, NJ. From SEO, web design, PPC to social media we cover all for businesses that want more local leads.',
+      'Hire trusted digital marketing agency serving Newark, New Jersey. From SEO, web design, PPC to social media we cover all for businesses that want more local leads.',
     keywords: [
       'digital marketing newark',
       'digital marketing services near me',
@@ -25,8 +25,8 @@ export const newarkDigitalMarketing: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'Digital Marketing in Newark, NJ',
-    h1: 'Digital Marketing in Newark, NJ',
+    eyebrow: 'Digital Marketing in Newark, New Jersey',
+    h1: 'Digital Marketing in Newark, New Jersey',
     intro: [
       'Your business needs more than a website to compete online. It needs a digital presence that helps Newark customers discover your brand, understand your services, and take action.',
       'Website Work 4 Less provides digital marketing in Newark for businesses that want to strengthen their online visibility and create better customer experiences. We bring web design, development, SEO, paid advertising, social media, and eCommerce solutions together to create a connected online strategy.',
@@ -182,7 +182,7 @@ export const newarkDigitalMarketing: ServiceLanding = {
     heading: 'Ready to Strengthen Your Online Presence?',
     body: [
       'Customers are searching online before they call, visit, compare, or buy. Your business needs a digital presence that makes those interactions easier and gives potential customers clear reasons to take the next step.',
-      'Build a smarter online foundation with Website Work 4 Less and take the next step toward reaching more customers in Newark, NJ.',
+      'Build a smarter online foundation with Website Work 4 Less and take the next step toward reaching more customers in Newark, New Jersey.',
     ],
     ctaLabel: 'Get a Free Consultation',
   },

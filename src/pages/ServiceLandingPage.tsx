@@ -159,7 +159,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
   // Per-page SEO: title, meta description, keywords, canonical, and JSON-LD
   // (Service + FAQPage + BreadcrumbList).
   useEffect(() => {
-    const DEFAULT_TITLE = 'Digital Marketing Agency in NJ | Website Work 4 Less';
+    const DEFAULT_TITLE = 'Digital Marketing Agency in New Jersey | Website Work 4 Less';
     document.title = content.seo.title;
 
     const upsertMeta = (name: string, value: string) => {
@@ -199,7 +199,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
           '@type': content.seo.areaServed.type,
           name: content.seo.areaServed.name,
           ...(content.seo.areaServed.type === 'City' &&
-          ['Newark', 'East Orange'].includes(content.seo.areaServed.name)
+          ['Newark', 'East Orange', 'West Orange'].includes(content.seo.areaServed.name)
             ? {
                 containedInPlace: {
                   '@type': 'AdministrativeArea',
@@ -360,7 +360,7 @@ export default function ServiceLandingPage({ content }: { content: ServiceLandin
           <AnimatedSection animation="fade-in-up">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-bold uppercase tracking-widest mb-8">
               <MapPinIcon className="h-4 w-4" />
-              {content.hero.eyebrow ?? 'Lakewood, NJ'}
+              {content.hero.eyebrow ?? 'Lakewood, New Jersey'}
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-text-primary leading-[1.05] mb-8">
               {content.hero.h1}
