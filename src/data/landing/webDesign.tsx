@@ -22,7 +22,7 @@ export const webDesign: ServiceLanding = {
     serviceType: 'Web Design',
   },
   hero: {
-    eyebrow: 'Web Design · Lakewood, NJ',
+    eyebrow: 'Web Design · Lakewood, New Jersey',
     h1: 'Professional Web Design in Lakewood',
     intro: [
       "At Website Work 4 Less, we believe your website should feel like a true reflection of your business, not a generic template that could belong to anyone. We design clean, modern sites that build trust the moment someone lands on your page and make it easy for them to take the next step.",

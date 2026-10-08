@@ -2,11 +2,11 @@ import type { ServiceLanding } from './types';
 
 export const socialMediaNJ: ServiceLanding = {
   slug: 'social-media-marketing-nj',
-  navLabel: 'Social Media Marketing in NJ',
+  navLabel: 'Social Media Marketing in New Jersey',
   seo: {
-    title: 'Social Media Marketing NJ | New Jersey Social Media Agency',
+    title: 'Social Media Marketing New Jersey | New Jersey Social Media Agency',
     description:
-      'Hire Social media marketing agency in NJ that handle content, posting & paid social so your business stays visible & grows its audience. Get free consultation.',
+      'Hire Social media marketing agency in New Jersey that handle content, posting & paid social so your business stays visible & grows its audience. Get free consultation.',
     keywords: [
       'social media marketing nj',
       'social media agency nj',
@@ -30,11 +30,11 @@ export const socialMediaNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'Social Media Marketing in NJ',
-    h1: 'Social Media Marketing in NJ That Builds Real Business Visibility',
+    eyebrow: 'Social Media Marketing in New Jersey',
+    h1: 'Social Media Marketing in New Jersey That Builds Real Business Visibility',
     intro: [
       'Being active on social media does not automatically bring customers. Businesses need content that earns attention, reaches the right audience, and gives people a reason to take the next step.',
-      'At Website Work 4 Less, our approach to social media marketing in NJ combines strategic content, audience research, paid campaigns, and ongoing management to turn your social profiles into useful business channels.',
+      'At Website Work 4 Less, our approach to social media marketing in New Jersey combines strategic content, audience research, paid campaigns, and ongoing management to turn your social profiles into useful business channels.',
     ],
     highlights: ['Audience-Focused Content', 'Targeted Social Campaigns', 'Consistent Brand Management'],
     ctaLabel: 'Get a Free Consultation',
@@ -43,7 +43,7 @@ export const socialMediaNJ: ServiceLanding = {
     heading: 'A New Jersey Social Strategy Built Around Your Business',
     body: [
       'Every business has a different audience, sales cycle, and reason for using social media. A local restaurant may need content that drives visits, while a professional service provider may need posts that establish expertise and trust.',
-      'As a social media agency in NJ, we build your strategy around those differences rather than forcing your business into a standard posting formula.',
+      'As a social media agency in New Jersey, we build your strategy around those differences rather than forcing your business into a standard posting formula.',
     ],
     bulletsIntro: 'Our approach includes:',
     bullets: [
@@ -54,7 +54,7 @@ export const socialMediaNJ: ServiceLanding = {
       'Campaign planning that connects social activity with measurable business goals.',
     ],
     outro:
-      'The objective of NJ social media marketing is not simply to increase the number of posts on your feed. It is to create a digital presence that supports awareness, engagement, inquiries, and long-term customer relationships.',
+      'The objective of New Jersey social media marketing is not simply to increase the number of posts on your feed. It is to create a digital presence that supports awareness, engagement, inquiries, and long-term customer relationships.',
   },
   pricing: {
     heading: 'Straightforward Plans Without the Marketing Fog',
@@ -69,7 +69,7 @@ export const socialMediaNJ: ServiceLanding = {
       'Communication that keeps you informed about what is being done and why.',
     ],
     outro:
-      'Whether you need ongoing management or strategic support from a social media marketing agency in NJ, the focus stays on practical work that contributes to your broader marketing goals.',
+      'Whether you need ongoing management or strategic support from a social media marketing agency in New Jersey, the focus stays on practical work that contributes to your broader marketing goals.',
     ctaLabel: 'Get a Free Consultation',
   },
   problem: {
@@ -86,7 +86,7 @@ export const socialMediaNJ: ServiceLanding = {
       'Better results from paid campaigns because targeting and creative are not properly aligned.',
     ],
     outro:
-      'Effective social media marketing in NJ gives your business a more intentional presence. Instead of posting simply because the calendar says it is time to post, every piece of content has a reason for being there.',
+      'Effective social media marketing in New Jersey gives your business a more intentional presence. Instead of posting simply because the calendar says it is time to post, every piece of content has a reason for being there.',
   },
   included: {
     heading: 'Explore Our Social Media Solutions',
@@ -122,7 +122,7 @@ export const socialMediaNJ: ServiceLanding = {
   process: {
     heading: 'How We Turn Strategy Into Consistent Social Activity',
     intro:
-      'Working with a NJ social media marketing agency should give you a repeatable process rather than random content ideas. Our workflow keeps strategy, production, publishing, and improvement connected.',
+      'Working with a New Jersey social media marketing agency should give you a repeatable process rather than random content ideas. Our workflow keeps strategy, production, publishing, and improvement connected.',
     steps: [
       { title: 'Discovery', desc: 'We learn about your business, audience, competitors, services, current social presence, and marketing objectives.' },
       { title: 'Planning', desc: 'We establish content themes, platform priorities, publishing schedules, and advertising opportunities based on what we learn.' },
@@ -131,7 +131,7 @@ export const socialMediaNJ: ServiceLanding = {
       { title: 'Review & Refinement', desc: 'Performance data is assessed to understand what is generating attention and engagement. The strategy can then be adjusted based on actual results.' },
     ],
     outro:
-      'This process gives our social media marketing in NJ a clear direction from the first planning stage through ongoing optimization.',
+      'This process gives our social media marketing in New Jersey a clear direction from the first planning stage through ongoing optimization.',
   },
   industries: {
     heading: 'Social Media Strategies for Different Business Types',
@@ -146,22 +146,22 @@ export const socialMediaNJ: ServiceLanding = {
       { title: 'Professional Services', desc: 'Educational content, industry insights, FAQs, and practical advice can help professional firms demonstrate knowledge and build familiarity with potential clients.' },
     ],
     outro:
-      'Our social media services in NJ can be adapted to the type of business you operate, the audience you want to reach, and the outcomes you want your social presence to support.',
+      'Our social media services in New Jersey can be adapted to the type of business you operate, the audience you want to reach, and the outcomes you want your social presence to support.',
   },
   whyUs: {
-    heading: 'Why Businesses Work With Our NJ Social Media Team',
+    heading: 'Why Businesses Work With Our New Jersey Social Media Team',
     intro:
       'Publishing content is only one part of social media management. The bigger challenge is making sure the content supports the brand and contributes to a wider marketing strategy.',
     bullets: [
       'A strategy developed around your business instead of a generic content package.',
       'Content planning that considers your audience, industry, and marketing objectives.',
       'Transparent communication about campaigns, publishing, and ongoing work.',
-      'Support from a social media consultant in NJ when you need direction beyond routine posting.',
+      'Support from a social media consultant in New Jersey when you need direction beyond routine posting.',
       'A consistent approach to brand messaging across your chosen platforms.',
       'Performance reviews that help identify what deserves more attention and what needs adjustment.',
     ],
     outro:
-      'As a social media company in NJ, we focus on making social media useful for the business behind the profile. The goal is not to chase every trend or create content simply to fill a calendar.',
+      'As a social media company in New Jersey, we focus on making social media useful for the business behind the profile. The goal is not to chase every trend or create content simply to fill a calendar.',
   },
   results: {
     heading: 'A Social Presence Connected to Business Goals',
@@ -169,19 +169,19 @@ export const socialMediaNJ: ServiceLanding = {
       'We align content, audience, publishing, engagement, and campaign measurement so social activity supports awareness, inquiries, conversions, and lasting customer relationships.',
   },
   finalCta: {
-    heading: 'Put Your NJ Business in the Conversation',
+    heading: 'Put Your New Jersey Business in the Conversation',
     body: [
       'Your potential customers are already spending time on social platforms. A thoughtful social presence gives your business more opportunities to be discovered and remembered.',
-      'With social media marketing in NJ built around your audience, brand, and goals, you can create a stronger connection between social activity and business growth. Whether you need ongoing management, advertising support, or a clearer strategy, Website Work 4 Less can help you move forward.',
+      'With social media marketing in New Jersey built around your audience, brand, and goals, you can create a stronger connection between social activity and business growth. Whether you need ongoing management, advertising support, or a clearer strategy, Website Work 4 Less can help you move forward.',
     ],
     ctaLabel: 'Get a Free Consultation',
   },
   faqs: [
-    { q: 'What does a social media marketing agency in NJ actually do?', a: 'A social media marketing agency develops and manages your social presence through strategy, content creation, publishing, engagement, paid advertising, and performance tracking. The exact services depend on your business goals and the platforms that matter to your audience.' },
+    { q: 'What does a social media marketing agency in New Jersey actually do?', a: 'A social media marketing agency develops and manages your social presence through strategy, content creation, publishing, engagement, paid advertising, and performance tracking. The exact services depend on your business goals and the platforms that matter to your audience.' },
     { q: 'How often should a New Jersey business post on social media?', a: 'There is no universal posting frequency that works for every business. A practical schedule depends on your audience, platform, available content, and marketing goals. Consistent, useful posts are generally more valuable than publishing frequently without a clear purpose.' },
-    { q: 'Which social media platforms should my business use?', a: 'The right platforms depend on where your customers spend time and what type of content your business can produce effectively. A social media firm in NJ can assess your audience and objectives to determine which channels deserve the most attention.' },
+    { q: 'Which social media platforms should my business use?', a: 'The right platforms depend on where your customers spend time and what type of content your business can produce effectively. A social media firm in New Jersey can assess your audience and objectives to determine which channels deserve the most attention.' },
     { q: 'Can social media advertising help generate leads?', a: 'Paid social campaigns can help businesses reach specific audience groups using factors such as demographics, interests, location, and online behavior. Results depend on targeting, offer, creative quality, landing experience, budget, and ongoing campaign optimization.' },
-    { q: 'Should a small business hire an NJ social media marketing agency?', a: 'A small business may benefit from professional support when its team lacks the time, experience, or resources to manage social media consistently. Outsourcing can provide access to planning, content, campaign management, and reporting without building a full internal team.' },
+    { q: 'Should a small business hire an New Jersey social media marketing agency?', a: 'A small business may benefit from professional support when its team lacks the time, experience, or resources to manage social media consistently. Outsourcing can provide access to planning, content, campaign management, and reporting without building a full internal team.' },
     { q: 'How do you measure whether social media is working?', a: 'Useful metrics depend on the campaign objective. These may include engagement, reach, website traffic, inquiries, leads, conversions, audience growth, and advertising performance. The important point is to measure activity against the business goal rather than focusing only on follower numbers.' },
     { q: 'Can you manage social media for businesses in different New Jersey industries?', a: 'Yes. Social strategies can be adapted for restaurants, professional services, retailers, contractors, healthcare-related businesses, fitness brands, and other industries. Content and platform priorities are adjusted according to the audience and objectives of each business.' },
     { q: 'Can you work with my existing social media accounts?', a: 'Yes. We can work with established social profiles and build on your existing audience, content, and brand presence. We can review what is already working, identify areas for improvement, and develop a more consistent strategy moving forward.' },

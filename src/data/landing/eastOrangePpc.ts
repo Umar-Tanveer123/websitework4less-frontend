@@ -5,14 +5,14 @@ export const eastOrangePpc: ServiceLanding = {
   navLabel: 'PPC Management in East Orange',
   seo: {
     title: 'PPC Management Agency in East Orange | Website Work 4 Less',
-    description: 'Get PPC management & advertising services in East Orange, NJ. Google Ads campaigns built, tracked & tuned to cut wasted spend & deliver qualified local leads.',
+    description: 'Get PPC management & advertising services in East Orange, New Jersey. Google Ads campaigns built, tracked & tuned to cut wasted spend & deliver qualified local leads.',
     keywords: ['ppc management east orange', 'pay per click services near me', 'pay per click advertising near me', 'ppc advertising services near me', 'ppc management agency near me', 'ppc management company near me', 'ppc agency east orange', 'ppc advertising services east orange', 'ppc services east orange', 'ppc management agency east orange'],
     schemaDescription: 'Website Work 4 Less provides PPC management in East Orange for businesses that need focused paid-search advertising. Our services combine audience targeting, keyword and search-query management, relevant ad messaging, landing-page alignment, controlled spending, conversion measurement, and ongoing optimization.',
     serviceType: 'PPC Management',
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'PPC Management in East Orange, NJ',
+    eyebrow: 'PPC Management in East Orange, New Jersey',
     h1: 'PPC Management in East Orange That Helps Turn Clicks into Customers',
     intro: ['Paid search can bring immediate visibility, but visibility alone does not guarantee useful results. Poor targeting, weak landing pages, irrelevant searches, or uncontrolled spending can quickly reduce a campaign\'s value.', 'Website Work 4 Less connects advertisements with people who have a genuine reason to take action. We bring together audience targeting, relevant messaging, conversion measurement, and continuous improvements to give paid advertising a clearer purpose.'],
     highlights: ['Focused Search Advertising', 'Controlled Campaign Spending', 'Conversion-Oriented Planning'],

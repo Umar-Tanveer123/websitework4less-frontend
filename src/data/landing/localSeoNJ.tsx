@@ -2,11 +2,11 @@ import type { ServiceLanding } from './types';
 
 export const localSeoNJ: ServiceLanding = {
   slug: 'local-seo-nj',
-  navLabel: 'Local SEO in NJ',
+  navLabel: 'Local SEO in New Jersey',
   seo: {
-    title: 'Local SEO Company in NJ | Website Work 4 Less',
+    title: 'Local SEO Company in New Jersey | Website Work 4 Less',
     description:
-      'Get Local SEO services in NJ that put your business in the map pack. We optimize your Google Business Profile, citations & local pages. No locked-in contracts.',
+      'Get Local SEO services in New Jersey that put your business in the map pack. We optimize your Google Business Profile, citations & local pages. No locked-in contracts.',
     keywords: [
       'local seo nj',
       'nj local seo',
@@ -30,11 +30,11 @@ export const localSeoNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'Local SEO in NJ',
-    h1: 'Local SEO in NJ That Helps Nearby Customers Find Your Business',
+    eyebrow: 'Local SEO in New Jersey',
+    h1: 'Local SEO in New Jersey That Helps Nearby Customers Find Your Business',
     intro: [
       'Being visible online is one thing. Being visible when someone nearby is actively looking for what you offer is another. When potential customers search for a service, store, or professional in their area, the businesses that appear prominently have an immediate opportunity to earn that attention.',
-      'At Website Work 4 Less, we provide local SEO in NJ focused on helping businesses strengthen their presence in local search. From business listings and location signals to reviews and localized content, we work on the factors that help customers discover your business when it matters.',
+      'At Website Work 4 Less, we provide local SEO in New Jersey focused on helping businesses strengthen their presence in local search. From business listings and location signals to reviews and localized content, we work on the factors that help customers discover your business when it matters.',
     ],
     highlights: ['Local Search Specialists', 'Clear Monthly Reporting', 'Strategies Built Around Your Service Area'],
     ctaLabel: 'Get a Free Consultation',
@@ -43,7 +43,7 @@ export const localSeoNJ: ServiceLanding = {
     heading: 'Turn Local Searches Into Real Business Opportunities',
     body: [
       'Local search is not simply about adding a city name to your website. Search engines look at whether your business is relevant to a search, where it is located, how trustworthy its online presence appears, and how well its information matches across different platforms.',
-      'Our NJ local SEO approach brings these elements together with a strategy built around your business and the customers you want to reach.',
+      'Our New Jersey local SEO approach brings these elements together with a strategy built around your business and the customers you want to reach.',
     ],
     bulletsIntro: 'Here is what that can involve:',
     bullets: [
@@ -61,7 +61,7 @@ export const localSeoNJ: ServiceLanding = {
     heading: 'Transparent Local Marketing Without the Runaround',
     body: [
       'Local search should not feel like a service you pay for without knowing what is actually happening behind the scenes. At Website Work 4 Less, we keep our process understandable and make sure you know what your campaign includes.',
-      'Working with a local SEO company in NJ means you should have a clear picture of the work being performed and the reasons behind it.',
+      'Working with a local SEO company in New Jersey means you should have a clear picture of the work being performed and the reasons behind it.',
     ],
     bullets: [
       'Straightforward recommendations based on your business',
@@ -88,12 +88,12 @@ export const localSeoNJ: ServiceLanding = {
       'A restaurant customer may rely on maps, reviews, photos, hours, and directions before deciding where to eat.',
     ],
     outro:
-      'If your business information is incomplete, inconsistent, or difficult to find, customers may move on before visiting your website. A focused local SEO in NJ strategy helps strengthen the digital signals surrounding your business so local prospects have a clearer path from search to contact.',
+      'If your business information is incomplete, inconsistent, or difficult to find, customers may move on before visiting your website. A focused local SEO in New Jersey strategy helps strengthen the digital signals surrounding your business so local prospects have a clearer path from search to contact.',
   },
   included: {
     heading: 'What Our Local SEO Services Cover',
     intro:
-      'Strong local visibility comes from several connected activities rather than one isolated optimization. Our local SEO services in NJ bring those elements together based on the needs of your business.',
+      'Strong local visibility comes from several connected activities rather than one isolated optimization. Our local SEO services in New Jersey bring those elements together based on the needs of your business.',
     items: [
       { title: 'Google Business Profile Optimization', desc: 'We improve important profile information so customers can quickly understand what your business offers, where you are located, when you are open, and how to contact you.' },
       { title: 'Local Citation Management', desc: 'We review business information across relevant directories and work to reduce inconsistencies that can create confusion for search engines and customers.' },
@@ -135,7 +135,7 @@ export const localSeoNJ: ServiceLanding = {
   whyUs: {
     heading: 'Why Businesses Choose Our Local SEO Approach',
     intro:
-      'Local search is constantly changing, and businesses need more than a one-time setup to maintain a strong presence. Our NJ local SEO company focuses on practical work that supports your visibility over time.',
+      'Local search is constantly changing, and businesses need more than a one-time setup to maintain a strong presence. Our New Jersey local SEO company focuses on practical work that supports your visibility over time.',
     bullets: [
       'Strategies shaped around your actual business, services, and target locations',
       'Clear communication instead of complicated marketing jargon',
@@ -155,7 +155,7 @@ export const localSeoNJ: ServiceLanding = {
     heading: 'Put Your Business in Front of More Local Searches',
     body: [
       'When people in your service area are searching for what you provide, your online presence should make it easy for them to understand who you are, where you operate, and why they should consider your business. Website Work 4 Less can help strengthen those local search foundations with practical optimization and ongoing guidance.',
-      'If you are evaluating a local SEO company in NJ, start with a conversation about where your business currently stands and where you want to be found.',
+      'If you are evaluating a local SEO company in New Jersey, start with a conversation about where your business currently stands and where you want to be found.',
     ],
     ctaLabel: 'Get a Free Consultation',
   },

@@ -2,9 +2,9 @@ import type { ServiceLanding } from './types';
 
 export const ppcNJ: ServiceLanding = {
   slug: 'ppc-management-nj',
-  navLabel: 'PPC Management in NJ',
+  navLabel: 'PPC Management in New Jersey',
   seo: {
-    title: 'PPC Management in NJ | PPC Advertising Services',
+    title: 'PPC Management in New Jersey | PPC Advertising Services',
     description:
       'We offer PPC management in New Jersey that builds & manages Google Ads campaigns to cut wasted spend & bring in qualified leads. Get free consultation.',
     keywords: [
@@ -30,11 +30,11 @@ export const ppcNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'PPC Management in NJ',
-    h1: 'PPC Management in NJ That Turns Ad Spend Into Qualified Leads',
+    eyebrow: 'PPC Management in New Jersey',
+    h1: 'PPC Management in New Jersey That Turns Ad Spend Into Qualified Leads',
     intro: [
       'Getting your ads in front of people is only the beginning. If the wrong searches trigger your campaigns, your landing pages fail to persuade, or your budget is spread too thin, clicks can become an expensive distraction instead of a source of new business.',
-      'At Website Work 4 Less, our PPC management in NJ approach is built around reaching people who are actively looking for what you sell. We combine careful targeting, compelling ad messaging, conversion tracking, and ongoing optimization to make your paid campaigns more purposeful.',
+      'At Website Work 4 Less, our PPC management in New Jersey approach is built around reaching people who are actively looking for what you sell. We combine careful targeting, compelling ad messaging, conversion tracking, and ongoing optimization to make your paid campaigns more purposeful.',
     ],
     highlights: ['Targeted Paid Search Campaigns', 'Clear Budget Management', 'Conversion-Focused Strategy'],
     ctaLabel: 'Get a Free Consultation',
@@ -43,7 +43,7 @@ export const ppcNJ: ServiceLanding = {
     heading: 'Get Your Ads in Front of the Right People',
     body: [
       'PPC works best when every part of the campaign has a specific job. The audience needs to be relevant, the search terms need to match your offer, the ad needs to communicate value quickly, and the destination page needs to make taking action easy.',
-      'Our PPC agency in NJ manages these moving parts as one connected strategy rather than treating campaign setup as a one-time task.',
+      'Our PPC agency in New Jersey manages these moving parts as one connected strategy rather than treating campaign setup as a one-time task.',
     ],
     bulletsIntro: 'That includes:',
     bullets: [
@@ -61,7 +61,7 @@ export const ppcNJ: ServiceLanding = {
     heading: 'Know Where Your Advertising Budget Goes',
     body: [
       'Paid advertising becomes difficult to manage when you cannot tell what your money is accomplishing. We believe businesses should have a clear understanding of their campaigns, spending, and performance.',
-      'As a PPC management company in NJ, we keep the process straightforward.',
+      'As a PPC management company in New Jersey, we keep the process straightforward.',
     ],
     bullets: [
       'Campaign recommendations based on your business and target audience',
@@ -78,7 +78,7 @@ export const ppcNJ: ServiceLanding = {
     heading: 'A Click Is Only Valuable When It Moves Someone Closer to Buying',
     body: [
       'Not every visitor who clicks an advertisement is ready to become a customer. Some are researching, some are looking for something completely different, and others may simply respond to a broad keyword that sounded relevant.',
-      'That is why effective PPC marketing in NJ requires more than choosing popular keywords.',
+      'That is why effective PPC marketing in New Jersey requires more than choosing popular keywords.',
     ],
     bulletsIntro: 'Consider what can happen without careful management:',
     bullets: [
@@ -87,7 +87,7 @@ export const ppcNJ: ServiceLanding = {
       'A professional service firm may receive plenty of traffic from broad searches but very few enquiries from qualified prospects.',
     ],
     outro:
-      'Good campaign management works to reduce those mismatches. Search terms, negative keywords, ad copy, targeting, landing pages, and conversion tracking all need to support the same objective. For businesses investing in PPC services in NJ, the real question is not simply how many clicks an account receives. It is whether the campaign is attracting the right audience and producing actions that matter to the business.',
+      'Good campaign management works to reduce those mismatches. Search terms, negative keywords, ad copy, targeting, landing pages, and conversion tracking all need to support the same objective. For businesses investing in PPC services in New Jersey, the real question is not simply how many clicks an account receives. It is whether the campaign is attracting the right audience and producing actions that matter to the business.',
   },
   included: {
     heading: 'What Our Paid Advertising Management Includes',
@@ -132,7 +132,7 @@ export const ppcNJ: ServiceLanding = {
       { title: 'Optimize & Refine', desc: 'We use performance data to improve targeting, adjust bids, test messaging, and shift attention toward the areas producing stronger results.' },
     ],
     outro:
-      'This structured approach to NJ PPC management helps keep paid advertising focused on continual improvement instead of allowing campaigns to run unattended.',
+      'This structured approach to New Jersey PPC management helps keep paid advertising focused on continual improvement instead of allowing campaigns to run unattended.',
   },
   industries: {
     heading: 'Paid Campaigns for Businesses With Different Goals',
@@ -147,7 +147,7 @@ export const ppcNJ: ServiceLanding = {
       { title: 'Local Retail & Service Businesses', desc: 'Businesses serving customers within a defined area can use geographic targeting and service-focused campaigns to reach people searching for nearby options.' },
     ],
     outro:
-      'If you are already running PPC in NJ or preparing to launch your first campaign, we can shape the strategy around your current position, available budget, and business objectives.',
+      'If you are already running PPC in New Jersey or preparing to launch your first campaign, we can shape the strategy around your current position, available budget, and business objectives.',
   },
   whyUs: {
     heading: 'Why Our PPC Management Approach Is Different',
@@ -161,7 +161,7 @@ export const ppcNJ: ServiceLanding = {
       'Straightforward communication about what is working and where changes are needed',
     ],
     outro:
-      'As an NJ PPC agency, we focus on making the connection between advertising activity and business outcomes easier to understand. Businesses that need more hands-on support can also work with a PPC management agency in NJ to oversee the campaign from planning through ongoing optimization. The objective is simple: build a paid advertising system that becomes more informed over time rather than repeatedly starting from scratch.',
+      'As an New Jersey PPC agency, we focus on making the connection between advertising activity and business outcomes easier to understand. Businesses that need more hands-on support can also work with a PPC management agency in New Jersey to oversee the campaign from planning through ongoing optimization. The objective is simple: build a paid advertising system that becomes more informed over time rather than repeatedly starting from scratch.',
   },
   results: {
     heading: 'Paid Advertising Focused on Meaningful Actions',
@@ -171,7 +171,7 @@ export const ppcNJ: ServiceLanding = {
   finalCta: {
     heading: 'Put Your Paid Advertising Budget to Work',
     body: [
-      'Website Work 4 Less provides strategic PPC management in NJ for businesses that want more control over their paid campaigns and a clearer understanding of what their advertising is producing.',
+      'Website Work 4 Less provides strategic PPC management in New Jersey for businesses that want more control over their paid campaigns and a clearer understanding of what their advertising is producing.',
       'Whether you are starting from zero, dealing with inconsistent campaign performance, or looking for a more structured approach to paid search, we can help you identify where your current strategy stands and what should happen next.',
     ],
     ctaLabel: 'Get a Free Consultation',

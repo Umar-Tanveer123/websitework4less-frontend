@@ -26,7 +26,7 @@ export const seoServices: ServiceLanding = {
     serviceType: 'Search Engine Optimization (SEO)',
   },
   hero: {
-    eyebrow: 'SEO Services · Lakewood, NJ',
+    eyebrow: 'SEO Services · Lakewood, New Jersey',
     h1: 'SEO in Lakewood That Actually Brings You New Customers',
     intro: [
       "Let's be honest. Having a great business doesn't matter much if nobody can find you online. You could have the best service in town, but if you're buried on page three of Google, your competitors are the ones getting the call instead of you.",

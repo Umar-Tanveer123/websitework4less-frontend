@@ -4,9 +4,9 @@ export const newarkLocalSeo: ServiceLanding = {
   slug: 'nj/essex-county/local-seo-company-newark',
   navLabel: 'Local SEO in Newark',
   seo: {
-    title: 'Local SEO Company in Newark, NJ | Website Work 4 Less',
+    title: 'Local SEO Company in Newark, New Jersey | Website Work 4 Less',
     description:
-      'Hire us for Local SEO in Newark, NJ. We optimize your Google Business Profile, map pack rankings & local citations so nearby customers find you first.',
+      'Hire us for Local SEO in Newark, New Jersey. We optimize your Google Business Profile, map pack rankings & local citations so nearby customers find you first.',
     keywords: [
       'local seo company newark',
       'newark nj local seo company',
@@ -25,8 +25,8 @@ export const newarkLocalSeo: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'Local SEO in Newark, NJ',
-    h1: 'Local SEO in Newark, NJ',
+    eyebrow: 'Local SEO in Newark, New Jersey',
+    h1: 'Local SEO in Newark, New Jersey',
     intro: [
       'When people need a business in Newark, they often turn to Google before they make a phone call, visit a store, or submit an inquiry. They may search for a service, compare nearby providers, check reviews, view business hours, or look for directions. Your business needs a local presence that gives these potential customers a clear reason to consider you.',
       'Website Work 4 Less delivers local SEO in Newark designed around the way people search for businesses in their communities. We work on your website, Google Business Profile, local listings, location-focused content, and other signals that can help strengthen your visibility across relevant local searches.',
@@ -66,7 +66,7 @@ export const newarkLocalSeo: ServiceLanding = {
       'Flexible strategies that can change as your business develops',
     ],
     outro:
-      'For companies comparing a local SEO agency in Newark, NJ, transparency and communication can make the ongoing process easier to manage.',
+      'For companies comparing a local SEO agency in Newark, New Jersey, transparency and communication can make the ongoing process easier to manage.',
     ctaLabel: 'Discuss Your Local SEO',
   },
   problem: {
@@ -110,7 +110,7 @@ export const newarkLocalSeo: ServiceLanding = {
       { title: 'Continued Improvement', desc: 'We use campaign insights to identify areas that need additional attention, new opportunities worth exploring, and existing elements that should be updated.' },
     ],
     outro:
-      'Choosing a local SEO agency in Newark, NJ means choosing a partner that understands the need for both initial optimization and continued attention.',
+      'Choosing a local SEO agency in Newark, New Jersey means choosing a partner that understands the need for both initial optimization and continued attention.',
   },
   industries: {
     heading: 'Strategies for Different Newark Businesses',
@@ -144,7 +144,7 @@ export const newarkLocalSeo: ServiceLanding = {
   results: {
     heading: 'A Connected Approach to Local Visibility',
     body:
-      'For businesses researching Newark, NJ local SEO company options, a connected approach can provide a more organized way to manage local visibility.',
+      'For businesses researching Newark, New Jersey local SEO company options, a connected approach can provide a more organized way to manage local visibility.',
   },
   finalCta: {
     heading: 'Give Your Newark Business More Opportunities to Be Discovered',

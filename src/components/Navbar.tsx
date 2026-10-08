@@ -4,15 +4,93 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Button from './Button';
 import { EnvelopeIcon, MoonIcon, PhoneIcon, SunIcon } from './Icons';
 import Logo from './Logo';
-import { landingPages } from '../data/landing';
+import {
+  eastOrangeLandingPages,
+  landingPages,
+  newarkLandingPages,
+  westOrangeLandingPages,
+} from '../data/landing';
+
+const lakewoodAreaPages = [
+  {
+    slug: 'nj/ocean-county/digital-marketing-lakewood',
+    navLabel: 'Digital Marketing in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/web-development-lakewood',
+    navLabel: 'Web Development in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/web-design-lakewood',
+    navLabel: 'Web Design in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/ecommerce-web-design-lakewood',
+    navLabel: 'eCommerce Web Design in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/ecommerce-web-development-lakewood',
+    navLabel: 'eCommerce Web Development in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/seo-lakewood',
+    navLabel: 'SEO in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/local-seo-company-lakewood',
+    navLabel: 'Local SEO in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/ppc-management-lakewood',
+    navLabel: 'PPC Management in Lakewood',
+  },
+  {
+    slug: 'nj/ocean-county/social-media-marketing-lakewood',
+    navLabel: 'Social Media Marketing in Lakewood',
+  },
+];
 
 const navLinks = [
   { label: 'Home', path: '/' },
   { label: 'Services', path: '/services' },
+  { label: 'Areas Served', path: '' },
   { label: 'Portfolio', path: '/portfolio' },
   { label: 'About', path: '/about' },
   { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
+];
+
+const serviceAreas = [
+  {
+    county: 'Essex County',
+    items: [
+      {
+        label: 'Newark',
+        path: '/nj/essex-county/digital-marketing-newark',
+        pages: newarkLandingPages.slice(1),
+      },
+      {
+        label: 'East Orange',
+        path: '/nj/essex-county/digital-marketing-east-orange',
+        pages: eastOrangeLandingPages.slice(1),
+      },
+      {
+        label: 'West Orange',
+        path: '/nj/essex-county/digital-marketing-west-orange',
+        pages: westOrangeLandingPages.slice(1),
+      },
+    ],
+  },
+  {
+    county: 'Ocean County',
+    items: [
+      {
+        label: 'Lakewood',
+        path: '/nj/ocean-county/digital-marketing-lakewood',
+        pages: lakewoodAreaPages.slice(1),
+      },
+    ],
+  },
 ];
 
 export default function Navbar() {
@@ -173,6 +251,107 @@ export default function Navbar() {
                       >
                         {page.navLabel}
                       </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : link.label === 'Areas Served' ? (
+              <div key={link.label} className="group/areas relative">
+                <button
+                  type="button"
+                  className={`flex items-center gap-1 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-200 ${isWhiteText
+                      ? 'text-white/70 hover:bg-white/10 hover:text-white'
+                      : 'text-text-secondary hover:bg-surface-muted hover:text-text-primary'
+                    }`}
+                  aria-haspopup="menu"
+                >
+                  {link.label}
+                  <svg
+                    className="h-3.5 w-3.5 transition-transform duration-200 group-hover/areas:rotate-180"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2.5}
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                  </svg>
+                </button>
+
+                <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover/areas:visible group-hover/areas:opacity-100 group-focus-within/areas:visible group-focus-within/areas:opacity-100">
+                  <div className="w-60 rounded-2xl border border-border bg-surface p-2 shadow-2xl shadow-black/10">
+                    {serviceAreas.map((area) => (
+                      <div key={area.county} className="group/county relative">
+                        <button
+                          type="button"
+                          className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-left text-sm font-semibold text-text-primary transition-colors hover:bg-accent/5 hover:text-accent"
+                          aria-haspopup="menu"
+                        >
+                          {area.county}
+                          <svg
+                            className="h-3.5 w-3.5"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2.5}
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" d="m9 18 6-6-6-6" />
+                          </svg>
+                        </button>
+
+                        <div className="invisible absolute left-full top-0 z-50 pl-2 opacity-0 transition-all duration-200 group-hover/county:visible group-hover/county:opacity-100 group-focus-within/county:visible group-focus-within/county:opacity-100">
+                          <div className="w-44 rounded-2xl border border-border bg-surface p-2 shadow-2xl shadow-black/10">
+                            {area.items.map((item) => (
+                              <div key={item.label} className="group/location relative">
+                                {item.path ? (
+                                  <Link
+                                    to={item.path}
+                                    onClick={() => setMobileOpen(false)}
+                                    className="flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-left text-sm font-medium text-text-secondary transition-colors hover:bg-accent/5 hover:text-accent"
+                                  >
+                                    {item.label}
+                                    {item.pages.length > 0 && (
+                                      <svg
+                                        className="h-3.5 w-3.5"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                        strokeWidth={2.5}
+                                      >
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m9 18 6-6-6-6" />
+                                      </svg>
+                                    )}
+                                  </Link>
+                                ) : (
+                                  <button
+                                    type="button"
+                                    className="block w-full cursor-default rounded-xl px-4 py-2.5 text-left text-sm font-medium text-text-secondary"
+                                  >
+                                    {item.label}
+                                  </button>
+                                )}
+
+                                {item.pages.length > 0 && (
+                                  <div className="invisible absolute left-full top-0 z-50 pl-2 opacity-0 transition-all duration-200 group-hover/location:visible group-hover/location:opacity-100 group-focus-within/location:visible group-focus-within/location:opacity-100">
+                                    <div className="w-72 rounded-2xl border border-border bg-surface p-2 shadow-2xl shadow-black/10">
+                                      {item.pages.map((page) => (
+                                        <Link
+                                          key={page.slug}
+                                          to={`/${page.slug}`}
+                                          onClick={() => setMobileOpen(false)}
+                                          className={`block rounded-xl px-4 py-2.5 text-sm font-medium transition-colors hover:bg-accent/5 hover:text-accent ${location.pathname === `/${page.slug}` ? 'text-accent' : 'text-text-secondary'
+                                            }`}
+                                        >
+                                          {page.navLabel}
+                                        </Link>
+                                      ))}
+                                    </div>
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -380,6 +559,46 @@ export default function Navbar() {
                       </div>
                     )}
                   </div>
+                ) : link.label === 'Areas Served' ? (
+                  <>
+                    <span className="text-2xl font-semibold text-text-primary">{link.label}</span>
+                    <div className="mt-3 flex flex-col items-center gap-4">
+                      {serviceAreas.map((area) => (
+                        <div key={area.county} className="flex flex-col items-center gap-2">
+                          <span className="text-sm font-semibold text-text-secondary">
+                            {area.county}
+                          </span>
+                          <div className="flex flex-col items-center gap-3">
+                            {area.items.map((item) => (
+                              <div key={item.label} className="flex flex-col items-center gap-2">
+                                <Link
+                                  to={item.path}
+                                  onClick={() => setMobileOpen(false)}
+                                  className="text-sm font-semibold text-accent"
+                                >
+                                  {item.label}
+                                </Link>
+                                {item.pages.length > 0 && (
+                                  <div className="flex max-w-sm flex-wrap justify-center gap-x-3 gap-y-2">
+                                    {item.pages.map((page) => (
+                                      <Link
+                                        key={page.slug}
+                                        to={`/${page.slug}`}
+                                        onClick={() => setMobileOpen(false)}
+                                        className="text-xs font-medium text-text-muted hover:text-accent"
+                                      >
+                                        {page.navLabel}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </>
                 ) : (
                   <Link
                     to={link.path}

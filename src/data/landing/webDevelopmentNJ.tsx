@@ -2,11 +2,11 @@ import type { ServiceLanding } from './types';
 
 export const webDevelopmentNJ: ServiceLanding = {
   slug: 'web-development-nj',
-  navLabel: 'Web Development in NJ',
+  navLabel: 'Web Development in New Jersey',
   seo: {
     title: 'Web Development in New Jersey | Website Work 4 Less',
     description:
-      'Get custom web development in New Jersey. Our NJ web developers build fast, easy to use, and mobile-friendly sites that rank and convert. 30-day guarantee.',
+      'Get custom web development in New Jersey. Our New Jersey web developers build fast, easy to use, and mobile-friendly sites that rank and convert. 30-day guarantee.',
     keywords: [
       'web development nj',
       'nj web development',
@@ -30,8 +30,8 @@ export const webDevelopmentNJ: ServiceLanding = {
     areaServed: { type: 'State', name: 'New Jersey' },
   },
   hero: {
-    eyebrow: 'Web Development in NJ',
-    h1: 'Professional Web Development in NJ for Growing Businesses',
+    eyebrow: 'Web Development in New Jersey',
+    h1: 'Professional Web Development in New Jersey for Growing Businesses',
     intro: [
       'At Website Work 4 Less, we create professional websites that help businesses across New Jersey attract customers, build trust, and generate more opportunities online. Our websites combine modern design, reliable functionality, mobile responsiveness, and practical features without unnecessary agency costs or lengthy development timelines.',
     ],
@@ -39,9 +39,9 @@ export const webDevelopmentNJ: ServiceLanding = {
     ctaLabel: 'Get a Free Consultation',
   },
   value: {
-    heading: 'NJ Web Development That Fits Your Business',
+    heading: 'New Jersey Web Development That Fits Your Business',
     body: [
-      'Your website should reflect how your business actually operates, not force you into a standard template. Our NJ web development services are built around your audience, goals, industry, and budget.',
+      'Your website should reflect how your business actually operates, not force you into a standard template. Our New Jersey web development services are built around your audience, goals, industry, and budget.',
     ],
     bulletsIntro: 'We create websites that are:',
     bullets: [
@@ -57,7 +57,7 @@ export const webDevelopmentNJ: ServiceLanding = {
   pricing: {
     heading: 'Transparent Pricing for Web Development in New Jersey',
     body: [
-      "Working with a web development company in NJ shouldn't involve unexpected costs appearing halfway through your project. We provide clear pricing and project expectations before development begins.",
+      "Working with a web development company in New Jersey shouldn't involve unexpected costs appearing halfway through your project. We provide clear pricing and project expectations before development begins.",
     ],
     bullets: [
       'Most standard website projects range from $1,000 to $2,500',
@@ -84,7 +84,7 @@ export const webDevelopmentNJ: ServiceLanding = {
       'Difficulty adding new services or features as your business expands',
     ],
     outro:
-      'Professional web development in NJ gives your company a stronger digital foundation. Instead of simply placing information online, a well-planned website can support customer engagement, marketing campaigns, search visibility, and future growth.',
+      'Professional web development in New Jersey gives your company a stronger digital foundation. Instead of simply placing information online, a well-planned website can support customer engagement, marketing campaigns, search visibility, and future growth.',
   },
   included: {
     heading: 'What Our Web Development Services Include',
@@ -118,13 +118,13 @@ export const webDevelopmentNJ: ServiceLanding = {
     ],
   },
   process: {
-    heading: 'How We Approach Web Development in NJ',
+    heading: 'How We Approach Web Development in New Jersey',
     intro:
       'We keep our development process organized so you always know what comes next. Our workflow removes unnecessary complexity while allowing room for collaboration and feedback.',
     steps: [
       { title: 'Discovery & Planning', desc: 'We learn about your company, target audience, services, website requirements, and the results you want the project to achieve.' },
       { title: 'Design Direction', desc: 'Our team develops the structure and visual direction of your website around your branding and the way customers should move through the site.' },
-      { title: 'Website Development', desc: 'A web developer in NJ from our team turns the approved design into a functional website using modern development practices and responsive layouts.' },
+      { title: 'Website Development', desc: 'A web developer in New Jersey from our team turns the approved design into a functional website using modern development practices and responsive layouts.' },
       { title: 'Testing & Launch', desc: 'Before going live, we review the website, test important functions, check responsiveness, and resolve issues that could affect the user experience.' },
       { title: 'Continued Assistance', desc: 'After launch, we remain available for support, updates, and future improvements as your business and website requirements change.' },
     ],
@@ -144,12 +144,12 @@ export const webDevelopmentNJ: ServiceLanding = {
       { title: 'Professional Services', desc: 'Law firms, consultants, financial professionals, and other service providers benefit from websites that clearly communicate their expertise while making enquiries convenient.' },
     ],
     outro:
-      "Whether you're launching a new company or upgrading an established website, our NJ web development company creates solutions around your specific business requirements. Although we serve businesses throughout the state, our clients also come from across the country.",
+      "Whether you're launching a new company or upgrading an established website, our New Jersey web development company creates solutions around your specific business requirements. Although we serve businesses throughout the state, our clients also come from across the country.",
   },
   whyUs: {
     heading: 'What Makes Our Team Different?',
     intro:
-      "Choosing a web development agency in NJ means looking beyond the appearance of a website. Communication, delivery times, pricing, and ongoing support all matter when you're investing in your online presence.",
+      "Choosing a web development agency in New Jersey means looking beyond the appearance of a website. Communication, delivery times, pricing, and ongoing support all matter when you're investing in your online presence.",
     bullets: [
       'Fast project delivery: Many websites are completed within 7 to 14 days.',
       'Clear pricing: You receive straightforward project costs before development starts.',
@@ -166,7 +166,7 @@ export const webDevelopmentNJ: ServiceLanding = {
       'From a first-time website to a complete rebuild, we focus on creating a digital presence that supports your business today and as it grows.',
   },
   finalCta: {
-    heading: 'Ready to Grow Your Business With Web Development in NJ?',
+    heading: 'Ready to Grow Your Business With Web Development in New Jersey?',
     body: [
       'Your website should do more than look professional. It should make it easier for customers to understand your services, trust your business, and take the next step.',
       "Whether you need a brand-new website, an eCommerce store, or a complete redesign, Website Work 4 Less can build a digital experience around your business goals. With clear pricing, flexible payments, and fast project delivery, getting your new website started doesn't have to be complicated.",
@@ -174,9 +174,9 @@ export const webDevelopmentNJ: ServiceLanding = {
     ctaLabel: 'Get a Free Consultation',
   },
   faqs: [
-    { q: 'How much does web development in NJ cost?', a: "Most standard Website Work 4 Less websites cost between $1,000 and $2,500. The final price depends on the website's size, features, design requirements, and functionality." },
+    { q: 'How much does web development in New Jersey cost?', a: "Most standard Website Work 4 Less websites cost between $1,000 and $2,500. The final price depends on the website's size, features, design requirements, and functionality." },
     { q: 'How long does it take to build a website in New Jersey?', a: "Many projects can be completed within 7 to 14 days. The timeline depends on the site's complexity, required features, content, feedback, and approval stages." },
-    { q: 'Do you build websites for small businesses?', a: "Yes. Our web development company in NJ works with startups, small businesses, and established companies. Projects are tailored around the company's goals, audience, budget, and requirements." },
+    { q: 'Do you build websites for small businesses?', a: "Yes. Our web development company in New Jersey works with startups, small businesses, and established companies. Projects are tailored around the company's goals, audience, budget, and requirements." },
     { q: 'Will my website work on smartphones?', a: 'Yes. Responsive development ensures that your website adjusts to different screen sizes, including smartphones, tablets, laptops, and desktop computers.' },
     { q: 'Can you create an online store?', a: 'Yes. Our eCommerce development services can provide product pages, shopping functionality, navigation, and checkout features for businesses selling products online.' },
     { q: 'Do you offer SEO with website development?', a: 'Yes. Website Work 4 Less also provides SEO and digital marketing services. Development can establish a stronger technical foundation, while ongoing SEO can focus on visibility and organic growth.' },

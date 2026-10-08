@@ -1,0 +1,95 @@
+import type { ServiceLanding } from './types';
+
+export const westOrangeDigitalMarketing: ServiceLanding = {
+  slug: 'nj/essex-county/digital-marketing-west-orange',
+  navLabel: 'Digital Marketing in West Orange',
+  seo: {
+    title: 'Digital Marketing Agency in West Orange | Website Work 4 Less',
+    description: 'Grow your West Orange business with coordinated web design, SEO, PPC and social media marketing focused on visibility, engagement and measurable growth.',
+    keywords: ['digital marketing in west orange', 'digital marketing services in west orange', 'digital marketing agency in west orange', 'digital marketing consultant in west orange', 'digital marketing company in west orange', 'internet marketing company in west orange'],
+    schemaDescription: 'Website Work 4 Less provides digital marketing in West Orange through website development, SEO, paid campaigns, social media, and conversion-focused design. Our connected digital strategies help businesses improve visibility, customer engagement, and sustainable online growth.',
+    serviceType: 'Digital Marketing',
+    areaServed: { type: 'City', name: 'West Orange' },
+  },
+  hero: {
+    eyebrow: 'Digital Marketing in West Orange',
+    h1: 'Grow Your Business with Digital Marketing in West Orange',
+    intro: ['Your online presence should actively contribute to your business, not simply give you a place on the internet. It should help prospective customers find you, understand your services, and feel confident taking the next step.', 'Website Work 4 Less brings website development, SEO, paid campaigns, social media, and conversion-minded design together to create digital solutions built around measurable business objectives.'],
+    highlights: ['Creative and Technical Expertise', 'Practical Execution', 'Strategies Built for Growth'],
+    ctaLabel: 'Get Your Free Consultation',
+  },
+  value: {
+    heading: 'Build a More Effective Online Presence',
+    body: ['A business rarely grows online because of a single marketing activity. Your website, search rankings, advertising, social profiles, and overall customer journey all influence how potential customers discover and evaluate your company.', 'As a digital marketing agency in West Orange, Website Work 4 Less connects these elements into a more coordinated strategy.'],
+    bullets: ['Websites created for navigation, mobile responsiveness, speed, and stronger user actions', 'SEO campaigns focused on improving rankings for valuable searches', 'Paid advertising designed to reach audiences likely to need your offerings', 'Social media marketing that maintains visibility and encourages interaction', 'Continued improvements as business priorities and customer expectations change'],
+    outro: 'Instead of managing disconnected specialists, you can work with one team to create, market, evaluate, and refine your online ecosystem.',
+  },
+  pricing: {
+    heading: 'A Straightforward Path to Your New Online Presence',
+    body: ['Effective digital projects begin with a clear understanding of the company they are being built for. Our approach creates direction from the beginning and keeps the project moving through each major stage.'],
+    bullets: ['Business, audience, competitor, and objective discovery', 'Website, content, visual, and marketing planning', 'Responsive development and coordinated campaign execution', 'Testing across important functions, layouts, devices, and user journeys', 'Continued support and optimization after launch'],
+    ctaLabel: 'Discuss Your Digital Strategy',
+  },
+  problem: {
+    heading: 'Digital Strategies That Support Business Growth',
+    body: ['From establishing your website to maintaining ongoing marketing campaigns, our digital marketing services in West Orange can support different needs as your company develops online.'],
+    bullets: ['Create a reliable website that gives your brand a professional digital foundation', 'Improve organic and local visibility when potential customers search', 'Reach relevant audiences through measurable paid campaigns', 'Maintain clear, consistent communication on suitable social platforms', 'Review and refine performance as your business develops'],
+    outro: 'Each channel has a clearer purpose when it is connected to the same customer journey and business objectives.',
+  },
+  included: {
+    heading: 'Our Digital Marketing Services',
+    intro: 'Choose individual services or combine them into a coordinated strategy based on your current priorities.',
+    items: [
+      { title: 'Web Development', desc: 'Dependable websites with responsive structures, practical functionality, efficient performance, and room for future requirements.' },
+      { title: 'Web Design', desc: 'Visually polished, clearly organized websites that make your services easier to understand and navigate.' },
+      { title: 'eCommerce Development', desc: 'Online stores built around practical purchasing journeys, useful functionality, and flexible product structures.' },
+      { title: 'eCommerce Website Design', desc: 'Customer-focused product and checkout experiences that remove unnecessary obstacles from the buying journey.' },
+      { title: 'Search Engine Optimization', desc: 'Search strategies designed to improve organic exposure and establish a stronger platform for long-term visibility.' },
+      { title: 'Local SEO', desc: 'Location-focused optimization that helps nearby customers discover relevant services when they are ready to decide.' },
+      { title: 'Pay Per Click Marketing', desc: 'Measurable campaigns that place your business in front of people actively looking for relevant products or services.' },
+      { title: 'Social Media Marketing', desc: 'Consistent social strategies that support awareness, communication, and useful engagement across suitable platforms.' },
+    ],
+  },
+  process: {
+    heading: 'From Initial Discussion to Digital Launch',
+    steps: [
+      { title: 'Discovery & Consultation', desc: 'We examine your business, target customers, competitors, current digital presence, and desired outcomes.' },
+      { title: 'Strategy & Creative Planning', desc: 'We map the website structure, content direction, visual approach, marketing priorities, and required functionality.' },
+      { title: 'Development & Execution', desc: 'Our development and marketing specialists put the approved strategy into practice using responsive and performance-conscious methods.' },
+      { title: 'Testing, Launch & Optimization', desc: 'We review important functions, layouts, devices, and journeys before launch, then identify opportunities for further refinement.' },
+    ],
+  },
+  industries: {
+    heading: 'Digital Projects Built Around Business Needs',
+    intro: 'Our work supports businesses with different industries, audiences, objectives, and digital requirements.',
+    items: [
+      { title: 'Business Websites', desc: 'Professional digital foundations that clearly explain services and make customer actions easier.' },
+      { title: 'Online Stores', desc: 'Flexible ecommerce experiences designed around product discovery and purchasing.' },
+      { title: 'Search Visibility', desc: 'Organic and local optimization aligned with relevant customer searches.' },
+      { title: 'Paid Advertising', desc: 'Focused campaigns that connect budget, audience, message, and measurable outcomes.' },
+      { title: 'Social Presence', desc: 'Consistent communication that supports recognition and useful audience interaction.' },
+      { title: 'Ongoing Growth', desc: 'Digital assets and strategies that can be refined as your company continues to develop.' },
+    ],
+  },
+  whyUs: {
+    heading: 'Straightforward Digital Marketing Without Unnecessary Complexity',
+    intro: 'You need a team that communicates clearly, understands your objectives, works within your budget, and recognizes how every channel affects the customer journey.',
+    bullets: ['Quick project turnarounds: Many projects can be completed within 7 to 14 days.', 'Clear pricing: Costs and expectations are established before work begins.', 'Flexible payment options: Available choices make it easier to begin while managing your budget.', '30-day money-back guarantee: Eligible projects include added reassurance. Terms apply.', 'Accessible communication: Our team remains available for updates, questions, and clarification.'],
+  },
+  results: { heading: 'Real Businesses, Practical Digital Outcomes', body: 'Businesses across multiple industries work with Website Work 4 Less for digital solutions focused on visibility, usability, customer engagement, and sustainable growth.' },
+  finalCta: {
+    heading: 'Ready to Grow with Digital Marketing in West Orange?',
+    body: ['Potential customers are constantly searching for businesses, comparing alternatives, reviewing websites, and deciding who deserves their attention.', 'Let us create an online presence that serves a genuine business purpose while giving visitors a clearer reason to engage with you.'],
+    ctaLabel: 'Get Your Free Consultation',
+  },
+  faqs: [
+    { q: 'Which digital marketing services in West Orange are suitable for a small business?', a: 'Depending on your goals, useful services may include website development, local SEO, PPC advertising, social media marketing, and content or conversion improvements.' },
+    { q: 'How can a digital marketing agency in West Orange improve my online visibility?', a: 'A digital marketing agency can evaluate your website and marketing channels, identify opportunities, and develop coordinated strategies across search, advertising, social media, and other relevant platforms.' },
+    { q: 'When should I consider hiring a digital marketing consultant?', a: 'A consultant can help define your digital strategy, identify marketing priorities, review current performance, or decide which services should receive your budget.' },
+    { q: 'Can digital marketing help a West Orange business attract local customers?', a: 'Yes. Local SEO, location-focused website content, paid campaigns, and social media can all contribute to reaching people searching for nearby businesses and services.' },
+    { q: 'Does Website Work 4 Less provide SEO for businesses in West Orange?', a: 'Yes. SEO is available to help businesses improve organic search visibility and attract more relevant visitors through search engines.' },
+    { q: 'Can I combine website development with other marketing services?', a: 'Yes. Combining website work with SEO, PPC, social media, or other activities can create a more consistent online experience and strategy.' },
+    { q: 'How long can a website project take?', a: 'Timelines depend on scope and requirements. Many projects can be completed within 7 to 14 days, while more involved work may require additional time.' },
+    { q: 'Can my digital strategy be adjusted as my business grows?', a: 'Yes. Your website and marketing priorities can be reviewed as your audience, offerings, competition, and business objectives change.' },
+  ],
+};

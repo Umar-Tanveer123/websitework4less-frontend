@@ -12,7 +12,7 @@ export const eastOrangeSeo: ServiceLanding = {
     areaServed: { type: 'City', name: 'East Orange' },
   },
   hero: {
-    eyebrow: 'SEO in East Orange, NJ',
+    eyebrow: 'SEO in East Orange, New Jersey',
     h1: 'SEO in East Orange That Helps Local Customers Find Your Business',
     intro: ['Having a website is only part of building an online presence. If prospective customers cannot find your pages when they search for products or services, your website may generate little business value regardless of how strong your offer is.', 'Website Work 4 Less provides SEO in East Orange to help businesses improve their organic and local search presence. We combine keyword research, content improvements, technical optimization, local search strategies, and performance tracking to create a practical foundation for sustainable visibility.'],
     highlights: ['Local Search Knowledge', 'Clear Performance Reporting', 'Strategies Aligned With Your Business'],
@@ -33,7 +33,7 @@ export const eastOrangeSeo: ServiceLanding = {
   },
   problem: {
     heading: 'Why Organic Search Visibility Can Influence Customer Decisions',
-    body: ['When someone needs a nearby service, they may search online before contacting a company. They can compare websites, read reviews, examine services, and assess which businesses appear relevant.', 'Effective SEO in East Orange, NJ can help close that visibility gap by making relevant pages easier for search engines and potential customers to locate.'],
+    body: ['When someone needs a nearby service, they may search online before contacting a company. They can compare websites, read reviews, examine services, and assess which businesses appear relevant.', 'Effective SEO in East Orange, New Jersey can help close that visibility gap by making relevant pages easier for search engines and potential customers to locate.'],
     bullets: ['Help repair providers reach nearby residents searching for assistance', 'Connect healthcare practices with people researching treatments', 'Help retailers attract shoppers looking for nearby products', 'Support professional firms reaching people seeking specialized local expertise'],
     outro: 'Search visibility alone cannot guarantee enquiries or sales, but appearing when people are actively researching relevant solutions creates more opportunities to enter their consideration.',
   },

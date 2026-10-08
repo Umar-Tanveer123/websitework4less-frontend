@@ -25,7 +25,7 @@ export const newarkWebDesign: ServiceLanding = {
     areaServed: { type: 'City', name: 'Newark' },
   },
   hero: {
-    eyebrow: 'Web Design in Newark, NJ',
+    eyebrow: 'Web Design in Newark, New Jersey',
     h1: 'Newark Web Design for Businesses That Want to Stand Out Online',
     intro: [
       'At Website Work 4 Less, we create websites for businesses that want their online presence to look professional and function naturally. Our approach to web design in Newark considers your audience, services, brand identity, and business objectives before we shape the visual experience.',
@@ -34,10 +34,10 @@ export const newarkWebDesign: ServiceLanding = {
     ctaLabel: 'Get a Free Consultation',
   },
   value: {
-    heading: 'Web Design in Newark, NJ Built Around Your Customers',
+    heading: 'Web Design in Newark, New Jersey Built Around Your Customers',
     body: [
       'Good website design starts with understanding the people who will use the website. A visually attractive page has limited value if visitors cannot find information, understand your offer, or figure out what to do next.',
-      'Our approach to web design in Newark, NJ focuses on the relationship between appearance and usability. We consider how customers move through your website and use design to make important information easier to discover.',
+      'Our approach to web design in Newark, New Jersey focuses on the relationship between appearance and usability. We consider how customers move through your website and use design to make important information easier to discover.',
     ],
     bulletsIntro: 'Your website can be structured around:',
     bullets: [
@@ -161,7 +161,7 @@ export const newarkWebDesign: ServiceLanding = {
     { q: 'How much do web design services in Newark cost?', a: 'The cost of web design services in Newark depends on factors such as the number of pages, level of customization, content requirements, eCommerce functionality, and project scope. We provide project pricing before work begins so you can understand the expected investment.' },
     { q: 'Can you design a website for a small Newark business?', a: 'Yes. Our web design company in Newark works with startups, small businesses, and established organizations. We can adjust the website scope and design approach around your business goals, audience, brand, and budget.' },
     { q: 'Can you redesign my existing website?', a: 'Yes. We provide website redesign services for businesses that want to update an older website. A redesign can address visual presentation, navigation, page structure, branding consistency, mobile layouts, and overall user experience.' },
-    { q: 'Is your web design responsive?', a: 'Yes. Our approach to web design in Newark, NJ considers different screen sizes. Responsive layouts help websites remain usable across smartphones, tablets, laptops, and desktop computers.' },
+    { q: 'Is your web design responsive?', a: 'Yes. Our approach to web design in Newark, New Jersey considers different screen sizes. Responsive layouts help websites remain usable across smartphones, tablets, laptops, and desktop computers.' },
     { q: 'Do you provide Newark eCommerce web design?', a: 'Yes. Our Newark eCommerce web design services can focus on product presentation, category navigation, shopping journeys, calls to action, and other visual components of an online store. The exact design depends on your products and business model.' },
     { q: 'Can you use my existing branding?', a: 'Absolutely. We can incorporate existing logos, colors, fonts, imagery, and brand guidelines into your website. If your branding needs greater consistency, we can also help establish a more cohesive visual direction.' },
     { q: 'How do I choose a web design agency in Newark?', a: 'Look for a web design agency in Newark that provides clear communication, responsive layouts, transparent pricing, customization, revision opportunities, and a design process that considers your business objectives. The right approach should balance visual presentation with usability.' },
