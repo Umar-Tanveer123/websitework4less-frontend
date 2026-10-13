@@ -122,6 +122,6 @@ export const digitalMarketingWestOrangePost = {
   thumbnail: "https://media.istockphoto.com/id/2008262446/photo/digital-marketing-concept.jpg?s=612x612&w=0&k=20&c=d-SY5qAVG6xEQFvuDecMafi9h4332hDA0S4NV_tSyZI=",
   content,
   published: true,
-  createdAt: "2026-10-12T06:00:00Z",
+  createdAt: "2026-10-07T10:00:00Z",
 };
 

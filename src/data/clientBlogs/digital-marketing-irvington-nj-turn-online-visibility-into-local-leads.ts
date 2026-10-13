@@ -156,6 +156,6 @@ export const digitalMarketingIrvingtonPost = {
   thumbnail: "https://media.istockphoto.com/id/600409112/photo/young-business-team-brainstorming-meeting-room-process-coworkers-startup-marketing.jpg?s=612x612&w=0&k=20&c=rfpi2wEdsO4a6SPLgOgynd3mFYEYdKJdhe8Rlt79vPQ=",
   content,
   published: true,
-  createdAt: "2026-10-12T08:00:00Z",
+  createdAt: "2026-10-10T10:00:00Z",
 };
 
