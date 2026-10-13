@@ -126,6 +126,6 @@ export const localSeoBloomfieldPost = {
   thumbnail: "https://media.istockphoto.com/id/2214187899/photo/close-up-man-hand-hold-smartphone-and-use-social-media-network-application-to-connect-or.jpg?s=612x612&w=0&k=20&c=lGBRxqZHNHqPhcV4oAqSMUAwqGYwLj_3AfQD8ofWV-w=",
   content,
   published: true,
-  createdAt: "2026-10-12T05:00:00Z",
+  createdAt: "2026-10-06T10:00:00Z",
 };
 

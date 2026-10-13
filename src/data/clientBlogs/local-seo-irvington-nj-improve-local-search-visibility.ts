@@ -134,6 +134,6 @@ export const localSeoIrvingtonPost = {
   thumbnail: "https://media.istockphoto.com/id/2213682727/photo/keyboard-and-local-seo.jpg?s=612x612&w=0&k=20&c=-Daamjp5kfzkmn0bAL3U_l3L7teOEDGwe1y1E3-1QRc=",
   content,
   published: true,
-  createdAt: "2026-10-12T03:00:00Z",
+  createdAt: "2026-10-03T10:00:00Z",
 };
 

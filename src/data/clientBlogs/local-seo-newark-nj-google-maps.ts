@@ -245,6 +245,6 @@ export const localSeoNewarkPost = {
   thumbnail: "https://media.istockphoto.com/id/2264481737/photo/person-using-laptop-with-glowing-local-seo-search-bar-representing-digital-marketing-online.jpg?s=612x612&w=0&k=20&c=CaxlhAFR6g1htiDO23c3LZFSKPM5ADNUXw7ZXNQUGl0=",
   content,
   published: true,
-  createdAt: "2026-10-12T02:00:00Z",
+  createdAt: "2026-10-02T10:00:00Z",
 };
 

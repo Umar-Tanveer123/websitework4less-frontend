@@ -161,6 +161,6 @@ export const localSeoEastOrangePost = {
   thumbnail: "https://media.istockphoto.com/id/2284220523/photo/local-seo-local-business-reviews-and-customer-feedback-system-showcasing-star-ratings-for.jpg?s=612x612&w=0&k=20&c=rdbQ5grf0csV88KDuXQPPui94aQ5XnYgpxuitVh7nz4=",
   content,
   published: true,
-  createdAt: "2026-10-12T04:00:00Z",
+  createdAt: "2026-10-04T10:00:00Z",
 };
 

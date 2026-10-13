@@ -126,6 +126,6 @@ export const localSeoWestOrangePost = {
   thumbnail: "https://media.istockphoto.com/id/1133800720/photo/social-media-marketing-network-communication-mobile-phone-app.jpg?s=612x612&w=0&k=20&c=m8mmA67JXe_RyM1ZbWuq_VQSPmNDoGEF28kCMuef9RA=",
   content,
   published: true,
-  createdAt: "2026-10-12T01:00:00Z",
+  createdAt: "2026-10-01T10:00:00Z",
 };
 

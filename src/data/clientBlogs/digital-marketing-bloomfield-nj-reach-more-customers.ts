@@ -148,6 +148,6 @@ export const digitalMarketingBloomfieldPost = {
   thumbnail: "https://media.istockphoto.com/id/1333702051/photo/digital-marketing-hexagonal-touch-screen-concept.jpg?s=612x612&w=0&k=20&c=eURh4l9b0zIubyCCKq5VnH2_DopaQYl_R1gSQFwulbk=",
   content,
   published: true,
-  createdAt: "2026-10-12T10:00:00Z",
+  createdAt: "2026-10-13T10:00:00Z",
 };
 

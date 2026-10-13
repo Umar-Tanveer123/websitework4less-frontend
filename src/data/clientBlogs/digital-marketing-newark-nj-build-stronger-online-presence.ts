@@ -225,6 +225,6 @@ export const digitalMarketingNewarkPost = {
   thumbnail: "https://media.istockphoto.com/id/2214786491/photo/business-technology-with-data-chart-and-analytics-interface.jpg?s=612x612&w=0&k=20&c=b-boDlPqH1mhkAREP0gOC5yNO470AiG_DAgcQnfL5K0=",
   content,
   published: true,
-  createdAt: "2026-10-12T07:00:00Z",
+  createdAt: "2026-10-09T10:00:00Z",
 };
 
